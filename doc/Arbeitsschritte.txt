@@ -1,10 +1,38 @@
-html grundgerüst
+grundgerüst
 	basic layout (standard css-klassen)
 	grundstyle (farbkonzept)
 	grund templates für die verschiedenen views
 		Benutzerprofil
 		Spielansicht
 		Listenansicht (Benutzer&Spiele)
+	CakePHP Controllers + leere Views
+
+
+	
+
+
+Model erstellen
+	SQL CREATE tables
+	Integrität / cascading
+	CakePHP mappings für tabellen
+
+
+
+
+API Spiel (PHP Controller)
+	Methoden aufrufen innerhalb von PHP
+	Pfade definition
+	Namenskonvention (Klassen + Dateien)
+	Zugriffsrechte
+	
+
+
+Spiel API für JS
+	Dom manipulation
+	Pooling (frequenzieller Daten refresh)
+	Schnittstelle AJAX Client<->Server
+
+
 
 
 
@@ -25,42 +53,10 @@ Spiele verwaltung
 	Detailseite Spiele
 
 
-		
-
-
-Model erstellen
-	SQL CREATE tables
-	Integrität / cascading
-	CakePHP mappings für tabellen
-
-
-
-
-API Spiel (PHP Controller)
-	Methoden aufrufen innerhalb von PHP
-	Pfade definition
-	Namenskonvention
-	
-	
-API Spiel (JSON Controller / Client->Ajax->Server)
-	Methoden aufrufen innerhalb von PHP
-	Pfade definition
-	Namenskonvention
-
-
-Spiel API
-	Controller für spiel definieren (php seitig)
-	Zwischenspeicher
-
-	Schnittstelle Client->Ajax->Server (JSON ausgabe)
-	
-	API für JS (Dom manipulation)
-	Pooling (frequenzieller Daten refresh)
-
 
 
 Umsetzung Spiel
-
+	umsetzung der Spiel API nach Plannung von vorherigen Arbeitsschritten
 
 
 
@@ -77,6 +73,7 @@ Funktionen des Administrators
 	Benutzer löschen, erstellen
 	Spiel beenden, löschen
 	Spieler speeren
+
 
 
 einpflegung statischer seite
