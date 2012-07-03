@@ -1,47 +1,94 @@
 <?php
+App::uses('AppController', 'Controller');
+/**
+ * Users Controller
+ *
+ * @property User $User
+ */
+class UsersController extends AppController {
 
-class UsersController extends AppController
-{
-    public $components = array('RequestHandler');
+/**
+ * index method
+ *
+ * @return void
+ */
+	public function index() {
+		$this->User->recursive = 0;
+		$this->set('users', $this->paginate());
+	}
 
-    public function index() {
-        $recipes = $this->User->find('all');
-        $this->set(array(
-            'recipes' => $recipes,
-            '_serialize' => array('recipe')
-        ));
-    }
+/**
+ * view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function view($id = null) {
+		$this->User->id = $id;
+		if (!$this->User->exists()) {
+			throw new NotFoundException(__('Invalid user'));
+		}
+		$this->set('user', $this->User->read(null, $id));
+	}
 
-    public function view($id) {
-        $recipe = $this->User->findById($id);
-        $this->set(array(
-            'recipe' => $recipe,
-            '_serialize' => array('recipe')
-        ));
-    }
+/**
+ * add method
+ *
+ * @return void
+ */
+	public function add() {
+		if ($this->request->is('post')) {
+			$this->User->create();
+			if ($this->User->save($this->request->data)) {
+				$this->flash(__('User saved.'), array('action' => 'index'));
+			} else {
+			}
+		}
+	}
 
-    public function edit($id) {
-        $this->User->id = $id;
-        if ($this->User->save($this->request->data)) {
-            $message = 'Saved';
-        } else {
-            $message = 'Error';
-        }
-        $this->set(array(
-            'message' => $message,
-            '_serialize' => array('message')
-        ));
-    }
+/**
+ * edit method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function edit($id = null) {
+		$this->User->id = $id;
+		if (!$this->User->exists()) {
+			throw new NotFoundException(__('Invalid user'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->User->save($this->request->data)) {
+				$this->flash(__('The user has been saved.'), array('action' => 'index'));
+			} else {
+			}
+		} else {
+			$this->request->data = $this->User->read(null, $id);
+		}
+	}
 
-    public function delete($id) {
-        if ($this->User->delete($id)) {
-            $message = 'Deleted';
-        } else {
-            $message = 'Error';
-        }
-        $this->set(array(
-            'message' => $message,
-            '_serialize' => array('message')
-        ));
-    }
+/**
+ * delete method
+ *
+ * @throws MethodNotAllowedException
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function delete($id = null) {
+		if (!$this->request->is('post')) {
+			throw new MethodNotAllowedException();
+		}
+		$this->User->id = $id;
+		if (!$this->User->exists()) {
+			throw new NotFoundException(__('Invalid user'));
+		}
+		if ($this->User->delete()) {
+			$this->flash(__('User deleted'), array('action' => 'index'));
+		}
+		$this->flash(__('User was not deleted'), array('action' => 'index'));
+		$this->redirect(array('action' => 'index'));
+	}
 }
