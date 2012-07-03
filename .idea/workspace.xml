@@ -52,19 +52,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.ctp" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="home.ctp" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/View/Pages/home.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="30" selection-start="795" selection-end="795" vertical-scroll-proportion="-5.8846154">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.ctp" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/View/Layouts/default.ctp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="18" selection-start="945" selection-end="945" vertical-scroll-proportion="0.48264983">
+            <state line="25" column="30" selection-start="795" selection-end="795" vertical-scroll-proportion="0.24132492">
               <folding />
             </state>
           </provider>
@@ -677,13 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/View/Pages/home.ctp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="30" selection-start="795" selection-end="795" vertical-scroll-proportion="-5.8846154">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/AppController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.024429968">
@@ -714,7 +698,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/View/Layouts/default.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="18" selection-start="945" selection-end="945" vertical-scroll-proportion="0.48264983">
+        <state line="33" column="18" selection-start="945" selection-end="945" vertical-scroll-proportion="0.24921136">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/View/Pages/home.ctp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="30" selection-start="795" selection-end="795" vertical-scroll-proportion="0.24132492">
           <folding />
         </state>
       </provider>
