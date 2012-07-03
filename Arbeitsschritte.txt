@@ -8,6 +8,15 @@
 		
 		
 
+Model erstellen
+	SQL CREATE tables
+	Integrität / cascading
+
+
+
+
+
+
 
 Benutzer verwaltung
 	Registrierung
@@ -20,7 +29,16 @@ Benutzer verwaltung
 
 
 
+Spiel API
+	Controller für spiel definieren
+	
+	
 
+
+einpflegung statischer seite
+	FAQ
+	Startseite
+	
 
 
 
