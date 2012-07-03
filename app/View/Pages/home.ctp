@@ -22,5 +22,28 @@ endif;
 App::uses('Debugger', 'Utility');
 ?>
 
-<a href="../Users">Users</a> |
-<a href="../Groups">Groups</a>
+<a href="Users">Users</a> |
+<a href="Groups">Groups</a>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/angular/angular.js"></script>
+    <script src="js/angular/angular-resource.js"></script>
+    <script >
+        var App = angular.module('app', ['ngResource']);
+
+        function UserViewModel($scope, $resource) {
+            var Users = $resource('Users.json');
+
+            Users.get(function(result) {
+                $scope.users = result.users;
+                console.log(result);
+            });
+        }
+    </script>
+        <div ng-app="app">
+            <div ng-controller="UserViewModel">
+                <div ng-repeat="item in users">
+                    {{item.User.username}}
+                </div>
+            </div>
+        </div>

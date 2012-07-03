@@ -7,15 +7,24 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
+    public $components = array('RequestHandler');
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->User->recursive = 0;
-		$this->set('users', $this->paginate());
-	}
+        //if ($this->RequestHandler->isAjax()) {
+            $users = $this->User->find('all');
+            $this->set(array(
+                'users' => $users,
+                '_serialize' => array('users')
+            ));
+        //}else {
+            $this->User->recursive = 0;
+            $this->set('users', $this->paginate());
+        //}
+    }
 
 /**
  * view method
@@ -29,7 +38,16 @@ class UsersController extends AppController {
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
-		$this->set('user', $this->User->read(null, $id));
+
+        $user = $this->User->read(null, $id);
+		$this->set('user', $user);
+
+        if ($this->RequestHandler->isAjax()) {
+            $this->set(array(
+                'user' => $user,
+                '_serialize' => array('user')
+            ));
+        }
 	}
 
 /**
@@ -91,4 +109,6 @@ class UsersController extends AppController {
 		$this->flash(__('User was not deleted'), array('action' => 'index'));
 		$this->redirect(array('action' => 'index'));
 	}
+
+
 }
