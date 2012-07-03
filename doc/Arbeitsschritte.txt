@@ -1,17 +1,10 @@
-1. html grundgerüst
+html grundgerüst
 	basic layout (standard css-klassen)
 	grundstyle (farbkonzept)
 	grund templates für die verschiedenen views
 		Benutzerprofil
 		Spielansicht
 		Listenansicht (Benutzer&Spiele)
-		
-		
-
-Model erstellen
-	SQL CREATE tables
-	Integrität / cascading
-
 
 
 
@@ -21,8 +14,9 @@ Benutzer verwaltung
 	Logout
 	Gast erkennung
 	Gruppen erstellen (Gast, Spieler und evt. Moderator)
-	Profilseite
-	Passwort zurücksetzen
+	(Profilseite)
+	(Passwort zurücksetzen)
+
 
 
 
@@ -31,29 +25,58 @@ Spiele verwaltung
 	Detailseite Spiele
 
 
-Funktionen des Administrators
-	Benutzer löschen, erstellen
-	Spiel beenden, löschen
-	Spieler speeren
 		
 
+
+Model erstellen
+	SQL CREATE tables
+	Integrität / cascading
+	CakePHP mappings für tabellen
+
+
+
+
+API Spiel (PHP Controller)
+	Methoden aufrufen innerhalb von PHP
+	Pfade definition
+	Namenskonvention
+	
+	
+API Spiel (JSON Controller / Client->Ajax->Server)
+	Methoden aufrufen innerhalb von PHP
+	Pfade definition
+	Namenskonvention
 
 
 Spiel API
 	Controller für spiel definieren (php seitig)
 	Zwischenspeicher
+
 	Schnittstelle Client->Ajax->Server (JSON ausgabe)
+	
 	API für JS (Dom manipulation)
 	Pooling (frequenzieller Daten refresh)
 
 
+
 Umsetzung Spiel
+
+
+
 
 
 Bewertungssystem
 	Vergleich zwischen Spieler
 	vergleichbarer Spieler suchen
 
+
+
+
+
+Funktionen des Administrators
+	Benutzer löschen, erstellen
+	Spiel beenden, löschen
+	Spieler speeren
 
 
 einpflegung statischer seite
@@ -67,7 +90,7 @@ einpflegung statischer seite
 
 
 
-7. Dokumentation Benutzeranleitung
+Dokumentation Benutzeranleitung
 	Benutzerführung durch die Seite
 	Spielregeln
 	funktionsweise Live-Spiel
@@ -75,8 +98,7 @@ einpflegung statischer seite
 
 
 
-
-8. Dokumentation technische Dokumentation
+Dokumentation technische Dokumentation
 	aufbau MVC
 	bearbeitung von requests
 	Zuständigkeit von Controllers
