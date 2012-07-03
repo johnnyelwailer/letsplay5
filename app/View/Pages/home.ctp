@@ -22,3 +22,5 @@ endif;
 App::uses('Debugger', 'Utility');
 ?>
 
+<a href="../Users">Users</a> |
+<a href="../Groups">Groups</a>
