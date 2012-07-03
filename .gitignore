@@ -7,5 +7,5 @@
 /dist
 .DS_Store
 /tags
-/.idea
-/.idea/workspace.xml
+.idea
+.idea/workspace.xml
