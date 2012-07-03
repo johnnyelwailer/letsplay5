@@ -15,29 +15,54 @@ Model erstellen
 
 
 
-
-
-
 Benutzer verwaltung
 	Registrierung
 	Login
 	Logout
 	Gast erkennung
 	Gruppen erstellen (Gast, Spieler und evt. Moderator)
-	
+	Profilseite
+	Passwort zurücksetzen
 
+
+
+Spiele verwaltung
+	Spieleliste
+	Detailseite Spiele
+
+
+Funktionen des Administrators
+	Benutzer löschen, erstellen
+	Spiel beenden, löschen
+	Spieler speeren
+		
 
 
 
 Spiel API
-	Controller für spiel definieren
-	
-	
+	Controller für spiel definieren (php seitig)
+	Zwischenspeicher
+	Schnittstelle Client->Ajax->Server (JSON ausgabe)
+	API für JS (Dom manipulation)
+	Pooling (frequenzieller Daten refresh)
+
+
+Umsetzung Spiel
+
+
+Bewertungssystem
+	Vergleich zwischen Spieler
+	vergleichbarer Spieler suchen
+
 
 
 einpflegung statischer seite
 	FAQ
 	Startseite
+	Spielregeln
+	404 Seite
+	500 Seite
+	Sonstige fehlerseite
 	
 
 
@@ -52,3 +77,8 @@ einpflegung statischer seite
 
 
 8. Dokumentation technische Dokumentation
+	aufbau MVC
+	bearbeitung von requests
+	Zuständigkeit von Controllers
+	Darstellung der Datenstruktur durch models
+	
