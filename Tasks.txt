@@ -1,0 +1,4 @@
+Arbeitsschritte
+Pflichtenheft
+Varianten beschrieb
+	erweitern das eine API bereitsteht, um weitere speile zu implementieren

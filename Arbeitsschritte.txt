@@ -4,6 +4,7 @@
 	grund templates für die verschiedenen views
 		Benutzerprofil
 		Spielansicht
+		Listenansicht (Benutzer&Spiele)
 		
 		
 
