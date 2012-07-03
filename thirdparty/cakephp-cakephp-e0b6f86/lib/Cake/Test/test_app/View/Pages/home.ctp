@@ -58,7 +58,7 @@ App::uses('Debugger', 'Utility');
 			echo '<span class="notice">';
 				echo __d('cake_dev', 'Your database configuration file is NOT present.');
 				echo '<br/>';
-				echo __d('cake_dev', 'Rename config/database.php.default to config/database.php');
+				echo __d('cake_dev', 'Rename config/database.php to config/database.php');
 			echo '</span>';
 		endif;
 	?>

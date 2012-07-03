@@ -71,7 +71,7 @@
 			else:
 				echo __d('cake', 'NOT present.');
 				echo '<br/>';
-				echo __d('cake', 'Rename config/database.php.default to config/database.php');
+				echo __d('cake', 'Rename config/database.php to config/database.php');
 			endif;
 		?>
 	</span>
