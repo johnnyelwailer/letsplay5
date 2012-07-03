@@ -1,0 +1,35 @@
+1. html grundgerüst
+	basic layout (standard css-klassen)
+	grundstyle (farbkonzept)
+	grund templates für die verschiedenen views
+		Benutzerprofil
+		Spielansicht
+		
+		
+
+
+Benutzer verwaltung
+	Registrierung
+	Login
+	Logout
+	Gast erkennung
+	Gruppen erstellen (Gast, Spieler und evt. Moderator)
+	
+
+
+
+
+
+
+
+
+7. Dokumentation Benutzeranleitung
+	Benutzerführung durch die Seite
+	Spielregeln
+	funktionsweise Live-Spiel
+	Funktionsweise Spiel-Detailseite
+
+
+
+
+8. Dokumentation technische Dokumentation
