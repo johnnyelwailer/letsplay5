@@ -14,16 +14,16 @@ class UsersController extends AppController {
  * @return void
  */
 	public function index() {
-        //if ($this->RequestHandler->isAjax()) {
+        if ($this->RequestHandler->requestedWith()) {
             $users = $this->User->find('all');
             $this->set(array(
                 'users' => $users,
                 '_serialize' => array('users')
             ));
-        //}else {
+        }else {
             $this->User->recursive = 0;
             $this->set('users', $this->paginate());
-        //}
+        }
     }
 
 /**
@@ -42,7 +42,7 @@ class UsersController extends AppController {
         $user = $this->User->read(null, $id);
 		$this->set('user', $user);
 
-        if ($this->RequestHandler->isAjax()) {
+        if ($this->RequestHandler->requestedWith() == 'XMLHttpRequest') {
             $this->set(array(
                 'user' => $user,
                 '_serialize' => array('user')
