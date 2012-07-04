@@ -21,6 +21,7 @@ table.border{
 .radius,
 table.radius {
 	border-radius: 5px 5px 5px 5px;
+	-ms-border-radius: 5px 5px 5px 5px;
 }
 
 table thead{

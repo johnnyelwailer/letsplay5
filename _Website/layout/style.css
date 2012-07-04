@@ -7,14 +7,15 @@
 	
 	display:none;
 */
+/*placedefinition*/
 ul.horizonal{
     margin:1% 25%;
 }
 
-
 ul.horizontal > li {
     padding:5px 20px;
     display:inline-block;
+	width: 10%;
 }
 
 ul.vertical li ul, ul.horizontal li ul {
@@ -24,6 +25,7 @@ ul.vertical li ul, ul.horizontal li ul {
 
 ul.vertical li:hover ul , ul.horizontal li:hover ul{
     display:table-caption;
+	color:#FF5500;
 }
 
 ul.styleless{
@@ -31,3 +33,10 @@ ul.styleless{
 	padding:0px;
 	list-style-type:none;
 }
+
+/*linkdefinition*/
+ul.fontstyle >li:link{
+	font-size:20px;
+
+}
+
