@@ -65,7 +65,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		//'login' => 'user',
 		//'password' => 'password',
-		'database' => 'lestplay5',
+		'database' => 'letsplay5',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
@@ -76,7 +76,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		//'login' => 'user',
 		//'password' => 'password',
-		'database' => 'lestplay5',
+		'database' => 'letsplay5',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
