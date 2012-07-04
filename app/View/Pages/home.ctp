@@ -30,6 +30,34 @@ App::uses('Debugger', 'Utility');
     <script src="js/angular/angular-resource.js"></script>
     <script src="js/angular/angular-app.js"></script>
     <script src="js/angular/angular-directives-calendar.js"></script>
+    <style>
+        .calendar {
+
+        }
+
+        .calendar .head {
+            overflow: visible;
+        }
+
+        .calendar .body {
+            position: relative;
+            overflow: hidden;
+            width: 210px;
+            height: 150px;
+        }
+        .calendar .months {
+            position: absolute;
+            overflow: auto;
+        }
+        .calendar .days {
+            float: left;
+        }
+        .calendar .day, .calendar .head > div {
+            float: left;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
     <script >
 
 
