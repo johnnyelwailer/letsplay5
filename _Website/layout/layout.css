@@ -1,0 +1,69 @@
+/*
+			layout/layout.css
+	#####################################
+	#		createt by @Jaun1911		#
+	#####################################
+	in this script is the layout of the div 
+	containers and the font declaration	
+*/
+
+/*universal*/
+* {
+padding: 0px;
+	font-style: ;
+	font-size:12px;
+	margin:0px;
+
+}
+
+html, body{
+	height: 100%;
+    width: 100%;
+}
+
+
+h1{
+	font-style:Arial;
+	font-size:16px;
+}
+
+
+/*container*/
+#main{
+	background:	#DEDEDE;
+	margin:auto;
+	height:100%;
+	width:100%;
+}
+
+#wrapper{
+	display:inline-block;
+	margin:0 20%;
+	height:100%;
+	width:60%;
+	}
+
+#navigation{
+	display:inline-block;
+	background:	#4876FF;
+	height:100px;
+	width:100%;
+}
+
+#content{
+	display:inline-block;
+	background:	#E5E5E5;
+	height:90%;
+	width:100%;
+}
+
+#content > * {
+	margin:10px;
+}
+
+#footer{
+	display:inline-block;
+	background:#E5E5E5;
+	height:20px;
+	width:100%;
+}

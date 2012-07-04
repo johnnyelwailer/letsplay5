@@ -1,0 +1,33 @@
+/*
+			layout/style.css
+	#####################################
+	#		createt by @Jaun1911		#
+	#####################################
+	layout navigation
+	
+	display:none;
+*/
+ul.horizonal{
+    margin:1% 25%;
+}
+
+
+ul.horizontal > li {
+    padding:5px 20px;
+    display:inline-block;
+}
+
+ul.vertical li ul, ul.horizontal li ul {
+    display:none;
+}
+
+
+ul.vertical li:hover ul , ul.horizontal li:hover ul{
+    display:table-caption;
+}
+
+ul.styleless{
+	margin:0px;
+	padding:0px;
+	list-style-type:none;
+}
