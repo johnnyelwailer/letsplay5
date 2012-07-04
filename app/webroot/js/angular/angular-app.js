@@ -27,25 +27,29 @@ Date.prototype.firstDayOfMonth = curryIdentity(Date.firstDayOfMonth = function(d
 });
 
 Date.prototype.lastDayOfMonth = curryIdentity(Date.lastDayOfMonth = function(date) {
-    return new Date(date.getFullYear(), date.getMonth(), 0)
+    return new Date(date.getFullYear(), date.getMonth()+1, 0)
 });
+
+Date.DAY_OF_MILLISECONDS = 86400000
+
 Date.prototype.firstDayOfWeek = curryIdentity(Date.firstDayOfWeek = function(date) {
-    return date.addDays(-(date.getDay()-1));
+    return new Date(date.valueOf() - (date.getDay()<=0 ? 7-1:date.getDay()-1)*Date.DAY_OF_MILLISECONDS);
 });
 
 Date.prototype.lastDayOfWeek = curryIdentity(Date.lastDayOfWeek = function(date) {
-    return date.addDays(7 - date.getDay());
+    return new Date( date.firstDayOfWeek().valueOf() + 6*Date.DAY_OF_MILLISECONDS);
 });
 Array.range = function (min, max, selector) {
     return Array(max-min+2).join().split(',').map(function(e, i) { return min+i; });
 }
 
 Array.generate = function(fn) {
-    var current, i = 0, result = [];
+    var current = null, i = 0, result = [];
+    fn (0, null);
     while ((current = fn(i, current)) !== false) {
         result[i] = current;
         i++;
     }
-
+    console.log(result,i);
     return result;
 }
