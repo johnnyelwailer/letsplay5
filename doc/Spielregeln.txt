@@ -1,0 +1,3 @@
+Versuche, 5 Kreuze hintereinander zu bekommen, senkrecht, waagerecht oder diagonal. 
+Sieger ist, wer am Ende die meisten Fünfer hat (nicht, wer den ersten Fünfer hat). Ansonsten läuft es wie bei "TicTacToe". 
+Der Spielstand wird angezeigt. 
