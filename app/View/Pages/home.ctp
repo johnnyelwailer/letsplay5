@@ -29,6 +29,7 @@ App::uses('Debugger', 'Utility');
     <script src="js/angular/angular.js"></script>
     <script src="js/angular/angular-resource.js"></script>
     <script src="js/angular/angular-app.js"></script>
+    <script src="js/angular/angular-directives-calendar.js"></script>
     <script >
 
 
@@ -45,6 +46,7 @@ App::uses('Debugger', 'Utility');
     </script>
         <div ng-app="app">
             <div ng-controller="UserViewModel">
+                <calendar selectedDate="new Date" monthsVisible="1"></calendar>
                 <div ng-repeat="item in users">
                     {{item.User.username}}{{what}}
                 </div>
