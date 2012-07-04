@@ -1,0 +1,903 @@
+2012-07-03 09:32:52 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:56:35 Error: Fatal Error (4): syntax error, unexpected '.', expecting '{' in [C:\xampp\htdocs\letsplay5\app\Controller\Index.phpController.php, line 9]
+2012-07-03 09:56:35 Error: [FatalErrorException] syntax error, unexpected '.', expecting '{'
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 9, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 9, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-03 09:56:42 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:00 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:02 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:03 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:04 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 09:58:38 Error: Fatal Error (4): syntax error, unexpected '.', expecting '{' in [C:\xampp\htdocs\letsplay5\app\Controller\Index.phpController.php, line 10]
+2012-07-03 09:58:38 Error: [FatalErrorException] syntax error, unexpected '.', expecting '{'
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 10, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 10, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-03 09:58:44 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:40 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:40 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 10:03:41 Error: [MissingControllerException] Controller class Index.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 14:36:46 Error: [MissingHelperException] Helper class AjaxHelper could not be found.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\View.php(861): HelperCollection->load('Ajax', Array)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\View\View.php(468): View->loadHelpers()
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): View->render(NULL, NULL)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#4 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#5 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2012-07-03 14:48:58 Error: [MissingControllerException] Controller class HomeController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 14:49:24 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Pages\letsplay5\Users.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\View.php(472): View->_getViewFileName('letsplay5/Users')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): View->render('letsplay5/Users', NULL)
+#2 C:\xampp\htdocs\letsplay5\app\Controller\PagesController.php(73): Controller->render('letsplay5/Users')
+#3 [internal function]: PagesController->display('letsplay5', 'Users')
+#4 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-07-03 14:49:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Pages\letsplay5\Users.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\View.php(472): View->_getViewFileName('letsplay5/Users')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): View->render('letsplay5/Users', NULL)
+#2 C:\xampp\htdocs\letsplay5\app\Controller\PagesController.php(73): Controller->render('letsplay5/Users')
+#3 [internal function]: PagesController->display('letsplay5', 'Users')
+#4 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-07-03 15:41:00 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Pages\js\angular\angular.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\View.php(472): View->_getViewFileName('js/angular/angu...')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): View->render('js/angular/angu...', NULL)
+#2 C:\xampp\htdocs\letsplay5\app\Controller\PagesController.php(73): Controller->render('js/angular/angu...')
+#3 [internal function]: PagesController->display('js', 'angular', 'angular')
+#4 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-07-03 15:41:00 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Pages\js\angular\angular-resource.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\View.php(472): View->_getViewFileName('js/angular/angu...')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): View->render('js/angular/angu...', NULL)
+#2 C:\xampp\htdocs\letsplay5\app\Controller\PagesController.php(73): Controller->render('js/angular/angu...')
+#3 [internal function]: PagesController->display('js', 'angular', 'angular-resourc...')
+#4 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#6 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2012-07-03 15:42:18 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\xampp\htdocs\letsplay5\app\Controller\UsersApiController.php, line 8]
+2012-07-03 15:42:18 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 8)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 8, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 8, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-03 15:43:58 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\xampp\htdocs\letsplay5\app\Controller\UsersApiController.php, line 8]
+2012-07-03 15:43:58 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 8)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 8, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 8, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-03 15:44:51 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\xampp\htdocs\letsplay5\app\Controller\UsersApiController.php, line 8]
+2012-07-03 15:44:51 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 8)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 8, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 8, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-03 15:45:32 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\xampp\htdocs\letsplay5\app\Controller\UsersApiController.php, line 13]
+2012-07-03 15:45:32 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 13)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 13, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 13, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-03 15:45:46 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\xampp\htdocs\letsplay5\app\Controller\UsersApiController.php, line 13]
+2012-07-03 15:45:46 Error: [FatalErrorException] Call to a member function find() on a non-object
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 13)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\xampp\htdocs...', 13, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\xampp\htdocs...', 13, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-03 15:46:31 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:47:42 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:01 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:02 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:02 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:02 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:02 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:02 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:02 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:02 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:02 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:02 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:02 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:02 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:48:03 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:27 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:27 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:28 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:50:29 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:52:11 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 15:59:55 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [C:\xampp\htdocs\letsplay5\app\Controller\UsersController.php, line 43]
+2012-07-03 15:59:55 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 43, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 43, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-03 16:00:04 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [C:\xampp\htdocs\letsplay5\app\Controller\UsersController.php, line 43]
+2012-07-03 16:00:04 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 43, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 43, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-03 16:00:12 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [C:\xampp\htdocs\letsplay5\app\Controller\UsersController.php, line 43]
+2012-07-03 16:00:12 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 43, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 43, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-03 16:00:20 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [C:\xampp\htdocs\letsplay5\app\Controller\UsersController.php, line 43]
+2012-07-03 16:00:20 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 43, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 43, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-03 16:00:20 Error: Fatal Error (4): syntax error, unexpected T_VARIABLE in [C:\xampp\htdocs\letsplay5\app\Controller\UsersController.php, line 43]
+2012-07-03 16:00:20 Error: [FatalErrorException] syntax error, unexpected T_VARIABLE
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 43)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 43, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 43, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-03 16:17:14 Error: [MissingControllerException] Controller class Users.jsController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 16:17:22 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\js\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\View.php(472): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 16:17:41 Error: [MissingControllerException] Controller class Users.jsController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-03 16:25:18 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 16:25:50 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 16:49:34 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-03 16:49:54 Error: [MissingViewException] View file "C:\xampp\htdocs\letsplay5\app\View\Users\json\index.ctp" is missing.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\View\JsonView.php(98): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(957): JsonView->render(NULL, NULL)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(193): Controller->render()
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-04 08:33:16 Error: [MissingConnectionException] Database connection "SQLSTATE[42000] [1049] Unknown database 'letsplay5'" is missing, or could not be created.
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Model\Datasource\DboSource.php(260): Mysql->connect()
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Model\ConnectionManager.php(101): DboSource->__construct(Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Model\Model.php(3158): ConnectionManager::getDataSource('default')
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Model\Model.php(1092): Model->setDataSource('default')
+#4 C:\xampp\htdocs\letsplay5\lib\Cake\Model\Model.php(3180): Model->setSource('users')
+#5 C:\xampp\htdocs\letsplay5\lib\Cake\Model\Model.php(2631): Model->getDataSource()
+#6 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Component\PaginatorComponent.php(173): Model->find('all', Array)
+#7 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(1082): PaginatorComponent->paginate(NULL, Array, Array)
+#8 C:\xampp\htdocs\letsplay5\app\Controller\UsersController.php(25): Controller->paginate()
+#9 [internal function]: UsersController->index()
+#10 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#11 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#12 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}

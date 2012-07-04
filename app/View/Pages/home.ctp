@@ -28,11 +28,14 @@ App::uses('Debugger', 'Utility');
     <script src="js/jquery.js"></script>
     <script src="js/angular/angular.js"></script>
     <script src="js/angular/angular-resource.js"></script>
+    <script src="js/angular/angular-app.js"></script>
     <script >
-        var App = angular.module('app', ['ngResource']);
+
 
         function UserViewModel($scope, $resource) {
             var Users = $resource('Users.json');
+
+            $scope.what = 'that';
 
             Users.get(function(result) {
                 $scope.users = result.users;
@@ -43,7 +46,7 @@ App::uses('Debugger', 'Utility');
         <div ng-app="app">
             <div ng-controller="UserViewModel">
                 <div ng-repeat="item in users">
-                    {{item.User.username}}
+                    {{item.User.username}}{{what}}
                 </div>
             </div>
         </div>
