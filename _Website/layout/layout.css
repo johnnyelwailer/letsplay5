@@ -9,12 +9,11 @@
 
 /*universal*/
 * {
-padding: 0px;
+	padding: 0px;
 	font-style: ;
 	font-size:12px;
 	margin:0px;
 	font-family:arial;
-
 }
 
 html, body{
@@ -46,16 +45,13 @@ h1{
 	width:60%;
 	min-width:500px;
 	max-width:800px;
-	
-	
 }
 
 #navigation{
 	display:inline-block;
 	background:	#4876FF;
-	height:80px;
+	height:30px;
 	width:100%;
-	
 	margin:5px 0px 0px 0px;
 	border-radius: 10px 10px 10px 10px;
 	border:1px solid #000099;
