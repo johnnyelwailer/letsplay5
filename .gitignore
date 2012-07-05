@@ -1,6 +1,6 @@
 /.idea
 /lib/Cake/Console/Templates/skel/tmp/
-app/tmp
+/app/tmp
 /plugins
 /vendors
 /build
