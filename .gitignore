@@ -1,3 +1,4 @@
+/.idea
 /lib/Cake/Console/Templates/skel/tmp/
 app/tmp
 /plugins
@@ -6,5 +7,3 @@ app/tmp
 /dist
 .DS_Store
 /tags
-/.idea
-.idea/workspace.xml

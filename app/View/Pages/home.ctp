@@ -97,7 +97,6 @@ App::uses('Debugger', 'Utility');
             background: #87cefa;
         }
 
-        @-webkit-keyframes 
     </style>
     <script >
 
