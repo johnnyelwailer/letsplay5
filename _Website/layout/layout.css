@@ -19,6 +19,7 @@ padding: 0px;
 html, body{
 	height:100%;
     width:100%;
+	background-color:#e0e0e0;
 }
 
 
@@ -30,7 +31,7 @@ h1{
 
 /*container*/
 #main{
-	background:	#DEDEDE;
+
 	margin:auto;
 	height:100%;
 	width:100%;
@@ -48,8 +49,13 @@ h1{
 #navigation{
 	display:inline-block;
 	background:	#4876FF;
-	height:100px;
+	height:80px;
 	width:100%;
+	
+	margin:20px 0px 0px 0px;
+	
+	
+	border-radius: 10px 10px 10px 10px;
 }
 
 #content{

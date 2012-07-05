@@ -9,13 +9,15 @@
 */
 /*placedefinition*/
 ul.horizonal{
-    margin:1% 25%;
+    margin:1% 25%;	
+	
 }
 
 ul.horizontal > li {
     padding:5px 20px;
     display:inline-block;
-	width: 10%;
+	width: 15%;
+
 }
 
 ul.vertical li ul, ul.horizontal li ul {
@@ -34,9 +36,53 @@ ul.styleless{
 	list-style-type:none;
 }
 
-/*linkdefinition*/
-ul.fontstyle >li:link{
-	font-size:20px;
+/*
 
+linkcolor
+
+*/
+ul.horizontal :link{
+	font-family:arial;
+	font-size:14px;
+	color:#FFFFFF;
+	
+}
+
+ul.vertical :link{
+	font-family:arial;
+	font-size:13px;
+	color:#FFFFFF;
+
+}
+/*capitalize on the navigation*/
+ul.horizontal > li  {
+	text-transform: uppercase;
+}
+
+ul.vertical > li  {
+	text-transform: none;
+}
+
+ul.horizontal :visited{
+	font-family:arial;
+	font-size:14px;
+	color:#FFFFFF;
+}
+ul.vertical :visited{
+	font-family:arial;
+	font-size:13px;
+	color:#FFFFFF;
+}
+
+ul.horizontal :hover{
+	font-family:arial;
+	font-size:14px;
+	color:#0040FF;
+}
+
+ul.vertical :hover{
+	font-family:arial;
+	font-size:13px;
+	color:#0040FF;
 }
 
