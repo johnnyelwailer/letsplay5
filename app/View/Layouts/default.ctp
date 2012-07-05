@@ -34,13 +34,14 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
+
+        echo $this->Html->script('jquery');
+        echo $this->Html->script('angular/angular');
+        echo $this->Html->script('angular/angular-resource');
+        echo $this->Html->script('angular/angular-app');
 	?>
-    <script src="js/jquery.js"></script>
-    <script src="js/angular/angular.js"></script>
-    <script src="js/angular/angular-resource.js"></script>
-    <script src="js/angular/angular-app.js"></script>
 </head>
-<body>
+<body ng-app="app">
 	<div id="container">
 		<div id="header">
 		</div>
