@@ -3,9 +3,9 @@ App::uses('AppModel', 'Model');
 /**
  * Game Model
  *
- * @property Challenger $Challenger
- * @property Opponent $Opponent
- * @property Winner $Winner
+ * @property User $Challenger
+ * @property User $Opponent
+ * @property User $Winner
  * @property Turn $Turn
  */
 class Game extends AppModel {
@@ -20,21 +20,21 @@ class Game extends AppModel {
  */
 	public $belongsTo = array(
 		'Challenger' => array(
-			'className' => 'Challenger',
+			'className' => 'User',
 			'foreignKey' => 'challenger_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
 		'Opponent' => array(
-			'className' => 'Opponent',
+			'className' => 'User',
 			'foreignKey' => 'opponent_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''
 		),
 		'Winner' => array(
-			'className' => 'Winner',
+			'className' => 'User',
 			'foreignKey' => 'winner_id',
 			'conditions' => '',
 			'fields' => '',

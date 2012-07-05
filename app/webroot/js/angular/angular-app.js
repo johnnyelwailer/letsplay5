@@ -49,7 +49,8 @@ Date.prototype.getDayDate = curryIdentity(Date.getMonthDate = function(date) {
 });
 
 Array.range = function (min, max, selector) {
-    return Array(max-min+2).join().split(',').map(function(e, i) { return min+i; });
+    selector = selector || function(x) {return x;};
+    return Array(max-min).join().split(',').map(function(e, i) { return selector(min+i); });
 }
 
 Array.generate = function(fn) {

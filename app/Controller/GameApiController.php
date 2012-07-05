@@ -1,12 +1,12 @@
 <?php
 App::uses('AppController', 'Controller');
 /**
- * Users Controller
+ * Game Api Controller
  *
  * @property Game $Game
  * @property Turn $Turn
  */
-class UsersController extends AppController {
+class GameApiController extends AppController {
 
     public $components = array('RequestHandler');
 /**
@@ -15,6 +15,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function index() {
+        $this->loadModel('Game');
         $games = $this->Game->find('all');
         $this->set(array(
             'games' => $games,
@@ -23,12 +24,35 @@ class UsersController extends AppController {
     }
 
     public function makeMatch() {
+        $this->loadModel('Game');
+        $this->loadModel('User');
 
+        $creator = $this->User->find('first');
+        $existing = $this->Game->find('first');
+
+        if ($existing != null) {
+            $this->set(array(
+                'game' => $existing,
+                '_serialize' => array('game')
+            ));
+
+            return;
+        }
+
+        $game = $this->Game->save(array('challenger_id' => $creator['User']['id'],'opponent_id' => null,'winner_id' => null));
+
+        $this->set(array(
+            'game' => $game,
+            '_serialize' => array('game')
+        ));
     }
 
-    public function turns($gameid, $since = null) {
-        $game = $this->Game->findById($gameid);
-        $turns = $this->Turn->findAllByGameId($gameid);
+    public function turns($id, $since = null) {
+        $this->loadModel('Turn');
+
+
+
+        $turns = $this->Turn->findAllByGameId($id);
 
         $this->set(array(
             'turns' => $turns,
@@ -36,32 +60,39 @@ class UsersController extends AppController {
         ));
     }
 
-    public function place($gameid, $position) {
+    public function place($id, $x, $y) {
+        $this->loadModel('Turn');
+        $this->loadModel('User');
 
+        $existing = $this->Turn->find('first', array('conditions' =>
+            array('game_id' => $id, 'x' => $x, 'y' => $y)));
+
+        if ($existing != null) {
+            throw new Exception('position already occupied.');
+        }
+
+        $creator = $this->User->find('first');
+        $turn = $this->Turn->save(array('game_id' => $id, 'x' => $x, 'y' => $y, 'creator' => $creator['User']['id']));
+        $this->set(array(
+            'turn' => $turn,
+            '_serialize' => array('turn')
+        ));
     }
 
 /**
  * view method
  *
- * @throws NotFoundException
  * @param string $id
  * @return void
  */
-	public function view($gameid = null) {
-		/*$this->User->id = $id;
-		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
-		}
+	public function view($id) {
+        $this->loadModel('Turn');
+        $turn = $this->Turn->findById($id);
 
-        $user = $this->User->read(null, $id);
-		$this->set('user', $user);
-
-        if ($this->RequestHandler->requestedWith() == 'XMLHttpRequest') {
-            $this->set(array(
-                'user' => $user,
-                '_serialize' => array('user')
-            ));
-        }*/
+        $this->set(array(
+            'turn' => $turn,
+            '_serialize' => array('turn')
+        ));
 	}
 
 /**
@@ -86,7 +117,7 @@ class UsersController extends AppController {
  * @param string $id
  * @return void
  */
-	public function edit($id = null) {
+	public function edit($id) {
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
@@ -109,7 +140,7 @@ class UsersController extends AppController {
  * @param string $id
  * @return void
  */
-	public function delete($id = null) {
+	public function delete($id) {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}

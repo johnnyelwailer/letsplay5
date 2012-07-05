@@ -21,7 +21,7 @@
 </div>
 <script type="text/javascript">
     function CreateUserViewModel($scope, $resource) {
-        $resource('../Groups/getAll.json').get(function(result) {console.log(result);
+        $resource('../Groups/getAll.json').get(function(result) {
            $scope.groups = result.groups;
         });
     }
