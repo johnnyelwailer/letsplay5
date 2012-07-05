@@ -39,6 +39,11 @@ Date.prototype.firstDayOfWeek = curryIdentity(Date.firstDayOfWeek = function(dat
 Date.prototype.lastDayOfWeek = curryIdentity(Date.lastDayOfWeek = function(date) {
     return new Date( date.firstDayOfWeek().valueOf() + 6*Date.DAY_OF_MILLISECONDS);
 });
+
+Date.prototype.getMonthDate = curryIdentity(Date.getMonthDate = function(date) {
+    return new Date( date.getFullYear(), date.getMonth()+1, 0);
+});
+
 Array.range = function (min, max, selector) {
     return Array(max-min+2).join().split(',').map(function(e, i) { return min+i; });
 }

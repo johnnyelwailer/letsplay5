@@ -32,11 +32,11 @@ App::uses('Debugger', 'Utility');
     <script src="js/angular/angular-directives-calendar.js"></script>
     <style>
         .calendar {
-
+            width: 210px;
         }
 
         .calendar .head {
-            overflow: visible;
+            overflow: hidden;
         }
 
         .calendar .body {
@@ -44,18 +44,57 @@ App::uses('Debugger', 'Utility');
             overflow: hidden;
             width: 210px;
             height: 150px;
+
         }
-        .calendar .months {
+
+        .calendar .nav {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            height: 20px;
+        }
+
+        .calendar .button {
+            z-index: 1;
             position: absolute;
-            overflow: auto;
         }
+
+        .calendar .button:hover, .calendar .day:hover {
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .calendar .current.button {
+            z-index: 0;
+            width: 100%;
+            left: 0;
+            text-align: center;
+        }
+
+        .calendar .prev.button {
+
+            left: 0;
+        }
+
+        .calendar .next.button {
+            right: 0;
+        }
+
         .calendar .days {
-            float: left;
+            width: 210px;
+            height: 150px;
         }
         .calendar .day, .calendar .head > div {
             float: left;
             width: 30px;
             height: 30px;
+            line-height: 30px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .calendar .day[aria-selected=true] {
+            background: #87cefa;
         }
     </style>
     <script >
@@ -64,7 +103,7 @@ App::uses('Debugger', 'Utility');
         function UserViewModel($scope, $resource) {
             var Users = $resource('Users.json');
 
-            $scope.what = 'that';
+            $scope.date = new Date;
 
             Users.get(function(result) {
                 $scope.users = result.users;
@@ -74,7 +113,9 @@ App::uses('Debugger', 'Utility');
     </script>
         <div ng-app="app">
             <div ng-controller="UserViewModel">
-                <calendar selectedDate="new Date" monthsVisible="1"></calendar>
+                <p>date: ({{date}})</p>
+                <calendar selectedDate="date" />
+
                 <div ng-repeat="item in users">
                     {{item.User.username}}{{what}}
                 </div>

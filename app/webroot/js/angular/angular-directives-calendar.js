@@ -2,20 +2,33 @@ App.directive('calendar', function() {
    return {
      restrict: 'E',
      replace: true,
-     scope: {selectedDate: '=_selectedDate', monthsVisible: '=_monthsVisible'},
+
+     scope: {selectedDate: '=_selectedDate'},
      link: function(scope, $element) {
-         scope._monthsVisible = scope._monthsVisible || 1;
          scope._selectedDate = scope._selectedDate || new Date;
-         scope.loadedMonths = [];
 
-
-         scope.$watch('_selectedDate', function(date){
-             generateMonths();
-         });
-
-         scope.isActive = function(month) {
-             return month.date.getMonth() - scope._selectedDate.getMonth() < scope._monthsVisible;
+         scope.currentMonth = {
+             date: new Date,
+             days: []
          };
+
+         scope.nextMonth = function() {
+             scope._selectedDate = scope._selectedDate.addMonths(1);
+         };
+
+         scope.prevMonth = function() {
+             scope._selectedDate = scope._selectedDate.addMonths(-1);
+         };
+
+         scope.select = function(date) {
+             scope._selectedDate = date;
+         };
+
+         scope.$watch('_selectedDate', function(date, oldDate){
+             if (date.getMonthDate().valueOf() != oldDate.getMonthDate().valueOf()) {
+                 generateMonth();
+             }
+         });
 
          var loadDays = function(date) {
              var lastday = date.lastDayOfMonth().lastDayOfWeek();
@@ -23,29 +36,27 @@ App.directive('calendar', function() {
              return Array.generate(function(i, prev) {
                  prev = prev !== null ? prev.addDays(1) : firstday;
                  var d = prev;
+
+                 scope.currentMonth.days[i] = d;
+
                  return (d - lastday > 0) ? false : d;
              });
          };
 
-         var generateMonths = function() {
-             var currentDate = new Date(scope._selectedDate.getFullYear(), scope._selectedDate.getMonth(), 0);
-             var currentMonth = currentDate.getMonth();
-             var min = currentMonth -1;
-             var max = currentMonth + scope._monthsVisible;
 
-             for (var i = -1; i < scope._monthsVisible; i++) {
-                 var date = currentDate.addMonths(i);
-                 scope.loadedMonths[i+1] = {
-                   date: date,
-                   days: loadDays(date)
-                 };
-             }
+         var generateMonth = function() {
+             scope.currentMonth.date =  new Date(scope._selectedDate.getFullYear(), scope._selectedDate.getMonth()+1, 0);
+             loadDays(scope.currentMonth.date);
          }
+
+         generateMonth();
      },
      template:
          '<div class="calendar">' +
              '<div class="nav">' +
-
+                '<div class="current button">{{currentMonth.date | date:"MMMM"}}</div>' +
+                '<div class="prev button" ng-click="prevMonth()">prev</div>' +
+                '<div class="next button" ng-click="nextMonth()">next</div>' +
              '</div>' +
              '<div class="head">' +
                 '<div>Mo</div>' +
@@ -58,8 +69,10 @@ App.directive('calendar', function() {
              '</div>' +
              '<div class="body">' +
                  '<div class="months">' +
-                     '<div class="days" ng-repeat="month in loadedMonths" ng-class="{minimized: isActive(month)}">' +
-                        '<div class="day" ng-repeat="day in month.days">' +
+                     '<div class="days">' +
+                        '<div class="day" ng-repeat="day in currentMonth.days"' +
+                        '                 aria-selected="{{day == _selectedDate}}"' +
+                        '                 ng-click="select(day)">' +
                             '{{day.getDate()}}' +
                         '</div>' +
                      '</div>' +
