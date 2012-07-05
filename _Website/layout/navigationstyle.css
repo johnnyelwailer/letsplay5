@@ -7,23 +7,15 @@
 	
 	display:none;
 */
+
 /*placedefinition*/
 ul.horizonal{
-    margin:1% 25%;	
-	
-}
-
-ul.horizontal > li {
-    padding:5px 20px;
-    display:inline-block;
-	width: 15%;
-
+    margin:1% 25%;
 }
 
 ul.vertical li ul, ul.horizontal li ul {
     display:none;
 }
-
 
 ul.vertical li:hover ul , ul.horizontal li:hover ul{
     display:table-caption;
@@ -36,27 +28,30 @@ ul.styleless{
 	list-style-type:none;
 }
 
-/*
-
-linkcolor
-
-*/
+/*color link*/
 ul.horizontal :link{
 	font-family:arial;
 	font-size:14px;
 	color:#FFFFFF;
-	
 }
 
 ul.vertical :link{
 	font-family:arial;
 	font-size:13px;
 	color:#FFFFFF;
-
 }
+
 /*capitalize on the navigation*/
+
 ul.horizontal > li  {
+	padding:5px 20px;
+    display:inline-block;
+	width: 15%;
 	text-transform: uppercase;
+	border-left: white solid 2px;
+}
+ul.horizontal> li:first-child   {
+	border-left: none;
 }
 
 ul.vertical > li  {
@@ -85,4 +80,3 @@ ul.vertical :hover{
 	font-size:13px;
 	color:#0040FF;
 }
-
