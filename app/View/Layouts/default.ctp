@@ -35,6 +35,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+    <script src="js/jquery.js"></script>
+    <script src="js/angular/angular.js"></script>
+    <script src="js/angular/angular-resource.js"></script>
+    <script src="js/angular/angular-app.js"></script>
 </head>
 <body>
 	<div id="container">

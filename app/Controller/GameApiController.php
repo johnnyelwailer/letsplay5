@@ -3,7 +3,8 @@ App::uses('AppController', 'Controller');
 /**
  * Users Controller
  *
- * @property User $User
+ * @property Game $Game
+ * @property Turn $Turn
  */
 class UsersController extends AppController {
 
@@ -14,11 +15,11 @@ class UsersController extends AppController {
  * @return void
  */
 	public function index() {
-            $games = $this->Game->find('all');
-            $this->set(array(
-                'games' => $games,
-                '_serialize' => array('games')
-            ));
+        $games = $this->Game->find('all');
+        $this->set(array(
+            'games' => $games,
+            '_serialize' => array('games')
+        ));
     }
 
     public function makeMatch() {
@@ -26,7 +27,13 @@ class UsersController extends AppController {
     }
 
     public function turns($gameid, $since = null) {
+        $game = $this->Game->findById($gameid);
+        $turns = $this->Turn->findAllByGameId($gameid);
 
+        $this->set(array(
+            'turns' => $turns,
+            '_serialize' => array('turns')
+        ));
     }
 
     public function place($gameid, $position) {
