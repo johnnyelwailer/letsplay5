@@ -96,6 +96,8 @@ App::uses('Debugger', 'Utility');
         .calendar .day[aria-selected=true] {
             background: #87cefa;
         }
+
+        @-webkit-keyframes 
     </style>
     <script >
 
@@ -114,7 +116,7 @@ App::uses('Debugger', 'Utility');
         <div ng-app="app">
             <div ng-controller="UserViewModel">
                 <p>date: ({{date}})</p>
-                <calendar selectedDate="date" />
+                <calendar selecteddate="date" />
 
                 <div ng-repeat="item in users">
                     {{item.User.username}}{{what}}

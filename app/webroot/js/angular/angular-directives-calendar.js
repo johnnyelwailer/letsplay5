@@ -3,9 +3,9 @@ App.directive('calendar', function() {
      restrict: 'E',
      replace: true,
 
-     scope: {selectedDate: '=_selectedDate'},
+     scope: {selecteddate: '='},
      link: function(scope, $element) {
-         scope._selectedDate = scope._selectedDate || new Date;
+         scope.selecteddate = scope.selecteddate || new Date;
 
          scope.currentMonth = {
              date: new Date,
@@ -13,18 +13,18 @@ App.directive('calendar', function() {
          };
 
          scope.nextMonth = function() {
-             scope._selectedDate = scope._selectedDate.addMonths(1);
+             scope.selecteddate = scope.selecteddate.addMonths(1);
          };
 
          scope.prevMonth = function() {
-             scope._selectedDate = scope._selectedDate.addMonths(-1);
+             scope.selecteddate = scope.selecteddate.addMonths(-1);
          };
 
          scope.select = function(date) {
-             scope._selectedDate = date;
+             scope.selecteddate = date;
          };
 
-         scope.$watch('_selectedDate', function(date, oldDate){
+         scope.$watch('selecteddate', function(date, oldDate){
              if (date.getMonthDate().valueOf() != oldDate.getMonthDate().valueOf()) {
                  generateMonth();
              }
@@ -45,7 +45,7 @@ App.directive('calendar', function() {
 
 
          var generateMonth = function() {
-             scope.currentMonth.date =  new Date(scope._selectedDate.getFullYear(), scope._selectedDate.getMonth()+1, 0);
+             scope.currentMonth.date =  new Date(scope.selecteddate.getFullYear(), scope.selecteddate.getMonth()+1, 0);
              loadDays(scope.currentMonth.date);
          }
 
@@ -71,7 +71,7 @@ App.directive('calendar', function() {
                  '<div class="months">' +
                      '<div class="days">' +
                         '<div class="day" ng-repeat="day in currentMonth.days"' +
-                        '                 aria-selected="{{day == _selectedDate}}"' +
+                        '                 aria-selected="{{day.getDayDate().valueOf() == selecteddate.getDayDate().valueOf()}}"' +
                         '                 ng-click="select(day)">' +
                             '{{day.getDate()}}' +
                         '</div>' +

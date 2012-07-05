@@ -44,6 +44,10 @@ Date.prototype.getMonthDate = curryIdentity(Date.getMonthDate = function(date) {
     return new Date( date.getFullYear(), date.getMonth()+1, 0);
 });
 
+Date.prototype.getDayDate = curryIdentity(Date.getMonthDate = function(date) {
+    return new Date( date.getFullYear(), date.getMonth()+1, date.getDate());
+});
+
 Array.range = function (min, max, selector) {
     return Array(max-min+2).join().split(',').map(function(e, i) { return min+i; });
 }
