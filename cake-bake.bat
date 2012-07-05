@@ -23,9 +23,9 @@
 @echo off
 
 SET app=%0
-SET lib=%~dp0
 
-php -q "%lib%cake.php" -working "%CD% " %*
+
+php -q "lib\Cake\Console\cake.php" -working "%CD% " bake %*
 
 echo.
 
