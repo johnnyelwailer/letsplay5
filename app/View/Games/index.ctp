@@ -33,7 +33,7 @@
 				echo $this->Html->image($img, array('alt' => $desc));
 				?>
 				</td>
-				<td><?php echo h('mh'); ?></td>
+				<td><?php echo var_dump($game); ?></td>
 				<td><?php echo $this->Time->nice($game['Game']['created']); ?></td>
 				<td><?php echo $this->Time->nice($game['Game']['modified']); ?></td>
 			</tr>
@@ -41,4 +41,12 @@
 		
 		</tbody>
 	</table>
+	
+	<div class="paging">
+	<?php
+		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+		echo $this->Paginator->numbers(array('separator' => ''));
+		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+	?>
+	</div>
 </div>
