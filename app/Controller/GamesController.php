@@ -12,6 +12,15 @@ class GamesController extends AppController {
      * @return void
      */
     public function index() {
+		//if ($this->RequestHandler->requestedWith()) {
+            //$games = $this->Game->find('all');
+           /* $this->set(array(
+                'games' => $games
+            ));*/
+        //}else {
+            $this->Game->recursive = 0;
+            $this->set('games', $this->paginate());
+        //}
     }
 
     /**

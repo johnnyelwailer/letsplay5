@@ -16,7 +16,8 @@
 		?>">Rangliste</a></li>
 		
 		<li><a href="<?php echo $this->Html->url(array(
-				"controller" => "games")
+				"controller" => "games",
+				"action" => "index")
 			);
 		?>">Spiele</a></li>
 		
@@ -26,6 +27,10 @@
 			);
 		?>">FAQ</a></li>
 		
-		<li><a href="#">Neues Spiel!</a></li>
+		<li><a href="<?php echo $this->Html->url(array(
+				"controller" => "games",
+				"action" => "play")
+			);
+		?>">Neues Spiel!</a></li>
 	</ul>
 </div>
