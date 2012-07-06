@@ -149,3 +149,28 @@ h1{
 #content > * {
 	margin:10px;
 }
+
+/*user view*/
+/*title of view*/
+legend{
+    margin: 0px 0px 0px 10px;
+}
+
+#UserUsername, #UserPassword{
+    margin:10px 50% 0px 0px;
+}
+
+label{
+    margin: 20px
+}
+.form{
+    height:200px;
+    width:95% ;
+}
+
+/*button declaration*/
+.submit{
+    margin: 20% 0px 0px 87% ;
+}
+
+
