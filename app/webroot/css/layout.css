@@ -64,9 +64,11 @@ a:focus{
 html, body{
 	height:100%;
     width:100%;
-	background-color:#e0e0e0;
 }
 
+body {
+	background-image: url(../img/background.png);
+}
 
 h1{
 	font-style:Arial;
