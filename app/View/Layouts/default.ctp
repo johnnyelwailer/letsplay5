@@ -25,30 +25,33 @@
 	<meta http-equiv="robots" content="index, follow, noarchive" />
 	<meta name="keywords" content="let's play 5, fünf gewinnt, 5 gewinnt, online game, online spiel, realtime game" />
 	
-	<title>
-		<?php echo $title_for_layout; ?>
-	</title>
+	<title><?php
+		/* title given by the controller*/
+		echo $title_for_layout;
+	?></title>
 	<?php
+		/* load favicon*/
 		echo $this->Html->meta('icon');
-
-		//echo $this->Html->css('cake.generic');
+		
+		/*load css file*/
+		echo $this->Html->css('cake');
 		echo $this->Html->css('layout');
 		echo $this->Html->css('form');
 		echo $this->Html->css('menubar');
 		echo $this->Html->css('table');
 		
+		/* load css file given by the controller (non theme css) */
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 		
+		/* load js files */
         echo $this->Html->script('angular/angular');
         echo $this->Html->script('angular/angular-resource');
         echo $this->Html->script('angular/angular-app');
 	?>
 </head>
 <body ng-app="app">
-	
-	
 	<div id="wrapper">
 			<?php echo $this->element('userlogin'); ?>
 			<?php echo $this->element('navigation'); ?>
