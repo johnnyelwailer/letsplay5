@@ -24,7 +24,7 @@ class GamesController extends AppController {
         //}else {
             $this->Game->recursive = 0;
             $this->set('games', $this->paginate());
-			
+			var_dump($this->Time);
         //}
     }
 

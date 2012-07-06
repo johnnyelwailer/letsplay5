@@ -1,0 +1,68 @@
+.play-grid {
+    width: 620px;
+    -webkit-perspective: 500;
+    -webkit-perspective-origin-x: 50%;
+    -webkit-perspective-origin-y: 50%;
+}
+
+.play-grid .grid {
+    -webkit-transition: all 0.5s ease-in-out;
+    -webkit-transform-origin: 50% 100px -140px;
+    -webkit-transform: rotateX(10deg);
+    -webkit-animation: spin 40s infinite;
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotateX(0deg);
+    }
+    80% {
+        -webkit-transform: rotateX(0deg);
+    }
+    to {
+        -webkit-transform: rotateX(360deg);
+    }
+}
+
+.grid-cell {
+    float: left;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid black;
+    vertical-align:  middle;
+    text-align: center;
+}
+
+.grid-cell:hover {
+    cursor: pointer;
+}
+
+.turn {
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -transform: translateY(-50px);
+    -webkit-transform: translateY(-50px);
+    opacity: 0;
+}
+.turn.marked {
+    opacity: 1;
+    width: 20px; height:20px;
+    margin: auto auto;
+    vertical-align:  middle;
+    text-align: center;
+    border-radius: 60px;
+    background: #f08080;
+
+    -transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+}
+
+.turn.belongs-to-line {
+    border: 3px solid #62c462;
+    -webkit-box-shadow: 0px 0px 50px #f08080;
+}
+
+.turn.marled.by-me {
+    background: lightBlue;
+}

@@ -6,10 +6,10 @@
 	layout and size of the tables
 */
 
-
 table.size{
-	width: 100%;
-	margin: 20px 0px;
+	width:85%;
+	height: 30px;
+	margin:20px;
 }
 
 table.border{
@@ -18,7 +18,6 @@ table.border{
 	border-spacing: 0px;
 	border-style:solid;
 }
-
 .radius,
 table.radius {
 	border-radius: 5px 5px 5px 5px;
