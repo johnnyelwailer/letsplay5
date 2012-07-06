@@ -22,9 +22,9 @@ class GamesController extends AppController {
                 'games' => $games
             ));*/
         //}else {
-            $this->Game->recursive = 0;
+            $this->Game->recursive = 1;
             $this->set('games', $this->paginate());
-			var_dump($this->Time);
+			
         //}
     }
 

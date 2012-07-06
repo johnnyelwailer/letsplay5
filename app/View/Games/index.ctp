@@ -1,4 +1,4 @@
-<div class="games index">
+﻿<div class="games index">
 	<h2><?php echo __('Games'); ?></h2>
 	
 	<table border="0" class="size border radius">
@@ -33,7 +33,7 @@
 				echo $this->Html->image($img, array('alt' => $desc));
 				?>
 				</td>
-				<td><?php echo h('mh'); ?></td>
+				<td><?php echo count($game['Turn']); ?></td>
 				<td><?php echo $this->Time->nice($game['Game']['created']); ?></td>
 				<td><?php echo $this->Time->nice($game['Game']['modified']); ?></td>
 			</tr>
@@ -41,4 +41,12 @@
 		
 		</tbody>
 	</table>
+	
+	<div class="paging">
+	<?php
+		echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+		echo $this->Paginator->numbers(array('separator' => ''));
+		echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+	?>
+	</div>
 </div>
