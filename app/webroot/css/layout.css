@@ -10,7 +10,6 @@
 /* universal - base for all elements */
 * {
 	padding: 0px;
-	font-style: ;
 	font-size:12px;
 	margin:0px;
 	font-family: 'SEGOE UI', arial;
@@ -71,7 +70,6 @@ body {
 }
 
 h1{
-	font-style:Arial;
 	font-size:16px;
 }
 
@@ -138,8 +136,8 @@ h1{
 }
 
 #content{
-	/*display:inline-block;
-	height:85%;*/
+    /*display:inline-block;
+    height:85%;*/
 	min-height: 300px;
 	background-color: #FFF;
 	border:1px solid #868687;
@@ -150,27 +148,43 @@ h1{
 	margin:10px;
 }
 
-/*user view*/
+
+
+/*###############
+    user view
+################*/
 /*title of view*/
+
 legend{
     margin: 0px 0px 0px 10px;
 }
 
-#UserUsername, #UserPassword{
-    margin:10px 50% 0px 0px;
+.actions li,.actions h3{
+    list-style-type:none;
+    margin:0px 0px 0px 20px;
 }
 
 label{
-    margin: 20px
+    margin: 20px;
+    width: 150px;
+    display: inline-block;
+
 }
+
+/*box definition*/
 .form{
-    height:200px;
-    width:95% ;
+    border-right: none;
+    border-bottom: none;
+}
+
+/*selectbox*/
+select{
+    margin: 10px 0px 0px 90px ;
+    width: 50px;
 }
 
 /*button declaration*/
 .submit{
-    margin: 20% 0px 0px 87% ;
+    float: right;
 }
-
 

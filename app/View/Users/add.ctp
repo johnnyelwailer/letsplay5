@@ -3,8 +3,11 @@
     <fieldset class="form">
         <legend><?php echo __('Add User'); ?></legend>
         <?php
-           echo $this->Form->input('username');
-           echo $this->Form->input('password');
+            echo $this->Form->input('username');
+            echo $this->Form->input('E-mail');
+            echo $this->Form->input('password');
+            echo $this->Form->input('password replication');
+
         ?>
 
         <!-- drop down -->
@@ -17,12 +20,14 @@
     </fieldset>
 </div>
 <div class="actions">
-    <h3><?php echo __('Actions'); ?></h3>
+    <!--<h3>
+    <?php echo __('Actions'); ?></h3>
 
-    <!-- list -->
+   list actions only  for adimistrator
     <ul>
         <li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
     </ul>
+    -->
 </div>
 <script type="text/javascript">
     function CreateUserViewModel($scope, $resource) {
