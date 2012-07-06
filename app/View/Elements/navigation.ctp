@@ -9,13 +9,14 @@
 							</ul>
 		</li>
 		
-		<li><a href="<?php echo $this->Html->url(array(
-				"controller" => "games")
-			);
-		?>">Spiele</a></li>
 		
 		<li><a href="<?php echo $this->Html->url(array(
 				"controller" => "users")
+			);
+		?>">Rangliste</a></li>
+		
+		<li><a href="<?php echo $this->Html->url(array(
+				"controller" => "games")
 			);
 		?>">Spiele</a></li>
 		

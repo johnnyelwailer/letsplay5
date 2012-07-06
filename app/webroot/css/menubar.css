@@ -99,7 +99,7 @@ ul.vertical :link{
 ul.horizontal > li  {
 	padding:5px 20px;
     display:inline-block;
-	width: 15%;
+	
 	text-transform: uppercase;/*capitalize on the navigation*/
 	border-left: white solid 2px;
 }
