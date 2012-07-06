@@ -1,15 +1,13 @@
 <div class="users form" ng-controller="CreateUserViewModel">
     <?php echo $this->Form->create('User'); ?>
-    <fieldset class="form">
-        <legend><?php echo __('Add User'); ?></legend>
+	<h1><legend><?php echo __('Add User'); ?></h1>
         <?php
             echo $this->Form->input('username');
             echo $this->Form->input('E-mail');
             echo $this->Form->input('password');
             echo $this->Form->input('password replication');
-
         ?>
-
+		
         <!-- drop down -->
         <select name="data[User][group_id]">
             <option ng-repeat="group in groups" label="{{group.Group.name}}">{{group.Group.id}}</option>
@@ -17,8 +15,8 @@
 
         <!-- button -->
         <?php echo $this->Form->end(__('Submit')); ?>
-    </fieldset>
 </div>
+
 <div class="actions">
     <!--<h3>
     <?php echo __('Actions'); ?></h3>

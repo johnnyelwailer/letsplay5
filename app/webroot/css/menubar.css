@@ -50,8 +50,9 @@ ul.vertical a:active, ul.horizontal a:active {
 }
 
 
-ul.vertical a:hover:before, ul.horizontal a:hover:before {content: ">" !important;}
-ul.vertical a:hover:after, ul.horizontal a:hover:after {content: "<" !important;}
+ul.vertical a:hover, ul.horizontal a:hover {
+	text-decoration: underline;
+}
 
 /*
 ul.vertical a:link:before, ul.horizontal a:link:before {content: '\0000a0';}

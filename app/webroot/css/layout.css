@@ -155,36 +155,31 @@ h1{
 ################*/
 /*title of view*/
 
-legend{
+.users legend {
     margin: 0px 0px 0px 10px;
 }
 
-.actions li,.actions h3{
+.users .actions li, .users .actions h3 {
     list-style-type:none;
     margin:0px 0px 0px 20px;
 }
 
-label{
+.users label{
     margin: 20px;
     width: 150px;
     display: inline-block;
 
 }
 
-/*box definition*/
-.form{
-    border-right: none;
-    border-bottom: none;
-}
 
 /*selectbox*/
-select{
+.users select{
     margin: 10px 0px 0px 90px ;
     width: 50px;
 }
 
 /*button declaration*/
-.submit{
+.users .submit{
     float: right;
 }
 
