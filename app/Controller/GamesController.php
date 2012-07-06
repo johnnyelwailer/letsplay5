@@ -6,7 +6,11 @@ App::uses('AppController', 'Controller');
  * @property Game $Game
  */
 class GamesController extends AppController {
-    /**
+    
+	public $helpers = array('Time');
+
+	
+	/**
      * index method
      *
      * @return void
@@ -20,6 +24,7 @@ class GamesController extends AppController {
         //}else {
             $this->Game->recursive = 0;
             $this->set('games', $this->paginate());
+			var_dump($this->Time);
         //}
     }
 

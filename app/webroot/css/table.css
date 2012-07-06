@@ -26,11 +26,17 @@ table.radius {
 
 table thead{
 	/*color different*/
-background: #2d5f99; /* Old browsers */
-
-
-color:#f0f0f0;
+	background: #2d5f99; /* Old browsers */
 }
+
+table thead th a:link, table thead th a:visited, table thead th {
+	color:#fff;
+}
+
+table thead th a:hover {
+	text-decoration: underline;
+}
+
 
 table tbody{
 	border:1px solid #B0C4DE;
@@ -55,4 +61,5 @@ table tr:nth-child(2n +2 ){
 
 table td{
 	border:1px solid #B4CDCD;
+	text-align: center;
 }

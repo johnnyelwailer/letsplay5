@@ -5,18 +5,40 @@
 		<thead>
 			<tr>
 				<th><?php echo $this->Paginator->sort('id'); ?></th>
-				<th><?php echo $this->Paginator->sort('username'); ?></th>
-				<th><?php echo $this->Paginator->sort('password'); ?></th>
-				<th><?php echo $this->Paginator->sort('group_id'); ?></th>
+				<th><?php echo $this->Paginator->sort('terminated'); ?></th>
+				<th><?php echo $this->Paginator->sort('countturns'); ?></th>
 				<th><?php echo $this->Paginator->sort('created'); ?></th>
 				<th><?php echo $this->Paginator->sort('modified'); ?></th>
-				<th class="actions"><?php echo __('Actions'); ?></th>
 			</tr>
 		</thead>
 		<tbody>
 		<?php
+		
 		foreach ($games as $game) { ?>
-			
-			
+			<tr>
+				<td><a href="<?php
+				echo $this->Html->url(array(
+					"controller" => "games",
+					"action" => "view",
+					$game['Game']['id'])
+				);
+				
+				?>"><?php echo $game['Game']['id']; ?></a></td>
+				<td>
+				<?php
+				
+				$img = $game['Game']['terminated'] ? 'inactive.png' : 'active.png';
+				$desc = $game['Game']['terminated'] ? __('The was terminated') : __('The game is still running');
+				
+				echo $this->Html->image($img, array('alt' => $desc));
+				?>
+				</td>
+				<td><?php echo h('mh'); ?></td>
+				<td><?php echo $this->Time->nice($game['Game']['created']); ?></td>
+				<td><?php echo $this->Time->nice($game['Game']['modified']); ?></td>
+			</tr>
 		<?php } ?>
+		
+		</tbody>
+	</table>
 </div>

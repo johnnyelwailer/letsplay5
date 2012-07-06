@@ -11,7 +11,8 @@
 		
 		
 		<li><a href="<?php echo $this->Html->url(array(
-				"controller" => "users")
+				"controller" => "users",
+				"action" => "index")
 			);
 		?>">Rangliste</a></li>
 		
