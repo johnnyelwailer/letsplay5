@@ -1,0 +1,113 @@
+/*
+			layout/style.css
+	#####################################
+	#		createt by @Jaun1911		#
+	#####################################
+	layout navigation
+	
+	display:none;
+*/
+
+/*placedefinition*/
+ul.horizonal{
+    margin:1% 25%;
+	text-align: center;
+}
+
+ul.horizontal li, ul.vertical li {
+	position: relative;
+}
+
+
+ul.vertical li ul, ul.horizontal li ul {
+	overflow: hidden;
+    max-height: 0px;
+	opacity: 0;
+	
+	transition: max-height 1s, opacity 1s;
+	-ms-transition: max-height 1s, opacity 1s;
+	-moz-transition: max-height 1s, opacity 1s;
+	-o-transition: max-height 1s, opacity 1s;
+	
+	position: absolute;
+	top: 33px;
+	left: 0px;
+	width: 100%;
+	
+	background-color: #FFF;
+	background-color: rgba(255, 255, 255, 0.9);
+	
+	border: 1px solid #868687;
+	
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+ul.vertical a:link, ul.horizontal a:link,
+ul.vertical a:visited, ul.horizontal a:visited,
+ul.vertical a:active, ul.horizontal a:active {
+	color: #FFF;
+}
+
+
+ul.vertical a:hover:before, ul.horizontal a:hover:before {content: ">" !important;}
+ul.vertical a:hover:after, ul.horizontal a:hover:after {content: "<" !important;}
+
+/*
+ul.vertical a:link:before, ul.horizontal a:link:before {content: '\0000a0';}
+ul.vertical a:link:after, ul.horizontal a:link:after{content: '\0000a0';}
+*/
+
+
+ul.vertical li:hover ul , ul.horizontal li:hover ul {
+    display:table-caption;
+	max-height: 100px;
+	opacity: 1;
+}
+
+ul.vertical li ul a:link, ul.horizontal  li ul a:link {
+	padding-left: 30px;
+}
+
+
+ul.vertical li ul a:link, ul.horizontal  li ul a:link,
+ul.vertical li ul a:visited, ul.horizontal  li ul a:visited {
+	color: #555;
+	text-shadow: #999 2px 2px 3px;
+}
+
+ul.styleless{
+	margin:0px;
+	padding:0px;
+	list-style-type:none;
+}
+
+/*color link*/
+ul.horizontal :link{
+	font-family:arial;
+	font-size:14px;
+	/*color:#FFFFFF;*/
+}
+
+ul.vertical :link{
+	font-family:arial;
+	font-size:13px;
+	/*color:#FFFFFF;*/
+}
+
+
+ul.horizontal > li  {
+	padding:5px 20px;
+    display:inline-block;
+	width: 15%;
+	text-transform: uppercase;/*capitalize on the navigation*/
+	border-left: white solid 2px;
+}
+
+ul.horizontal> li:first-child   {
+	border-left: none;
+}
+
+ul.vertical ul, ul.horizontal ul  {
+	text-transform: none;
+}

@@ -1,0 +1,19 @@
+﻿label {
+	font-weight: bold;
+}
+
+
+
+input[type="submit"], input[type="reset"], input[type="button"], button {
+	/*background: #054AED;*/
+	background: #CCC;
+	border: 1px solid #4D4D4D;
+	color: #000;
+	padding: 1px 5px;
+	border-radius: 2px;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover {
+	background: #3972ED;
+	color: #FFF;
+}

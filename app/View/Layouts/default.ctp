@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  *
  * PHP 5
@@ -22,6 +22,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
+	<meta http-equiv="robots" content="index, follow, noarchive" />
+	<meta name="keywords" content="let's play 5, fünf gewinnt, 5 gewinnt, online game, online spiel, realtime game" />
+	
 	<title>
 		<?php echo $cakeDescription ?>:
 		<?php echo $title_for_layout; ?>
@@ -29,32 +32,39 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css('cake.generic');
-
+		//echo $this->Html->css('cake.generic');
+		echo $this->Html->css('layout');
+		echo $this->Html->css('form');
+		echo $this->Html->css('menubar');
+		echo $this->Html->css('table');
+		
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
-
-        echo $this->Html->script('jquery');
+		
         echo $this->Html->script('angular/angular');
         echo $this->Html->script('angular/angular-resource');
         echo $this->Html->script('angular/angular-app');
 	?>
 </head>
 <body ng-app="app">
-	<div id="container">
-		<div id="header">
-		</div>
-		<div id="content">
-
+	
+	
+	<div id="wrapper">
+			<?php echo $this->element('userlogin'); ?>
+			<?php echo $this->element('navigation'); ?>
+			
+			
 			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
-		</div>
-		<div id="footer">
-
-		</div>
+			
+			<div id="content">
+				<?php echo $this->fetch('content'); ?>
+			</div>
+			
+			<?php 
+			if(isset($_GET['dev']))
+					echo $this->element('sql_dump');
+				?>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
 </body>
 </html>

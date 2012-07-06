@@ -1,0 +1,147 @@
+﻿/*
+			layout/layout.css
+	#####################################
+	#		createt by @Jaun1911		#
+	#####################################
+	in this script is the layout of the div 
+	containers and the font declaration	
+*/
+
+/* universal - base for all elements */
+* {
+	padding: 0px;
+	font-style: ;
+	font-size:12px;
+	margin:0px;
+	font-family: 'SEGOE UI', arial;
+}
+
+/* default link style*/
+
+a:link{
+	text-decoration:none;
+	font-size:12px;
+	color: #0040FF
+}
+
+a:visited{
+	text-decoration:none;
+	font-size:12px;
+	color: #00BFFF
+}
+
+a:hover{
+	text-decoration:none;
+	font-size:12px;
+	color: #FF5500;   
+}
+
+a:active{
+	text-decoration:none;
+	font-size:12px;
+}
+
+a:focus{
+	text-decoration:none;
+	font-size:12px;
+}
+
+/* when selecting a text */
+
+::selection {
+	background: #02BA30;
+	color: #FFF;
+}
+
+
+::-moz-selection{
+	background: #02BA30;
+	color: #FFF;
+}
+
+/* default style of the common elements */
+
+html, body{
+	height:100%;
+    width:100%;
+	background-color:#e0e0e0;
+}
+
+
+h1{
+	font-style:Arial;
+	font-size:16px;
+}
+
+
+/* layout containers 
+#main{
+	margin:auto;
+	height:100%;
+	width:100%;
+	
+	background-image: url('../images/background.png');
+}*/
+
+#background {
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	top: 0px;
+}
+
+#wrapper{
+	display:inline-block;
+	margin:0% 20%;
+	padding:5px 0px 5px 0px;
+	height:100%;
+	width:60%;
+	min-width:500px;
+	max-width:800px;
+	
+}
+
+#navigation{
+	padding: 5px 10px;
+	position: relative;
+	
+	margin:20px 0px;
+	border-radius: 3px;
+	border:1px solid #868687;
+	font-weight: bold;
+	text-shadow: #333 3px 3px 5px;
+	/*text-align: center;*/
+	
+	/*color flow*/
+	background: #1e5799; /* Old browsers */
+	background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(50%,#2989d8), color-stop(51%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+}
+
+
+#navigation div.background {
+	background: url(../img/corn-toolbar.png);
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+}
+
+#content{
+	/*display:inline-block;*/
+	height:85%;
+	background-color: #FFF;
+	border:1px solid #868687;
+	border-radius: 5px;
+}
+
+#content > * {
+	margin:10px;
+}
