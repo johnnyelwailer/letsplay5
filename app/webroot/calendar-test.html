@@ -81,11 +81,13 @@
 <div ng-app="app">
     <div ng-controller="UserViewModel">
         <p>date: ({{date}})</p>
-        <calendar selecteddate="date" />
+
+        <div ><input calendar value="hello" /></div>
 
         <div ng-repeat="item in users">
             {{item.User.username}}{{what}}
         </div>
+        <calendar selecteddate="date" />
     </div>
 </div>
 

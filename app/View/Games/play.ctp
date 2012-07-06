@@ -5,6 +5,7 @@
 
         $scope.turns = [];
         $scope.isMyTurn = true;
+        $scope.lastTurn = null;
         $scope.grid = Array.range(0, gridSize * gridSize, function(i){
             return null;
         });
@@ -18,6 +19,11 @@
                     var turn = parseTurn(item);
                     console.log(turn, getIndex(turn));
                     doTurn(turn);
+                    if($scope.lastTurn === null || turn.createdDate.valueOf() > $scope.lastTurn.createdDate) {
+                        $scope.lastTurn = turn;
+                        $scope.isMyTurn = !turn.isMine;
+                    }
+
                     return turn;
                 });
             });
@@ -29,7 +35,8 @@
                 y: parseInt(item.Turn.y),
                 game_id: parseInt(item.Turn.game_id),
                 creator: parseInt(item.Turn.creator),
-                created: item.Turn.created
+                created: item.Turn.created,
+                createdDate: new Date(item.Turn.created)
             };
         }
 
@@ -43,6 +50,10 @@
 
         var doTurn = function(turn) {
             var index = getIndex(turn);
+            if($scope.grid[index] === null) {
+                return false;
+            }
+            
             var turn = $scope.grid[index] = turn;
             turn.isMine = turn.creator == $scope.game.challenger_id;
         };
@@ -79,7 +90,7 @@
         }
 
         .grid-cell .marked {
-            border-radius: 30px;
+            border-radius: 60px;
             background: #f08080;
         }
 
