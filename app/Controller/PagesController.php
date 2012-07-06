@@ -44,6 +44,16 @@ class PagesController extends AppController {
  * @var array
  */
 	public $uses = array();
+	
+	
+	public function beforeFilter() {
+		/*
+		overwrite permission from the db
+		static pages are ALL accessable
+		*/
+		parent::beforeFilter();
+		$this->Auth->allow('*');
+	}
 
 /**
  * Displays a view
