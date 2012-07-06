@@ -1025,3 +1025,66 @@
 #3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2012-07-06 15:40:59 Error: [Exception] position already occupied.
+#0 [internal function]: GameApiController->place('1', '14', '12')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(GameApiController), Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(GameApiController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-06 15:40:59 Error: [Exception] position already occupied.
+#0 [internal function]: GameApiController->place('1', '14', '12')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(GameApiController), Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(GameApiController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-06 15:41:01 Error: [Exception] position already occupied.
+#0 [internal function]: GameApiController->place('1', '15', '12')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(GameApiController), Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(GameApiController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-06 15:41:01 Error: [Exception] position already occupied.
+#0 [internal function]: GameApiController->place('1', '15', '12')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(GameApiController), Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(GameApiController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-06 15:41:03 Error: [Exception] position already occupied.
+#0 [internal function]: GameApiController->place('1', '15', '14')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(GameApiController), Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(GameApiController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-06 15:41:05 Error: [Exception] position already occupied.
+#0 [internal function]: GameApiController->place('1', '1', '1')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(GameApiController), Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(GameApiController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-06 15:41:28 Error: [Exception] position already occupied.
+#0 [internal function]: GameApiController->place('1', '12', '1')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(GameApiController), Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(GameApiController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-06 15:41:28 Error: [Exception] position already occupied.
+#0 [internal function]: GameApiController->place('1', '12', '1')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(GameApiController), Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(GameApiController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2012-07-06 15:41:29 Error: [Exception] position already occupied.
+#0 [internal function]: GameApiController->place('1', '10', '1')
+#1 C:\xampp\htdocs\letsplay5\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(GameApiController), Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(186): Controller->invokeAction(Object(CakeRequest))
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Routing\Dispatcher.php(161): Dispatcher->_invoke(Object(GameApiController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
