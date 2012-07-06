@@ -16,9 +16,9 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
 ?>
-<!DOCTYPE html>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
 <html>
 <head>
 	<?php echo $this->Html->charset(); ?>
@@ -26,7 +26,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<meta name="keywords" content="let's play 5, fünf gewinnt, 5 gewinnt, online game, online spiel, realtime game" />
 	
 	<title>
-		<?php echo $cakeDescription ?>:
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php

@@ -99,9 +99,8 @@ h1{
 	padding:5px 0px 5px 0px;
 	height:100%;
 	width:60%;
-	min-width:500px;
-	max-width:800px;
-	
+	min-width:800px;
+	max-width: 1024px;
 }
 
 #navigation{
@@ -114,6 +113,8 @@ h1{
 	font-weight: bold;
 	text-shadow: #333 3px 3px 5px;
 	/*text-align: center;*/
+	
+	box-shadow: 8px 8px 4px #666;
 	
 	/*color flow*/
 	background: #1e5799; /* Old browsers */
@@ -137,8 +138,9 @@ h1{
 }
 
 #content{
-	/*display:inline-block;*/
-	height:85%;
+	/*display:inline-block;
+	height:85%;*/
+	min-height: 300px;
 	background-color: #FFF;
 	border:1px solid #868687;
 	border-radius: 5px;
