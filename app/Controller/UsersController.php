@@ -14,13 +14,14 @@ class UsersController extends AppController {
  * @return void
  */
 	public function index() {
-        //if ($this->RequestHandler->requestedWith()) {
+        /*//if ($this->RequestHandler->requestedWith()) {
             $users = $this->User->find('all');
             $this->set(array(
                 'users' => $users,
                 '_serialize' => array('users')
             ));
         //}else {
+		*/
             $this->User->recursive = 0;
             $this->set('users', $this->paginate());
         //}
