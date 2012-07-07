@@ -20,6 +20,7 @@
             overflow: hidden;
             width: 210px;
             height: 150px;
+            -webkit-animation-duration: 0.4s;
 
         }
 
@@ -72,7 +73,79 @@
         .calendar .day[aria-selected=true] {
             background: #87cefa;
         }
+        
+        .slidein-from-right .body {
+            -webkit-animation-name: calendar-slidein-from-right;
+            animation-name: calendar-slidein-from-right;
+        }
+        .slidein-from-left .body {
+            -webkit-animation-name: calendar-slidein-from-left;
+            animation-name: calendar-slidein-from-left;
+        }
 
+        @keyframes calendar-slidein-from-right {
+            10% {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            11% {
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+        
+        @-webkit-keyframes calendar-slidein-from-right {
+            10% {
+                opacity: 0;
+                -webkit-transform: translateX(-30px);
+            }
+
+            11% {
+                -webkit-transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: translateX(0px);
+            }
+        }
+        
+        @keyframes calendar-slidein-from-left {
+            10% {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+
+            11% {
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+        
+        @-webkit-keyframes calendar-slidein-from-left {
+            10% {
+                opacity: 0;
+                -webkit-transform: translateX(30px);
+            }
+
+            11% {
+                -webkit-transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: translateX(0px);
+            }
+        }
     </style>
 
 </head>

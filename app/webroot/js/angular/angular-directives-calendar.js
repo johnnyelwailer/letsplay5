@@ -1,4 +1,4 @@
-App.directive('calendar', function ($compile) {
+App.directive('calendar', function ($compile, $timeout) {
     return {
         restrict: 'EA',
         replace: false,
@@ -54,7 +54,19 @@ App.directive('calendar', function ($compile) {
                 };
 
                 scope.$watch('selecteddate', function (date, oldDate) {
-                    if (date.getMonthDate().valueOf() != oldDate.getMonthDate().valueOf()) {
+                    var monthsdiff = date.getMonthDate().valueOf() - oldDate.getMonthDate().valueOf();
+
+                    $element.removeClass('slidein-from-right slidein-from-left');
+                    $timeout(function () {
+                        if (monthsdiff > 0) {
+                            $element.addClass('slidein-from-left');
+                        }
+                        else if (monthsdiff < 0) {
+                            $element.addClass('slidein-from-right');
+                        }
+                    });
+
+                    if (monthsdiff != 0) {
                         generateMonth();
                     }
                 });
