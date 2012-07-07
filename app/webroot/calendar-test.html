@@ -82,11 +82,8 @@
     <div ng-controller="UserViewModel">
         <p>date: ({{date}})</p>
 
-        <div ><input calendar value="hello" /></div>
+        <div ><input calendar value="hello" selecteddate="date" /></div>
 
-        <div ng-repeat="item in users">
-            {{item.User.username}}{{what}}
-        </div>
         <calendar selecteddate="date" />
     </div>
 </div>
@@ -97,15 +94,10 @@
 <script src="js/angular/angular-app.js"></script>
 <script src="js/angular/angular-directives-calendar.js"></script>
 <script >
-    function UserViewModel($scope, $resource) {
-        var Users = $resource('Users.json');
+    function UserViewModel($scope) {
 
         $scope.date = new Date;
 
-        Users.get(function(result) {
-            $scope.users = result.users;
-            console.log(result);
-        });
     }
 </script>
 </body>
