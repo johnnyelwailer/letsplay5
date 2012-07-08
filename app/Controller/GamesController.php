@@ -8,7 +8,20 @@ App::uses('AppController', 'Controller');
 class GamesController extends AppController {
     
 	public $helpers = array('Time');
-
+	
+	
+	public function isAuthorized($user) {
+		switch($user['Group']['name']) {
+			case 'Moderator':
+			case 'Registered':
+			case 'Anonymous':
+				if(in_array($this->request->params['action'], array("index", "play", "view")))
+					return true;
+				break;
+		}
+		
+		return parent::isAuthorized($user);
+	}
 	
 	/**
      * index method
@@ -45,5 +58,4 @@ class GamesController extends AppController {
      */
     public function view($id = null) {
     }
-
 }

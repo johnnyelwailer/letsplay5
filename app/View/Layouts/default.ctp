@@ -51,12 +51,19 @@
         echo $this->Html->script('angular/angular-resource');
         echo $this->Html->script('angular/angular-app');
         echo $this->Html->script('angular/angular-game-services');
+		
 	?>
 </head>
 <body ng-app="app">
 	<div id="wrapper">
-			<?php echo $this->element('userlogin'); ?>
-			<?php echo $this->element('navigation'); ?>
+			<?php 
+			
+			if($isGast)
+				echo $this->element('userlogin');
+			else
+				echo $this->element('userlogout');
+			
+			echo $this->element('navigation'); ?>
 			
 			
 			<?php echo $this->Session->flash(); ?>

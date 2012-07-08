@@ -52,9 +52,14 @@ class PagesController extends AppController {
 		static pages are ALL accessable
 		*/
 		parent::beforeFilter();
-		$this->Auth->allow('*');
 	}
-
+	
+	
+	public function isAuthorized($user) {
+		/* pages is accessable by all groups (no modification possible) */
+		return true;//parent::isAuthorized($user);
+	}
+	
 /**
  * Displays a view
  *
@@ -62,6 +67,7 @@ class PagesController extends AppController {
  * @return void
  */
 	public function display() {
+		
 		$path = func_get_args();
 
 		$count = count($path);

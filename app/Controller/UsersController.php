@@ -6,48 +6,86 @@ App::uses('AppController', 'Controller');
  * @property User $User
  */
 class UsersController extends AppController {
-
-	public function beforeFilter() {
-		//overwrite permission from the db
-		//static pages are ALL accessable
-		
-		parent::beforeFilter();
-		$this->Auth->allow('*');
-	}
-
-function initDB() {
 	
-    $this->Acl->allow(array( 'model' => 'Group', 'foreign_key' => 4), 'controllers');
-
-    //we add an exit to avoid an ugly "missing views" error message
+	public function isAuthorized($user) {
+		var_dump($user);
+		switch($user['Group']['name']) {
+			case 'Moderator':
+				if(in_array($this->request->params['action'], array("delete", "edit", "add")))
+					return true;
+			case 'Registered':
+				if(in_array($this->request->params['action'], array("add")))
+					return false;
+				
+				if(in_array($this->request->params['action'], array("logout")))
+					return true;
+				
+				if($this->request->params['action'] ==  "edit")
+					if(isset($this->request->params['pass'][0]) && $this->request->params['pass'][0] == $user['id'])
+						return true;
+				
+			case 'Gast':
+				if(in_array($this->request->params['action'], array("login", "index", "view", "add")))
+					return true;
+				break;
+		}
+		
+		return parent::isAuthorized($user);
+	}
+	
+	public function beforeFilter() {
+		parent::beforeFilter();
+	}
+/*
+function initDB() {
+	$group = $this->User->Group;
+    //set up admin
+    $group->id = 1;
+    $this->Acl->allow($group, 'controllers');
+	
+	//set up moderator
+	$group->id = 2;
+	$this->Acl->allow($group, 'controllers/Games/delete');
+	$this->Acl->allow($group, 'controllers/Users/add');
+	$this->Acl->allow($group, 'controllers/Users/delete');
+	$this->Acl->allow($group, 'controllers/Users/delete');
+	$this->Acl->allow($group, 'controllers/Pages');
+	$this->Acl->allow($group, 'controllers/Games/play');
+	$this->Acl->allow($group, 'controllers/Games/index');
+	$this->Acl->allow($group, 'controllers/Games/view');
+	$this->Acl->allow($group, 'controllers/Users/view');
+	$this->Acl->allow($group, 'controllers/Users/index');
+	
+	//set up user
+	$group->id = 3;
+	
+	$this->Acl->allow($group, 'controllers/Games/play');
+	$this->Acl->allow($group, 'controllers/Games/index');
+	$this->Acl->allow($group, 'controllers/Games/view');
+	$this->Acl->allow($group, 'controllers/Users/view');
+	$this->Acl->allow($group, 'controllers/Users/index');
+	$this->Acl->allow($group, 'controllers/Pages');
+	$this->Acl->allow($group, 'controllers/Games/play');
+	$this->Acl->allow($group, 'controllers/Games/index');
+	$this->Acl->allow($group, 'controllers/Games/view');
+	$this->Acl->allow($group, 'controllers/Users/view');
+	$this->Acl->allow($group, 'controllers/Users/index');
+	
+	//set up gasts
+	$group->id = 4;
+	
+	$this->Acl->allow($group, 'controllers/Pages');
+	$this->Acl->allow($group, 'controllers/Games/play');
+	$this->Acl->allow($group, 'controllers/Games/index');
+	$this->Acl->allow($group, 'controllers/Games/view');
+	$this->Acl->allow($group, 'controllers/Users/view');
+	$this->Acl->allow($group, 'controllers/Users/index');
+	
+	//we add an exit to avoid an ugly "missing views" error message
     echo "all done";
     exit;
-    //allow managers to posts and widgets
-    $group->id = 3;
-    $this->Acl->deny('Registered', 'controllers');
-    $this->Acl->allow('Registered', 'controllers/Games/play');
-	$this->Acl->allow('Registered', 'controllers/Games/view');
-	$this->Acl->allow('Registered', 'controllers/Games/index');
-    $this->Acl->allow('Registered', 'controllers/Users/view');
-	$this->Acl->allow('Registered', 'controllers/Users/index');
- 
-    //allow users to only add and edit on posts and widgets
-    $group->id = 2;
-    $this->Acl->deny('Moderator', 'controllers');
-    $this->Acl->allow('Moderator', 'controllers/Games/');
-    $this->Acl->allow('Moderator', 'controllers/Users');
-	
-	$group->id = 1;
-    $this->Acl->deny('Gast', 'controllers');
-    $this->Acl->allow('Gast', 'controllers/Games/play');
-	$this->Acl->allow('Gast', 'controllers/Games/view');
-	$this->Acl->allow('Gast', 'controllers/Games/index');
-    $this->Acl->allow('Gast', 'controllers/Users/view');
-	$this->Acl->allow('Gast', 'controllers/Users/index');
-	
-	
-	
-	}
+	}*/
+
     public $components = array('RequestHandler');
 /**
  * index method
@@ -55,17 +93,8 @@ function initDB() {
  * @return void
  */
 	public function index() {
-        /*//if ($this->RequestHandler->requestedWith()) {
-            $users = $this->User->find('all');
-            $this->set(array(
-                'users' => $users,
-                '_serialize' => array('users')
-            ));
-        //}else {
-		*/
-            $this->User->recursive = 0;
-            $this->set('users', $this->paginate());
-        //}
+        $this->User->recursive = 0;
+        $this->set('users', $this->paginate());
     }
 
 /**
@@ -76,11 +105,6 @@ function initDB() {
  * @return void
  */
 	public function view($id = null) {
-		
-		
-		
-		
-		
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
@@ -158,8 +182,15 @@ function initDB() {
 	}
 
 	public function login() {
+		if($this->Auth->user()) {
+			$this->redirect($this->Auth->redirect());
+		}
+		
+		
 		if ($this->request->is('post')) {
+			var_dump(AuthComponent::password($this->data['User']['password']));
 			if ($this->Auth->login()) {
+				
 				$this->redirect($this->Auth->redirect());
 			} else {
 				$this->Session->setFlash(__('Your username or password was incorrect.'));
@@ -168,6 +199,6 @@ function initDB() {
 	}
 
 	public function logout() {
-		//Leave empty for now.
+		 $this->redirect($this->Auth->logout());
 	}
 }

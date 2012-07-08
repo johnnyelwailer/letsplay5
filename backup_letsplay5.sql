@@ -27,6 +27,7 @@ USE letsplay5;
 
 -- --------------------------------------------------------
 
+/*
 --
 -- Tabellenstruktur für Tabelle `acos`
 --
@@ -67,8 +68,8 @@ CREATE TABLE IF NOT EXISTS `aros` (
 
 CREATE TABLE IF NOT EXISTS `aros_acos` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `aro_id` int(10) unsigned NOT NULL,
-  `aco_id` int(10) unsigned NOT NULL,
+  `aro_id` int(10) unsigned,
+  `aco_id` int(10) unsigned,
   `_create` char(2) COLLATE utf8_bin NOT NULL DEFAULT '0',
   `_read` char(2) COLLATE utf8_bin NOT NULL DEFAULT '0',
   `_update` char(2) COLLATE utf8_bin NOT NULL DEFAULT '0',
@@ -79,6 +80,9 @@ CREATE TABLE IF NOT EXISTS `aros_acos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
+*/
+
+
 
 --
 -- Tabellenstruktur für Tabelle `games`
@@ -151,8 +155,8 @@ CREATE TABLE IF NOT EXISTS `turns` (
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(30) COLLATE utf8_bin NOT NULL DEFAULT 'Gast',
-  `password` varchar(32) COLLATE utf8_bin NOT NULL,
+  `username` varchar(30) COLLATE utf8_bin NOT NULL DEFAULT 'Unknown',
+  `password` varchar(40) COLLATE utf8_bin NOT NULL,
   `email` varchar(50) COLLATE utf8_bin NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
@@ -160,6 +164,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `isMale` tinyint(4) DEFAULT '1',
   `group_id` int(11) NOT NULL,
   `storePassword` tinyint(4) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT 0,
   PRIMARY KEY (`id`),
   KEY `fk_users_groups` (`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
@@ -188,10 +193,11 @@ CREATE TABLE IF NOT EXISTS `waitingforgames` (
 --
 -- Constraints der Tabelle `aros_acos`
 --
+/*
 ALTER TABLE `aros_acos`
   ADD CONSTRAINT `fk_aros_acos_acos1` FOREIGN KEY (`aro_id`) REFERENCES `acos` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_aros_acos_aros1` FOREIGN KEY (`aco_id`) REFERENCES `aros` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
+*/
 --
 -- Constraints der Tabelle `games`
 --
@@ -213,6 +219,30 @@ ALTER TABLE `turns`
 ALTER TABLE `users`
   ADD CONSTRAINT `fk_users_groups` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
+  
+  
+  
+  
+--
+-- Inserts default values / group
+--
+
+INSERT INTO `groups` (`id`, `name`, `created`, `modified`) VALUES
+(1, 'Administrator', '2012-07-07 18:16:04', '2012-07-07 18:16:26'),
+(2, 'Moderator', '2012-07-07 18:16:09', '2012-07-07 18:16:09'),
+(3, 'Registered', '2012-07-07 18:16:16', '2012-07-07 18:16:16'),
+(4, 'Anonymous', '2012-07-07 23:06:53', '2012-07-07 23:06:53');
+
+
+  
+  
+ 
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `created`, `modified`, `score`, `isMale`, `group_id`, `storePassword`) VALUES
+(1, 'user', '46df4a13034942d363c8c9be702380ecfc5adc9c', '', '2012-07-07 18:56:17', '2012-07-07 18:56:17', 0, 1, 3, NULL),
+(2, 'admin', '39a06327c87c9e3563a4b6cc136db546cd723a62', '', '2012-07-07 20:29:39', '2012-07-07 20:29:39', 0, 1, 1, NULL),
+(3, 'Moderator', '3abfe6335f246c0becb374b4b1a7a5f09df58bbe', 'moderator@moderator.mod', '2012-07-08 00:00:00', '2012-07-08 20:03:43', 0, 1, 2, NULL);
+
+  
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

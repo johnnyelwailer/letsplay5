@@ -16,8 +16,10 @@ class User extends AppModel {
 	
 	//this encrypt the passwort
 	public function beforeSave() {
-        $this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
-        return true;
+	
+        if (isset($this->data[$this->alias]['password'])) {
+			$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
+		}
     }
 	
 	
@@ -30,7 +32,7 @@ class User extends AppModel {
 	the Aro table is updated.
 	*/
 	public $belongsTo = array('Group');
-    public $actsAs = array('Acl' => array('type' => 'requester'));
+	//public $actsAs = array('Acl' => array('type' => 'requester'));
 	
 	public function parentNode() {
         if(!$this->id && empty($this->data))
@@ -54,6 +56,6 @@ class User extends AppModel {
 	Every user has to have assigned group_id for this to work.
 	*/
 	public function bindNode($user) {
-		return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
+		 return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
 	}
 }

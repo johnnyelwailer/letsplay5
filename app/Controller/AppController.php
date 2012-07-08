@@ -48,22 +48,91 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	public $components = array(
-        'Acl',
+        /*'Acl',
         'Auth' => array(
             'authorize' => array(
                 'Actions' => array('actionPath' => 'controllers')
             )
+			*/
+		'Auth' => array(
+			'loginRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
+			'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
+			'authorize' => array('controller'), // Added this line
         ),
         'Session'
     );
 	
-    public $helpers = array('Html', 'Form', 'Session');
-	
+	private $_currentUser = null;
 	
 	public function beforeFilter() {
-        //Configure AuthComponent
-        $this->Auth->loginAction = array('controller' => 'users', 'action' => 'login');
-        $this->Auth->logoutRedirect = array('controller' => 'users', 'action' => 'login');
-        $this->Auth->loginRedirect = array('controller' => 'posts', 'action' => 'add');
+		
+		$this->Auth->fields  = array( 
+            'username'=>'username', //The field the user logs in with (eg. username) 
+            'password' =>'password' //The password field 
+        ); 
+		
+		if($this->isGast()) 
+			$this->set('isGast', true);
+		else
+			$this->set('isGast', false);
+		
+		$this->set('currentUser', $this->currentUser());
+		//$this->Auth->login($this->currentUser());
+		
+		//var_dump($this->currentUser());
     }
+	
+	public function isAuthorized($user) {
+		// Admin can access every action
+		if(isset($user['Group']) && $user['Group']['name'] === 'Administrator') {
+			return true;
+		}
+		
+		// Default deny
+		return false;
+	}
+	
+	
+	
+	public function createGast() {
+		if(!$this->_currentUser) {
+			$this->loadModel('Gast');
+			$session = $this->Session;
+		
+			$def = array();
+		
+			if(!$session->check('gast')) {
+				$date = date('Y-m-d H:i:s');
+				$session->write('gast.created', $date);
+				$session->write('gast.modified', $date);
+			
+				$def['created'] = $date;
+				$def['modified'] = $date;
+			}else {
+				$def['created'] = $session->read('gast.created');
+				$def['modified'] = $session->read('gast.modified');
+			}
+				
+			return $this->Gast->create($def);
+		}
+		
+		return false;
+	}
+	
+	/* current user (gast will appear as NULL in the db)*/
+	public function currentUser() {
+		if($user = $this->Auth->user())
+			return $user;
+		
+		if(!$this->_currentUser) {
+			$this->_currentUser = $this->createGast();
+		}
+		
+		return $this->_currentUser;
+	}
+	
+	public function isGast() {
+		return is_null($this->Auth->user());
+	}
+	
 }
