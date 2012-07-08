@@ -13,6 +13,7 @@
 
         .calendar .head {
             overflow: hidden;
+			border-bottom: 1px solid #9999A9;
         }
 
         .calendar .body {
@@ -63,16 +64,26 @@
         }
         .calendar .day, .calendar .head > div {
             float: left;
-            width: 30px;
+            width: 28px;
             height: 30px;
             line-height: 30px;
             text-align: center;
             vertical-align: middle;
+			word-wrap: break-word;
+			border: 1px solid transparent;
         }
 
         .calendar .day[aria-selected=true] {
             background: #87cefa;
         }
+		
+		.calendar .day.other-month {
+			opacity: 0.6;
+		}
+		
+		.calendar .day.today {
+			border: 1px solid #9999A9;
+		}
         
         .slidein-from-right .body {
             -webkit-animation-name: calendar-slidein-from-right;
@@ -146,6 +157,30 @@
                 -webkit-transform: translateX(0px);
             }
         }
+		
+		.popout {
+			position: absolute;
+			background: white;
+			z-index: 100;
+		}
+		
+		.transitioned {
+			transition: all 0.4s ease-in-out;
+			-webkit-transition: all 0.4s ease-in-out;
+			-moz-transition: all 0.4s ease-in-out;
+		}
+		
+		.collapsedY {
+			opacity: 0;
+			
+			transform-origin: center top;
+			-webkit-transform-origin: center top;
+			-moz-transform-origin: center top;
+			
+			transform: scaleY(0);
+			-webkit-transform: scaleY(0);
+			-moz-transform: scaleY(0);
+		}
     </style>
 
 </head>
@@ -153,17 +188,19 @@
 
 <div ng-app="app">
     <div ng-controller="UserViewModel">
+		<calendar selecteddate="date" ></calendar>
         <p>date: ({{date}})</p>
 
-        <div ><input calendar value="hello" selecteddate="date" /></div>
+        <div><input calendar value="hello" selecteddate="date" /></div>
 
-        <calendar selecteddate="date" />
+        <input id="what"/>
     </div>
 </div>
 
 <script src="js/jquery.js"></script>
 <script src="js/angular/angular.js"></script>
 <script src="js/angular/angular-resource.js"></script>
+<script src="js/angular/i18n/angular-locale_de-ch.js"></script>
 <script src="js/angular/angular-app.js"></script>
 <script src="js/angular/angular-directives-calendar.js"></script>
 <script >

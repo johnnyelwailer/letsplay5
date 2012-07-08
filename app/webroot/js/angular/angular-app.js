@@ -60,6 +60,6 @@ Array.generate = function(fn) {
         result[i] = current;
         i++;
     }
-    console.log(result,i);
+	
     return result;
 }
