@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 App::uses('AppController', 'Controller');
 /**
  * Game Api Controller

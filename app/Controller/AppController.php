@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Application level Controller
  *
