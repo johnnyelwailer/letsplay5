@@ -9,6 +9,21 @@ App::uses('AppController', 'Controller');
 class GameApiController extends AppController {
 
     public $components = array('RequestHandler');
+
+    public function isAuthorized($user) {
+        /*switch($user['Group']['name']) {
+            case 'Moderator':
+            case 'Registered':
+            case 'Anonymous':
+                if(in_array($this->request->params['action'], array("index", "play", "view")))
+                    return true;
+                break;
+        }*/
+        return true;
+
+        return parent::isAuthorized($user);
+    }
+
 /**
  * index method
  *
