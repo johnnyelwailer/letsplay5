@@ -80,7 +80,6 @@ class UsersController extends AppController {
  * @return void
  */
 	public function add() {
-		
 		$this->set('groups', $this->groups());
 		
 		$user = $this->currentUser();
@@ -88,7 +87,7 @@ class UsersController extends AppController {
 		if($this->request->is('post')) {
 			//$this->User->create();
 			if($user['Group']['name'] != 'Administrator') {
-				$this->request->data['User']['group_id'] = 3;
+				//$this->request->data
 			}
 			
 			if($this->User->save($this->request->data)) {
@@ -107,17 +106,52 @@ class UsersController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		$user = $this->currentUser();
+		
+		$groups = $this->groups();
+		//moderator cannot access admin group
+		if($user['Group']['name'] != 'Administrator')
+			unset($groups[1]);
+		$this->set('groups', $groups);
+		
+		
 		$this->User->id = $id;
-		if (!$this->User->exists()) {
+		if(!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
-		if ($this->request->is('post') || $this->request->is('put')) {
+		
+		if($this->request->is('post') || $this->request->is('put')) {
+			//group can only be changed by admin && moderator
+			if($user['Group']['name'] == 'Administrator' OR $user['Group']['name'] == 'Moderator') {
+				//only accessable groups are allowed
+				if(!in_array($this->request->data['User']['group_id'], array_keys($groups))){
+					unset($this->request->data['User']['group_id']);
+				}
+			}else {
+				if(isset($this->request->data['User']['group_id']))
+					unset($this->request->data['User']['group_id']);
+			}
+			
+			//reset the password only if it is not empty AND if the sent value isnt equal to the db password
+			if(isset($this->request->data['User']['password'])) {
+				if(empty($this->request->data['User']['password'])) {
+					unset($this->request->data['User']['password']);
+				}else {
+					if($this->User->password == $this->request->data['User']['password'])
+						unset($this->request->data['User']['password']);
+				}
+			}
+			
+			
 			if ($this->User->save($this->request->data)) {
 				$this->flash(__('The user has been saved.'), array('action' => 'index'));
 			} else {
+				$this->flash(__('The user has not been saved.'), array('action' => 'index'));
 			}
 		} else {
 			$this->request->data = $this->User->read(null, $id);
+			//set password to an empty string
+			unset($this->request->data['User']['password']);
 		}
 	}
 
