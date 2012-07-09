@@ -7,6 +7,9 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 	
+	public $uses = array('Group', 'User');
+
+	
 	public function isAuthorized($user) {
 		switch($user['Group']['name']) {
 			case 'Moderator':
@@ -77,11 +80,21 @@ class UsersController extends AppController {
  * @return void
  */
 	public function add() {
-		if ($this->request->is('post')) {
-			$this->User->create();
-			if ($this->User->save($this->request->data)) {
+		
+		$this->set('groups', $this->groups());
+		
+		$user = $this->currentUser();
+		
+		if($this->request->is('post')) {
+			//$this->User->create();
+			if($user['Group']['name'] != 'Administrator') {
+				$this->request->data['User']['group_id'] = 3;
+			}
+			
+			if($this->User->save($this->request->data)) {
 				$this->flash(__('User saved.'), array('action' => 'index'));
 			} else {
+				$this->flash(__('User not saved.'), array('action' => 'index'));
 			}
 		}
 	}
@@ -148,5 +161,21 @@ class UsersController extends AppController {
 
 	public function logout() {
 		 $this->redirect($this->Auth->logout());
+	}
+	
+	private function groups() {
+		static $groups = null;
+		
+		if(!$groups) {
+			$gs = $this->Group->find('all');
+			
+			$groups = array();
+			
+			foreach($gs as $obj) {
+				$groups[(int)$obj['Group']['id']] = $obj['Group']['name'];
+			}
+		}
+		
+		return $groups;
 	}
 }

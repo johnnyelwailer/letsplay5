@@ -1,14 +1,30 @@
 ﻿<div id="navigation" class="toolbar-gradient">
 	<div class="background"></div>
 	<ul class="styleless horizontal">
-		<li><a href="#">Benutzerprofil</a>
+		<?php if(!$isGast) { ?>
+		
+		<li><a href="<?php echo $this->Html->url(array(
+				"controller" => "users",
+				"action" => "view", $currentUser['id'])
+			);
+		?>">Benutzerprofil</a>
 							<ul class="styleless vertical rounded">
-								<li><a href="#">Angebot</a></li>
-								<li><a href="#">Geschichte</a></li>
-								<li><a href="#">Jobs</a></li>
+								<li><a href="<?php echo $this->Html->url(array(
+										"controller" => "users",
+										"action" => "edit", $currentUser['id'])
+									);
+								?>">Einstellungen</a></li>
+								<li><a href="#">Nächster Zug!</a></li>
+								<li><a href="<?php echo $this->Html->url(array(
+										"controller" => "users",
+										"action" => "logout")
+									);
+								?>">Logout</a></li>
 							</ul>
+			</a>
 		</li>
 		
+		<?php } ?>
 		
 		<li><a href="<?php echo $this->Html->url(array(
 				"controller" => "users",
