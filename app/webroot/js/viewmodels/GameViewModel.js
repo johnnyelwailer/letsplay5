@@ -14,11 +14,6 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
             var newTurns = $.map(result.turns, function(item) {
                 var turn = parseTurn(item);
                 makeTurn(turn);
-                if($scope.lastTurn === null || turn.createdDate.valueOf() > $scope.lastTurn.createdDate) {
-                    $scope.lastTurn = turn;
-                    $scope.isMyTurn = !turn.isMine;
-                    $scope.lastTurnTime = $scope.lastTurn.createdDate;
-                }
 
                 return turn;
             });
@@ -52,7 +47,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
             game_id: parseInt(item.Turn.game_id),
             creator: parseInt(item.Turn.creator),
             created: item.Turn.created,
-            createdDate: new Date(item.Turn.created)
+            createdDate: Date.fromSqlFormat(item.Turn.created)
         };
     }
 
@@ -89,6 +84,17 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
             return false;
         }
 
+        if (!turn.createdDate.isValid()) {
+            console.log('invalid created date', turn);
+        }
+
+        if($scope.lastTurn === null || turn.createdDate.valueOf() > $scope.lastTurn.createdDate.valueOf()) {
+            $scope.lastTurn = turn;
+            $scope.isMyTurn = !turn.isMine;
+            $scope.lastTurnTime = $scope.lastTurn.createdDate;
+        }
+
+        findAdjacentRows(turn);
         return $scope.grid[index] = turn;
 
     };
@@ -104,8 +110,8 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
 
         console.log('place', index)
         $resource('../GameApi/place/:id/:x/:y.json', params).get(function(result) {
-            var turn = makeTurn(parseTurn(result.turn));
-            findAdjacentRows(turn);
+            makeTurn(parseTurn(result.turn));
+
         });
     };
 

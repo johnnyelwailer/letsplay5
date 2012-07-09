@@ -82,8 +82,8 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
                 };
 				
                 scope.$watch('selecteddate', function (date, oldDate) {
-					if( !isFinite(date)) {
-						if (isFinite(oldDate)) {
+					if( !Date.isValid(date)) {
+						if (Date.isValid(oldDate)) {
 							scope.selecteddate = oldDate;
 						}
 						
