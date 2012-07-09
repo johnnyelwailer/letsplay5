@@ -45,16 +45,20 @@ class GameApiController extends AppController {
         $this->loadModel('WaitingForGame');
 
         $user = $this->currentUser();
+        //var_dump('user', $user);
 
         $existingByUser = $this->WaitingForGame->findByUserId($user['id']);
-        $existingByUser = isset($existingByUser) ? $existingByUser['WaitingForGame'] : null;
 
+        $existingByUser = isset($existingByUser) ? $existingByUser['WaitingForGame'] : null;
+        //var_dump('user existing', $existingByUser);
         if (isset($existingByUser)) {
 
             //game created, ready to rumble!
-            if (isset($existingByUser['Game'])) {
+            if ($existingByUser['game_id'] != null) {
+
+                $game = $this->Game->findById($existingByUser['game_id']);
                 $this->set(array(
-                    'game' => $existingByUser['Game'],
+                    'game' => $game,
                     '_serialize' => array('game')
                 ));
 
@@ -78,19 +82,27 @@ class GameApiController extends AppController {
                     'game_id' => null)));
 
         $matching = isset($matching) ? $matching['WaitingForGame'] : null;
-
+        //var_dump('matching', $matching);
         if (isset($matching)) {
-            $game = $this->Game->save(array('challenger_id' => $user['id'],'opponent_id' => $matching['User']['id'],'winner_id' => null));
-            $this->WaitingForGame->save(array('game_id' => $game['Game']['id']));
+            $game = $this->Game->save(array(
+                'challenger_id' => $matching['user_id'],
+                'opponent_id' => $user['id'],
+                'winner_id' => null));
+
+            //var_dump('new game', $game);
+
+            $this->WaitingForGame->save(array('id' => $matching['id'],'game_id' => $game['Game']['id']));
+
             $this->set(array(
-                'game' => $matching,
+                'game' => $game,
                 '_serialize' => array('game')
             ));
             return;
         }
 
+        $this->WaitingForGame->save(array('user_id' => $user['id']));
         $this->set(array(
-            'await' => 'noting found',
+            'await' => 'searching',
             '_serialize' => array('await')
         ));
     }
@@ -119,8 +131,8 @@ class GameApiController extends AppController {
             throw new Exception('position already occupied.');
         }
 
-        $creator = $this->User->find('first');
-        $turn = $this->Turn->save(array('game_id' => $id, 'x' => $x, 'y' => $y, 'creator' => $creator['User']['id']));
+        $user = $this->currentUser();
+        $turn = $this->Turn->save(array('game_id' => $id, 'x' => $x, 'y' => $y, 'creator' => $user['id']));
         $this->set(array(
             'turn' => $turn,
             '_serialize' => array('turn')

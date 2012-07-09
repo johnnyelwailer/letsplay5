@@ -39,10 +39,9 @@
 }
 
 .turn {
-    transition: all 0.4s ease-in-out;
-    -webkit-transition: all 0.4s ease-in-out;
-    -transform: translateY(-50px);
-    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px) scaleY(0);
+    -moz-transform: translateY(-50px) scaleY(0);
+    -webkit-transform: translateY(-50px) scaleY(0);
     opacity: 0;
 }
 .turn.marked {
@@ -54,15 +53,18 @@
     border-radius: 60px;
     background: #f08080;
 
-    -transform: translateY(0px);
-    -webkit-transform: translateY(0px);
+    transform: translateY(0px) scaleY(1);
+    -webkit-transform: translateY(0px) scaleY(1);
+    -moz-transform: translateY(0px) scaleY(1);
 }
 
 .turn.belongs-to-line {
     border: 3px solid #62c462;
+    box-shadow: 0px 0px 50px #f08080;
     -webkit-box-shadow: 0px 0px 50px #f08080;
+    -moz-box-shadow: 0px 0px 50px #f08080;
 }
 
-.turn.marled.by-me {
+.turn.marked.by-me {
     background: lightBlue;
 }

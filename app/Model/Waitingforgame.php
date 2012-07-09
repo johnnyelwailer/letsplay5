@@ -18,26 +18,8 @@ class Waitingforgame extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'User' => array(
-			'className' => 'User',
-			'foreignKey' => 'user_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Game' => array(
-			'className' => 'Game',
-			'foreignKey' => 'game_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		),
-		'Session' => array(
-			'className' => 'Session',
-			'foreignKey' => 'session_id',
-			'conditions' => '',
-			'fields' => '',
-			'order' => ''
-		)
+		'User',
+		'Game',
+		'Session'
 	);
 }

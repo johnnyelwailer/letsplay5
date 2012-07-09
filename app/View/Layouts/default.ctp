@@ -61,7 +61,7 @@
 				echo $this->element('userlogin');
 			else
 				echo $this->element('userlogout');
-			
+
 			echo $this->element('navigation'); ?>
 			
 			

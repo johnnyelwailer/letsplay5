@@ -11,6 +11,24 @@
 	color:#fff;
 }
 
+.transitioned {
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+}
+
+.collapsedY {
+    opacity: 0;
+
+    transform-origin: center top;
+    -webkit-transform-origin: center top;
+    -moz-transform-origin: center top;
+
+    transform: scaleY(0);
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+}
+
 /** Paging **/
 .paging {
 	background:#fff;
