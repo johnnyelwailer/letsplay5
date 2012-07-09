@@ -1290,3 +1290,94 @@
 #3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2012-07-09 10:44:27 Error: Fatal Error (4): syntax error, unexpected T_IS_NOT_EQUAL in [C:\xampp\htdocs\letsplay5\app\View\Users\index.ctp, line 14]
+2012-07-09 10:44:27 Error: [FatalErrorException] syntax error, unexpected T_IS_NOT_EQUAL
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 14, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 14, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-09 10:44:37 Error: Fatal Error (4): syntax error, unexpected T_IS_NOT_EQUAL in [C:\xampp\htdocs\letsplay5\app\View\Users\index.ctp, line 14]
+2012-07-09 10:44:37 Error: [FatalErrorException] syntax error, unexpected T_IS_NOT_EQUAL
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 14, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 14, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-09 10:44:42 Error: Fatal Error (4): syntax error, unexpected T_IS_NOT_EQUAL in [C:\xampp\htdocs\letsplay5\app\View\Users\index.ctp, line 14]
+2012-07-09 10:44:42 Error: [FatalErrorException] syntax error, unexpected T_IS_NOT_EQUAL
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 14, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 14, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-09 10:44:50 Error: Fatal Error (4): syntax error, unexpected T_IS_NOT_EQUAL in [C:\xampp\htdocs\letsplay5\app\View\Users\index.ctp, line 14]
+2012-07-09 10:44:50 Error: [FatalErrorException] syntax error, unexpected T_IS_NOT_EQUAL
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 14, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 14, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-09 10:44:59 Error: Fatal Error (4): syntax error, unexpected T_IS_NOT_EQUAL in [C:\xampp\htdocs\letsplay5\app\View\Users\index.ctp, line 10]
+2012-07-09 10:44:59 Error: [FatalErrorException] syntax error, unexpected T_IS_NOT_EQUAL
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 10)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 10, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 10, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-09 10:45:41 Error: [MissingControllerException] Controller class Thanks.phpController could not be found.
+#0 C:\xampp\htdocs\letsplay5\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-07-09 10:57:39 Error: Fatal Error (4): syntax error, unexpected $end in [C:\xampp\htdocs\letsplay5\app\View\Users\index.ctp, line 64]
+2012-07-09 10:57:39 Error: [FatalErrorException] syntax error, unexpected $end
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 64)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 64, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 64, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-09 11:03:07 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\letsplay5\app\View\Users\index.ctp, line 25]
+2012-07-09 11:03:07 Error: [FatalErrorException] syntax error, unexpected '<'
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 25)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 25, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 25, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-09 11:03:59 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\xampp\htdocs\letsplay5\app\View\Users\index.ctp, line 47]
+2012-07-09 11:03:59 Error: [FatalErrorException] syntax error, unexpected '}'
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 47)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 47, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 47, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-09 11:04:08 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\xampp\htdocs\letsplay5\app\View\Users\index.ctp, line 47]
+2012-07-09 11:04:08 Error: [FatalErrorException] syntax error, unexpected '}'
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 47)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 47, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 47, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-09 11:04:09 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\xampp\htdocs\letsplay5\app\View\Users\index.ctp, line 47]
+2012-07-09 11:04:09 Error: [FatalErrorException] syntax error, unexpected '}'
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 47)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 47, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 47, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2012-07-09 11:17:38 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\xampp\htdocs\letsplay5\app\View\Users\index.ctp, line 17]
+2012-07-09 11:17:38 Error: [FatalErrorException] syntax error, unexpected '}'
+#0 C:\xampp\htdocs\letsplay5\lib\Cake\Error\ErrorHandler.php(162): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\xampp\htdocs...', 17, Array)
+#2 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(926): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\xampp\htdocs...', 17, Array)
+#3 C:\xampp\htdocs\letsplay5\lib\Cake\Core\App.php(899): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

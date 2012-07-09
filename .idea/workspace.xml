@@ -28,7 +28,7 @@
       <file leaf-file-name="navigation.ctp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/View/Elements/navigation.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="20" selection-start="326" selection-end="326" vertical-scroll-proportion="-5.230769">
+            <state line="8" column="14" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -37,7 +37,7 @@
       <file leaf-file-name="GamesController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/GamesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="3.9230769">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -46,31 +46,31 @@
       <file leaf-file-name="PagesController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Controller/PagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.ctp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.ctp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/View/Users/index.ctp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="12" selection-start="674" selection-end="674" vertical-scroll-proportion="0.34987894">
+            <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="-0.0">
               <folding>
-                <marker date="1341822934673" expanded="true" signature="682:752" placeholder="..." />
-                <marker date="1341822934673" expanded="true" signature="682:753" placeholder="..." />
-                <marker date="1341822934673" expanded="true" signature="727:752" placeholder="..." />
-                <marker date="1341822934673" expanded="true" signature="1267:1306" placeholder="..." />
-                <marker date="1341822934673" expanded="true" signature="1720:1733" placeholder="..." />
+                <marker date="1341825611314" expanded="true" signature="107:186" placeholder="..." />
+                <marker date="1341825611314" expanded="true" signature="120:186" placeholder="..." />
+                <marker date="1341825611314" expanded="true" signature="134:137" placeholder="..." />
+                <marker date="1341825611314" expanded="true" signature="757:982" placeholder="..." />
+                <marker date="1341825611314" expanded="true" signature="939:982" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AppController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Controller/AppController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+            <state line="141" column="0" selection-start="3666" selection-end="3666" vertical-scroll-proportion="2.4719903">
               <folding />
             </state>
           </provider>
@@ -113,7 +113,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="width" value="1514" />
+    <option name="width" value="1688" />
     <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -386,8 +386,8 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="project.propVCSSupport.VCSs.Git" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -441,14 +441,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1514" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="1688" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19146006" sideWeight="0.956278" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17343174" sideWeight="0.956278" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -521,51 +521,37 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/webroot/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/webroot/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/View/Pages/faq.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/View/Users/view.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="280" selection-end="280" vertical-scroll-proportion="-7.8461537">
-          <folding />
-        </state>
+        <state line="12" column="13" selection-start="280" selection-end="280" vertical-scroll-proportion="-7.8461537" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Test/Case/Controller/GamesControllerTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Test/Case/Controller/GroupsControllerTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/User.php">
@@ -591,28 +577,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Controller/GameApiController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.0375302">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-2.0375302" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/View/Elements/navigation.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="20" selection-start="326" selection-end="326" vertical-scroll-proportion="-5.230769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controller/AppController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Controller/GamesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="3.9230769">
+        <state line="8" column="14" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -626,14 +596,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/View/Users/index.ctp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="12" selection-start="674" selection-end="674" vertical-scroll-proportion="0.34987894">
+        <state line="0" column="19" selection-start="19" selection-end="19" vertical-scroll-proportion="-0.0">
           <folding>
-            <marker date="1341822934673" expanded="true" signature="682:752" placeholder="..." />
-            <marker date="1341822934673" expanded="true" signature="682:753" placeholder="..." />
-            <marker date="1341822934673" expanded="true" signature="727:752" placeholder="..." />
-            <marker date="1341822934673" expanded="true" signature="1267:1306" placeholder="..." />
-            <marker date="1341822934673" expanded="true" signature="1720:1733" placeholder="..." />
+            <marker date="1341825611314" expanded="true" signature="107:186" placeholder="..." />
+            <marker date="1341825611314" expanded="true" signature="120:186" placeholder="..." />
+            <marker date="1341825611314" expanded="true" signature="134:137" placeholder="..." />
+            <marker date="1341825611314" expanded="true" signature="757:982" placeholder="..." />
+            <marker date="1341825611314" expanded="true" signature="939:982" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controller/GamesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Controller/AppController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="0" selection-start="3666" selection-end="3666" vertical-scroll-proportion="2.4719903">
+          <folding />
         </state>
       </provider>
     </entry>
