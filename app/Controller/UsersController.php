@@ -8,7 +8,8 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 	
 	public function isAuthorized($user) {
-		var_dump($user);
+		return true;
+		
 		switch($user['Group']['name']) {
 			case 'Moderator':
 				if(in_array($this->request->params['action'], array("delete", "edit", "add")))
@@ -24,7 +25,7 @@ class UsersController extends AppController {
 					if(isset($this->request->params['pass'][0]) && $this->request->params['pass'][0] == $user['id'])
 						return true;
 				
-			case 'Gast':
+			case 'Anonymous':
 				if(in_array($this->request->params['action'], array("login", "index", "view", "add")))
 					return true;
 				break;
@@ -182,15 +183,13 @@ function initDB() {
 	}
 
 	public function login() {
-		if($this->Auth->user()) {
-			$this->redirect($this->Auth->redirect());
-		}
-		
-		
-		if ($this->request->is('post')) {
-			var_dump(AuthComponent::password($this->data['User']['password']));
+		if($this->request->is('post')) {
+			if($this->isGast())
+				$this->Auth->logout();
+			else 
+				$this->redirect($this->Auth->redirect());
+			
 			if ($this->Auth->login()) {
-				
 				$this->redirect($this->Auth->redirect());
 			} else {
 				$this->Session->setFlash(__('Your username or password was incorrect.'));

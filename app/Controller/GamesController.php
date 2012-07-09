@@ -11,6 +11,8 @@ class GamesController extends AppController {
 	
 	
 	public function isAuthorized($user) {
+		var_dump($user);
+		
 		switch($user['Group']['name']) {
 			case 'Moderator':
 			case 'Registered':

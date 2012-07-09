@@ -57,7 +57,6 @@
 <body ng-app="app">
 	<div id="wrapper">
 			<?php 
-			
 			if($isGast)
 				echo $this->element('userlogin');
 			else

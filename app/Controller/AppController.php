@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Application level Controller
  *
@@ -71,15 +71,16 @@ class AppController extends Controller {
             'password' =>'password' //The password field 
         ); 
 		
+		if($this->Auth->user()){
+			
+		}
+		
 		if($this->isGast()) 
 			$this->set('isGast', true);
 		else
 			$this->set('isGast', false);
 		
 		$this->set('currentUser', $this->currentUser());
-		//$this->Auth->login($this->currentUser());
-		
-		//var_dump($this->currentUser());
     }
 	
 	public function isAuthorized($user) {
@@ -112,8 +113,8 @@ class AppController extends Controller {
 				$def['created'] = $session->read('gast.created');
 				$def['modified'] = $session->read('gast.modified');
 			}
-				
-			return $this->Gast->create($def);
+			$ret = $this->Gast->create($def);
+			return $ret['Gast'];
 		}
 		
 		return false;
@@ -121,18 +122,25 @@ class AppController extends Controller {
 	
 	/* current user (gast will appear as NULL in the db)*/
 	public function currentUser() {
-		if($user = $this->Auth->user())
+		if($user = $this->Auth->user()) {
+			var_dump("auth: ", $user);
+			echo '<br /> <br />';
 			return $user;
-		
+		}
 		if(!$this->_currentUser) {
 			$this->_currentUser = $this->createGast();
+			$this->Auth->login($this->_currentUser);
 		}
 		
 		return $this->_currentUser;
 	}
 	
 	public function isGast() {
-		return is_null($this->Auth->user());
+		$user = $this->currentUser();
+		//var_dump($user);
+		if($user['group_id'] == 4)
+			return true;
+		return false;
 	}
 	
 }

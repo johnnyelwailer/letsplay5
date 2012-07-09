@@ -17,7 +17,7 @@ Class Gast extends User {
 		$date = date('Y-m-d H:i:s');
 		
 		$def = array(
-			'username' => 'Gast',
+			'username' => 'Anonymous',
 			'email' => NULL,
 			'isGast' => 1,
 			'isMale' => 1,
@@ -30,10 +30,11 @@ Class Gast extends User {
 			'modified' => $date
 		);
 		
+		//var_dump($def);
 		if(is_array($data)) {
 			array_merge($def, $data);
 		}
 		
-		return parent::create($def, $somethingElse = false);
+		return parent::create($def, $somethingElse);
 	}
 }
