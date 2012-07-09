@@ -64,6 +64,14 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
                 };
 				
                 scope.$watch('selecteddate', function (date, oldDate) {
+					if( !isFinite(date)) {
+						if (isFinite(oldDate)) {
+							scope.selecteddate = oldDate;
+						}
+						
+						return;
+					}
+					
                     var monthsdiff = date.getMonthDate().valueOf() - oldDate.getMonthDate().valueOf();
 
                     $element.removeClass('slidein-from-right slidein-from-left');
@@ -167,7 +175,7 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
 				});
 			}).blur(function(){
 				$timeout(function() {
-					if (document.activeElement != document.body) {
+					if (document.activeElement != document.body && $element.has($(document.activeElement)).length == 0) {
 						scope.$apply(function() {
 							scope.show = false;
 						});
