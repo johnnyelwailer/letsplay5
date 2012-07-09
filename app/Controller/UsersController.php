@@ -8,8 +8,6 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 	
 	public function isAuthorized($user) {
-		return true;
-		
 		switch($user['Group']['name']) {
 			case 'Moderator':
 				if(in_array($this->request->params['action'], array("delete", "edit", "add")))
@@ -37,55 +35,6 @@ class UsersController extends AppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
 	}
-/*
-function initDB() {
-	$group = $this->User->Group;
-    //set up admin
-    $group->id = 1;
-    $this->Acl->allow($group, 'controllers');
-	
-	//set up moderator
-	$group->id = 2;
-	$this->Acl->allow($group, 'controllers/Games/delete');
-	$this->Acl->allow($group, 'controllers/Users/add');
-	$this->Acl->allow($group, 'controllers/Users/delete');
-	$this->Acl->allow($group, 'controllers/Users/delete');
-	$this->Acl->allow($group, 'controllers/Pages');
-	$this->Acl->allow($group, 'controllers/Games/play');
-	$this->Acl->allow($group, 'controllers/Games/index');
-	$this->Acl->allow($group, 'controllers/Games/view');
-	$this->Acl->allow($group, 'controllers/Users/view');
-	$this->Acl->allow($group, 'controllers/Users/index');
-	
-	//set up user
-	$group->id = 3;
-	
-	$this->Acl->allow($group, 'controllers/Games/play');
-	$this->Acl->allow($group, 'controllers/Games/index');
-	$this->Acl->allow($group, 'controllers/Games/view');
-	$this->Acl->allow($group, 'controllers/Users/view');
-	$this->Acl->allow($group, 'controllers/Users/index');
-	$this->Acl->allow($group, 'controllers/Pages');
-	$this->Acl->allow($group, 'controllers/Games/play');
-	$this->Acl->allow($group, 'controllers/Games/index');
-	$this->Acl->allow($group, 'controllers/Games/view');
-	$this->Acl->allow($group, 'controllers/Users/view');
-	$this->Acl->allow($group, 'controllers/Users/index');
-	
-	//set up gasts
-	$group->id = 4;
-	
-	$this->Acl->allow($group, 'controllers/Pages');
-	$this->Acl->allow($group, 'controllers/Games/play');
-	$this->Acl->allow($group, 'controllers/Games/index');
-	$this->Acl->allow($group, 'controllers/Games/view');
-	$this->Acl->allow($group, 'controllers/Users/view');
-	$this->Acl->allow($group, 'controllers/Users/index');
-	
-	//we add an exit to avoid an ugly "missing views" error message
-    echo "all done";
-    exit;
-	}*/
 
     public $components = array('RequestHandler');
 /**

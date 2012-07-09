@@ -16,13 +16,15 @@ Class Gast extends User {
 	public function create($data = null, $somethingElse = false) {
 		$date = date('Y-m-d H:i:s');
 		
+		$groups = $this->Group->read(null, 4);
+		
 		$def = array(
 			'username' => 'Anonymous',
 			'email' => NULL,
 			'isGast' => 1,
 			'isMale' => 1,
 			'group_id' => 4,
-			'Group' => $this->Group->read(null, 4),
+			'Group' => $groups['Group'],
 			'password' => NULL,
 			'storePassword' => NULL,
 			'status' => 0,
@@ -32,9 +34,10 @@ Class Gast extends User {
 		
 		//var_dump($def);
 		if(is_array($data)) {
-			array_merge($def, $data);
+			$def = array_merge($def, $data);
 		}
 		
-		return parent::create($def, $somethingElse);
+		$ret = parent::create($def, $somethingElse);
+		return array_merge($def, $ret['Gast']);
 	}
 }

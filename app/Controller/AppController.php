@@ -114,7 +114,7 @@ class AppController extends Controller {
 				$def['modified'] = $session->read('gast.modified');
 			}
 			$ret = $this->Gast->create($def);
-			return $ret['Gast'];
+			return $ret;
 		}
 		
 		return false;
@@ -123,12 +123,13 @@ class AppController extends Controller {
 	/* current user (gast will appear as NULL in the db)*/
 	public function currentUser() {
 		if($user = $this->Auth->user()) {
-			var_dump("auth: ", $user);
-			echo '<br /> <br />';
 			return $user;
 		}
+		
+		
 		if(!$this->_currentUser) {
 			$this->_currentUser = $this->createGast();
+			
 			$this->Auth->login($this->_currentUser);
 		}
 		
