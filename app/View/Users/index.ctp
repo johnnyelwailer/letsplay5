@@ -22,14 +22,12 @@
 	    <tbody>
 	        <?php
 	            foreach ($users as $user) {
-                    echo var_dump($user);
-                    echo var_dump($users);
             ?>
 
                     <tr>
 
 		                <td><?php echo h($user['User']['id']); ?>&nbsp;</td>
-		                <td><?php echo h($user['User']['name']); ?>&nbsp;</td>
+		                <td><?php echo h($user['User']['username']); ?>&nbsp;</td>
 
                             <?php
                                 echo "<td>". h($user['Group']['name']). "&nbsp"."</td>";

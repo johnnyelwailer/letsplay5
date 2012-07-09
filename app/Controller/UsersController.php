@@ -7,7 +7,7 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 	
-	public $uses = array('Group', 'User');
+	public $uses = array('User', 'Group');
 
 	
 	public function isAuthorized($user) {
