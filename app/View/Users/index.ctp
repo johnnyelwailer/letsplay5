@@ -50,7 +50,7 @@
 						$last_access = time() - strtotime($user['User']['last_access']);
 						
 						$img = $last_access < $timeout ? 'inactive.png' : 'active.png';
-						$desc = $last_access < $timeout ? __('The was terminated') : __('The game is still running');
+						$desc = $last_access < $timeout ? __('Offline') : __('Online');
 						
 						echo $this->Html->image($img, array('alt' => $desc)); ?></td>
 							

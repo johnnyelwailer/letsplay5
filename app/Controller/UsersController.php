@@ -13,8 +13,15 @@ class UsersController extends AppController {
 	public function isAuthorized($user) {
 		switch($user['Group']['name']) {
 			case 'Moderator':
-				if(in_array($this->request->params['action'], array("delete", "edit", "add")))
+				if(in_array($this->request->params['action'], array("add")))
 					return true;
+				
+				//only allowed if the other user is no admin or moderator
+				if(in_array($this->request->params['action'], array("delete", "edit"))) {
+					 $data = $this->User->findById($this->request->params['pass'][0]);
+					 if($data['Group']['name'] == 'Registered')
+						return true;
+				}
 			case 'Registered':
 				if(in_array($this->request->params['action'], array("add")))
 					return false;
