@@ -14,7 +14,7 @@ class GroupsController extends AppController {
 	
 	
 	public function isAuthorized($user) {
-		return parent::isAuthorized($user)
+		return parent::isAuthorized($user);
 	}
 	
 	
@@ -26,13 +26,12 @@ class GroupsController extends AppController {
         ));
     }
 	
-/**
+ /**
  * Scaffold
  *
  * @var mixed
  */
 	public $scaffold;
-
 
 
 }
