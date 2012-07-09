@@ -5,12 +5,11 @@ App::uses('AppController', 'Controller');
  *
  * @property Game $Game
  * @property Turn $Turn
+ * @property WaitingForGame $WaitingForGame
  */
 class GameApiController extends AppController {
 
     public $components = array('RequestHandler');
-
-    public static $usersAwaitingGame = array();
 
     public function isAuthorized($user) {
         /*switch($user['Group']['name']) {
@@ -43,34 +42,56 @@ class GameApiController extends AppController {
     public function makeMatch() {
         $this->loadModel('Game');
         $this->loadModel('User');
+        $this->loadModel('WaitingForGame');
 
         $user = $this->currentUser();
 
-        $existing =  $usersAwaitingGame[$user['User']['id']];
+        $existingByUser = $this->WaitingForGame->findByUserId($user['id']);
+        $existingByUser = isset($existingByUser) ? $existingByUser['WaitingForGame'] : null;
 
-        if ($existing['Game'] != null) {
+        if (isset($existingByUser)) {
+
+            //game created, ready to rumble!
+            if (isset($existingByUser['Game'])) {
+                $this->set(array(
+                    'game' => $existingByUser['Game'],
+                    '_serialize' => array('game')
+                ));
+
+                $this->WaitingForGame->delete($existingByUser);
+                return;
+            }
+
+            //waiting on
             $this->set(array(
-                'game' => $existing,
+                'await' => $existingByUser,
+                '_serialize' => array('await')
+            ));
+            return;
+        }
+
+        $matching =  $this->WaitingForGame->find('first',
+            array('conditions' =>
+                array(
+                    'NOT' => array(
+                        'user_id' => $user['id']),
+                    'game_id' => null)));
+
+        $matching = isset($matching) ? $matching['WaitingForGame'] : null;
+
+        if (isset($matching)) {
+            $game = $this->Game->save(array('challenger_id' => $user['id'],'opponent_id' => $matching['User']['id'],'winner_id' => null));
+            $this->WaitingForGame->save(array('game_id' => $game['Game']['id']));
+            $this->set(array(
+                'game' => $matching,
                 '_serialize' => array('game')
             ));
-
-            unset($usersAwaitingGame[$user['User']['id']]);
             return;
         }
-
-        $awaitingUser = reset($usersAwaitingGame);
-        if ($awaitingUser == null) {
-            $usersAwaitingGame[$user['User']['id']] = $user;
-            return;
-        }
-
-        $game = $this->Game->save(array('challenger_id' => $user['User']['id'],'opponent_id' => $awaitingUser['User']['id'],'winner_id' => null));
-
-        $usersAwaitingGame[$awaitingUser['User']['id']] = $game;
 
         $this->set(array(
-            'game' => $game,
-            '_serialize' => array('game')
+            'await' => 'noting found',
+            '_serialize' => array('await')
         ));
     }
 

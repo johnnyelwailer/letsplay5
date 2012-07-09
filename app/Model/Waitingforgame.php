@@ -4,6 +4,7 @@ App::uses('AppModel', 'Model');
  * Waitingforgame Model
  *
  * @property User $User
+ * @property Game $Game
  * @property Session $Session
  */
 class Waitingforgame extends AppModel {
@@ -20,6 +21,13 @@ class Waitingforgame extends AppModel {
 		'User' => array(
 			'className' => 'User',
 			'foreignKey' => 'user_id',
+			'conditions' => '',
+			'fields' => '',
+			'order' => ''
+		),
+		'Game' => array(
+			'className' => 'Game',
+			'foreignKey' => 'game_id',
 			'conditions' => '',
 			'fields' => '',
 			'order' => ''

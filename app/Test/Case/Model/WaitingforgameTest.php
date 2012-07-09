@@ -15,6 +15,9 @@ class WaitingforgameTest extends CakeTestCase {
 	public $fixtures = array(
 		'app.waitingforgame',
 		'app.user',
+		'app.group',
+		'app.game',
+		'app.turn',
 		'app.session'
 	);
 

@@ -180,9 +180,11 @@ CREATE TABLE IF NOT EXISTS `waitingforgames` (
   `user_id` int(11) NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
+  `game_id` INT NULL,
   `session_id` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_waitingForGames_users1` (`user_id`),
+  KEY `fk_waitingForGames_games1` (`game_id`),
   KEY `fk_waitingForGames_cake_sessions1` (`session_id`)
 ) ENGINE=MEMORY DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
