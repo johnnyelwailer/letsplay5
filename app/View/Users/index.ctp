@@ -26,7 +26,6 @@
 	    <tbody>
 	        <?php
 	            foreach ($users as $user) {
-				var_dump($user);
 				?>
 					<?php
 					if($currentUser["Group"]["name"]=="Administrator"){

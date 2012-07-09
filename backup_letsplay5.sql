@@ -118,6 +118,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
 
 -- --------------------------------------------------------
 
+/*
 --
 -- Tabellenstruktur für Tabelle `sessions`
 --
@@ -128,6 +129,9 @@ CREATE TABLE IF NOT EXISTS `cake_sessions` (
   `expires` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+*/
+
+
 
 -- --------------------------------------------------------
 
@@ -164,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `isMale` tinyint(4) DEFAULT '1',
   `group_id` int(11) NOT NULL,
   `storePassword` tinyint(4) DEFAULT NULL,
-  `status` tinyint(4) DEFAULT 0,
+  `last_access` DATETIME DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_users_groups` (`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;

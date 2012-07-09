@@ -16,12 +16,14 @@ class User extends AppModel {
 	
 	//this encrypt the passwort
 	public function beforeSave() {
-	
         if (isset($this->data[$this->alias]['password'])) {
 			$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
 		}
     }
 	
+	public function node() {
+		var_dump("User.node");
+	}
 	
 	/*
 	What this does, is tie the Group and User models to the Acl, 

@@ -36,7 +36,7 @@
  */
 
 App::uses('Controller', 'Controller');
-
+App::uses('DatabaseSession', 'Model/Datasource/Session');
 /**
  * Application Controller
  *
@@ -47,6 +47,8 @@ App::uses('Controller', 'Controller');
  * @link http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	var $uses = array('User');
+	
 	public $components = array(
         /*'Acl',
         'Auth' => array(
@@ -65,22 +67,23 @@ class AppController extends Controller {
 	private $_currentUser = null;
 	
 	public function beforeFilter() {
+		parent::beforeFilter();
 		
 		$this->Auth->fields  = array( 
             'username'=>'username', //The field the user logs in with (eg. username) 
             'password' =>'password' //The password field 
-        ); 
+        );
 		
-		if($this->Auth->user()){
-			
-		}
+		$user = $this->currentUser();
+		$this->set('currentUser', $user);
 		
 		if($this->isGast()) 
 			$this->set('isGast', true);
-		else
+		else {
 			$this->set('isGast', false);
-		
-		$this->set('currentUser', $this->currentUser());
+			$this->User->id = $user['id'];
+			$this->User->saveField('last_access', date('Y-m-d H:i:s'));
+		}
     }
 	
 	public function isAuthorized($user) {
@@ -126,7 +129,6 @@ class AppController extends Controller {
 			return $user;
 		}
 		
-		
 		if(!$this->_currentUser) {
 			$this->_currentUser = $this->createGast();
 			
@@ -138,7 +140,6 @@ class AppController extends Controller {
 	
 	public function isGast() {
 		$user = $this->currentUser();
-		//var_dump($user);
 		if($user['group_id'] == 4)
 			return true;
 		return false;
