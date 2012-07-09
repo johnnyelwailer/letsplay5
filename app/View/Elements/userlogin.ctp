@@ -1,6 +1,9 @@
 ﻿<div id="user-form">
-	<?php 
+	<?php
+
+    //session begings
 	echo $this->Session->flash('auth');
+
 	echo $this->Form->create('User',
 		array(
 			'url' => array(
@@ -8,13 +11,25 @@
 				'action' => 'login'
 			)
 		)
-	); 
-	
-	echo $this->Form->input('username');
+	);
+
+
+    echo $this->Form->input('username');
     echo $this->Form->input('password');
-		
-	echo $this->Form->end(__('Login'));
-	
+
+    //image as button
+    echo $this->Form->submit('/img/login.png');
+
+
+    echo $this->html->image("Login");
+
+
+
+    //echo $this->form->end('Login');
+
+
+
+
 	echo $this->Html->link('Registrieren', array(
 		"controller" => "users",
 		"action" => "add")
