@@ -188,9 +188,9 @@
 
 <div ng-app="app">
     <div ng-controller="UserViewModel">
-		<calendar selecteddate="date" ></calendar>
-        <p>date: ({{date}})</p>
-
+		<calendar selecteddate="date" selecteddates="dates" ></calendar>
+        <p>date: ({{date | date}})</p>
+		<p>dates: <span ng-repeat="d in dates" style="padding: 5px">{{d | date}}</span></p>
         <div><input calendar value="hello" selecteddate="date" /></div>
 
         <input id="what"/>
@@ -207,7 +207,7 @@
     function UserViewModel($scope) {
 
         $scope.date = new Date;
-
+		$scope.dates = [];
     }
 </script>
 </body>

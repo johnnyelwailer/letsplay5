@@ -2,7 +2,7 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
     return {
         restrict: 'EA',
         replace: false,
-        scope: { selecteddate: '=' },
+        scope: { selecteddate: '=', selecteddates: '=' },
         compile: function ($place, att) {
             var template =
                 '<div class="calendar">' +
@@ -25,7 +25,7 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
                             '<div class="days">' +
                                 '<div class="day" ng-repeat="day in currentMonth.days"' +
 								'                 ng-class="{today: isToday(day), \'other-month\': !isCurrentMonth(day)}"' +
-                                '                 aria-selected="{{day.getDayDate().valueOf() == selecteddate.getDayDate().valueOf()}}"' +
+                                '                 aria-selected="{{isSelected(day)}}"' +
                                 '                 ng-click="select(day)">' +
                                    '{{day.getDate()}}' +
                                 '</div>' +
@@ -58,9 +58,27 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
                 scope.prevMonth = function () {
                     scope.selecteddate = scope.selecteddate.addMonths(-1);
                 };
+				
+				scope.isSelected = function(date) {
+					var datevalue = date.getDayDate().valueOf();
+					if (scope.selecteddates != null) {
+						return scope.selecteddates.indexOf(datevalue) != -1;
+					}
+					
+					return scope.selecteddate.getDayDate().valueOf() == datevalue;
+				};
 
                 scope.select = function (date) {
                     scope.selecteddate = date;
+					var datevalue = date.getDayDate().valueOf();
+					
+					if (scope.selecteddates == null) return;
+					if (scope.selecteddates.indexOf(datevalue) != -1) {
+						scope.selecteddates.remove(datevalue);
+					}
+					else {
+						scope.selecteddates.push(datevalue);
+					}
                 };
 				
                 scope.$watch('selecteddate', function (date, oldDate) {

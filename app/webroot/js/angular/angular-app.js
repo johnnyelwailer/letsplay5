@@ -53,6 +53,15 @@ Array.range = function (min, max, selector) {
     return Array(max-min).join().split(',').map(function(e, i) { return selector(min+i); });
 }
 
+Array.prototype.remove = curryIdentity(Array.remove = function (array, value) {
+	var index = array.indexOf(value);
+	if (index >=0) {
+		array.splice(index, 1);
+	}
+	return value;
+});
+
+
 Array.generate = function(fn) {
     var current = null, i = 0, result = [];
     fn (0, null);
