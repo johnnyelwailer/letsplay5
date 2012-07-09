@@ -22,7 +22,12 @@ class UsersController extends AppController {
 				if(in_array($this->request->params['action'], array("logout")))
 					return true;
 				
+				//allowed to edit/delete own profile
 				if($this->request->params['action'] ==  "edit")
+					if(isset($this->request->params['pass'][0]) && $this->request->params['pass'][0] == $user['id'])
+						return true;
+				
+				if($this->request->params['action'] ==  "delete")
 					if(isset($this->request->params['pass'][0]) && $this->request->params['pass'][0] == $user['id'])
 						return true;
 				

@@ -6,10 +6,14 @@
 	        <tr>
 	            <th><?php echo $this->Paginator->sort('id'); ?></th>
 		        <th><?php echo $this->Paginator->sort('username'); ?></th>
-
+				<th><?php echo $this->Paginator->sort('status'); ?></th>
+				
+				
+				<?php  if($currentUser["Group"]["name"]=="Administrator" OR $currentUser["Group"]["name"]=="Moderator") { ?>
+				<th><?php echo $this->Paginator->sort('group_id'); ?></th>
+				<?php } ?>
+				
                 <?php
-
-                    echo "<th>".$this->Paginator->sort('group_id')."</th>";
                     if($currentUser["Group"]["name"]=="Administrator"){
                         echo "<th>".$this->Paginator->sort('created')."</th>";
                         echo "<th>".$this->Paginator->sort('modified')."</th>";
@@ -22,20 +26,39 @@
 	    <tbody>
 	        <?php
 	            foreach ($users as $user) {
-            ?>
-
-                    <tr>
-
-		                <td><?php echo h($user['User']['id']); ?>&nbsp;</td>
-		                <td><?php echo h($user['User']['username']); ?>&nbsp;</td>
-
+				var_dump($user);
+				?>
+					<?php
+					if($currentUser["Group"]["name"]=="Administrator"){
+                    ?>
+					<tr>
+					<?php
+					}else {
+					?>
+					<tr onclick="window.location='<?php echo $this->Html->url(array(
+							"controller" => "users",
+							"action" => "view",
+							$user['User']['id']
+							)); ?>'">
+					<?php
+					}
+					?>
+		                <td><?php echo h($user['User']['id']); ?></td>
+		                <td><?php echo h($user['User']['username']); ?></td>
+						<td><?php $img = $user['User']['is_active'] ? 'inactive.png' : 'active.png';
+						$desc = $game['Game']['terminated'] ? __('The was terminated') : __('The game is still running');
+						
+						echo $this->Html->image($img, array('alt' => $desc)); ?></td>
+							
                             <?php
-                                echo "<td>". h($user['Group']['name']). "&nbsp"."</td>";
-
+								if($currentUser["Group"]["name"]=="Administrator" OR $currentUser["Group"]["name"]=="Moderator") {
+									echo "<td>", h($user['Group']['name']), "</td>";
+								}
+								
                                 //if the group is administrator
                                 if($currentUser["Group"]["name"]=="Administrator"){
-                                    echo "<td>". h($user['User']['created']). "&nbsp"."</td>";
-                                    echo "<td>". h($user['User']['modified']). "&nbsp"."</td>";
+                                    echo "<td>". $this->Time->nice($user['User']['created']), "</td>";
+                                    echo "<td>". $this->Time->nice($user['User']['modified']), "</td>";
 
                                     //create delete view
                                     echo '<td class="actions">';

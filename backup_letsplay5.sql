@@ -122,7 +122,7 @@ CREATE TABLE IF NOT EXISTS `groups` (
 -- Tabellenstruktur für Tabelle `sessions`
 --
 
-CREATE TABLE IF NOT EXISTS `sessions` (
+CREATE TABLE IF NOT EXISTS `cake_sessions` (
   `id` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
   `data` text COLLATE utf8_bin,
   `expires` int(11) DEFAULT NULL,
