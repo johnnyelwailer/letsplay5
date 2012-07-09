@@ -10,6 +10,8 @@ class GameApiController extends AppController {
 
     public $components = array('RequestHandler');
 
+    public static $usersAwaitingGame = array();
+
     public function isAuthorized($user) {
         /*switch($user['Group']['name']) {
             case 'Moderator':
@@ -42,19 +44,29 @@ class GameApiController extends AppController {
         $this->loadModel('Game');
         $this->loadModel('User');
 
-        $creator = $this->User->find('first');
-        $existing = $this->Game->find('first');
+        $user = $this->currentUser();
 
-        if ($existing != null) {
+        $existing =  $usersAwaitingGame[$user['User']['id']];
+
+        if ($existing['Game'] != null) {
             $this->set(array(
                 'game' => $existing,
                 '_serialize' => array('game')
             ));
 
+            unset($usersAwaitingGame[$user['User']['id']]);
             return;
         }
 
-        $game = $this->Game->save(array('challenger_id' => $creator['User']['id'],'opponent_id' => null,'winner_id' => null));
+        $awaitingUser = reset($usersAwaitingGame);
+        if ($awaitingUser == null) {
+            $usersAwaitingGame[$user['User']['id']] = $user;
+            return;
+        }
+
+        $game = $this->Game->save(array('challenger_id' => $user['User']['id'],'opponent_id' => $awaitingUser['User']['id'],'winner_id' => null));
+
+        $usersAwaitingGame[$awaitingUser['User']['id']] = $game;
 
         $this->set(array(
             'game' => $game,
