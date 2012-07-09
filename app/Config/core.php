@@ -173,7 +173,8 @@ Configure::write('Routing.prefixes', array('admin/user'));
  *
  */
 	Configure::write('Session', array(
-		'defaults' => 'php'
+		'defaults' => 'php',
+		'timeout' => 1440
 	));
 
 /**

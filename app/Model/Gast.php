@@ -29,7 +29,8 @@ Class Gast extends User {
 			'storePassword' => NULL,
 			'status' => 0,
 			'created' => $date,
-			'modified' => $date
+			'modified' => $date,
+			'last_addess' => $date
 		);
 		
 		//var_dump($def);

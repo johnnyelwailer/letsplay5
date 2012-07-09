@@ -36,7 +36,7 @@
  */
 
 App::uses('Controller', 'Controller');
-App::uses('DatabaseSession', 'Model/Datasource/Session');
+
 /**
  * Application Controller
  *

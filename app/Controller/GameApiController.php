@@ -42,7 +42,7 @@ class GameApiController extends AppController {
     public function makeMatch() {
         $this->loadModel('Game');
         $this->loadModel('User');
-        $this->loadModel('WaitingForGame');
+		$this->loadModel('WaitingForGame');
 
         $user = $this->currentUser();
         //var_dump('user', $user);

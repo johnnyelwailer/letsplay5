@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `isMale` tinyint(4) DEFAULT '1',
   `group_id` int(11) NOT NULL,
   `storePassword` tinyint(4) DEFAULT NULL,
-  `last_access` DATETIME DEFAULT NULL,
+  `last_access` DATETIME DEFAULT '2000-01-01 00:00:00', -- some date from the past
   PRIMARY KEY (`id`),
   KEY `fk_users_groups` (`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;

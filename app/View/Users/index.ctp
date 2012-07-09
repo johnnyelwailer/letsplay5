@@ -44,8 +44,13 @@
 					?>
 		                <td><?php echo h($user['User']['id']); ?></td>
 		                <td><?php echo h($user['User']['username']); ?></td>
-						<td><?php $img = $user['User']['is_active'] ? 'inactive.png' : 'active.png';
-						$desc = $game['Game']['terminated'] ? __('The was terminated') : __('The game is still running');
+						<td><?php 
+						
+						$timeout = Configure::read('Session.timeout')*60;
+						$last_access = time() - strtotime($user['User']['last_access']);
+						
+						$img = $last_access < $timeout ? 'inactive.png' : 'active.png';
+						$desc = $last_access < $timeout ? __('The was terminated') : __('The game is still running');
 						
 						echo $this->Html->image($img, array('alt' => $desc)); ?></td>
 							
