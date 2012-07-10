@@ -55,29 +55,37 @@
 	?>
 </head>
 <body ng-app="app">
-	<div id="wrapper">
-			<div id="login-bar">
-			<?php 
-			if($isGast)
-				echo $this->element('userlogin');
-			else
-                echo $this->element('userlogout',array('user'=>$currentUser));
+    <?php echo
+        //input of the logo
+        $this->html->image("/img/logo.png", array("alt" => "logo","id" => "logo"));
+    ?>
+
+
+
+
+    <div id="wrapper">
+		<div id="login-bar">
+			<?php
+			    if($isGast)
+				    echo $this->element('userlogin');
+			    else
+				    echo $this->element('userlogout',array('user'=>$currentUser));
 			?>
-			</div>
+		</div>
 			
 			
-			<?php echo $this->element('navigation'); ?>
-			<?php echo $this->Session->flash(); ?>
+		<?php echo $this->element('navigation'); ?>
+		<?php echo $this->Session->flash(); ?>
 			
-			<div id="content">
-				<?php echo $this->fetch('content'); ?>
-			</div>
+		<div id="content">
+			<?php echo $this->fetch('content'); ?>
+		</div>
 			
-			<?php 
+		<?php
 			
 			//echo $this->element('sql_dump');
 			
-			?>
+		?>
 	</div>
 </body>
 </html>
