@@ -1,5 +1,5 @@
 <?php
-/**
+    /**
  *
  * PHP 5
  *
@@ -16,32 +16,39 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  * @var $this View
  */
-if (Configure::read('debug') == 0):
-	throw new NotFoundException();
-endif;
-App::uses('Debugger', 'Utility');
+        if (Configure::read('debug') == 0):
+	        throw new NotFoundException();
+        endif;
+        App::uses('Debugger', 'Utility');
 ?>
 
 <h1>
-Wir begr&uuml;ssen dich auf unserer 5Gewinnt Seite!
+    Wir begr&uuml;ssen dich auf unserer 5Gewinnt Seite!
 </h1>
 
 
 <p>
-Wir hoffen, dass wir dir das Spiel und alle zus&auml;tzlichen funktionen so angenehm wie m&ouml;glich gestalten konnten.
-Bei Fragen zur Bedienung kannst du gerne in unser <?php echo $this->Html->link(__('Benutzerhandbuch'), array('action' => 'Benutzerhandbuch', )); ?> schauen. 
-Falls sich das Problem bis dann noch nicht gel&ouml;st hat, k&ouml;nnte es dir weiterhelfen, wenn du einen Blick in die FAQ's wirfst.<br>
-Da werden g&auml;ngige Probleme mit ihren L&ouml;sungsvarianten beschrieben.
-Ansonsten w&uuml;nschen wir dir viel Spass & Erfolg beim Spielen und hoffen nat&uuml;rlich, dass du &uuml;ber das Spiel spannende & Interessante Gegner finden kannst.
+    Wir hoffen, dass wir dir das Spiel und alle zus&auml;tzlichen funktionen so angenehm wie m&ouml;glich gestalten konnten.
+    Bei Fragen zur Bedienung kannst du gerne in unser
+
+
+    <?php echo $this->Html->link(__('Benutzerhandbuch'), array('action' => 'Benutzerhandbuch', )); ?>
+
+
+    schauen.Falls sich das Problem bis dann noch nicht gel&ouml;st hat, k&ouml;nnte es dir weiterhelfen, wenn du einen Blick in die FAQ's wirfst.<br>
+    Da werden g&auml;ngige Probleme mit ihren L&ouml;sungsvarianten beschrieben.
+    Ansonsten w&uuml;nschen wir dir viel Spass & Erfolg beim Spielen und hoffen nat&uuml;rlich, dass du &uuml;ber das Spiel spannende & Interessante Gegner finden kannst.
 </p>
 <p>
-Wir hoffen, dass ihr Gefallen an unserer Seite findet und sind nat&uuml;rlich offen f&uuml;r Optimierungsvorschl&auml;ge.
-<h2>
-Ihr 5Gewinnt Team
-</h2>
+    Wir hoffen, dass ihr Gefallen an unserer Seite findet und sind nat&uuml;rlich offen f&uuml;r Optimierungsvorschl&auml;ge.
+    <h2>
+        Ihr 5Gewinnt Team
+    </h2>
 </p>
 <p>
-<img src="letsgo.png" width="368" height="383" alt="3..2..1..  Los gehts mit Zocken!">
-<img src="letsgo.png" width=120 height=130> 
+    <?php echo
+    //input of the logo
+        $this->html->image("/img/letsgo.png", array("alt" => "1.2.3 lets go","id" => "letsgo"));
+    ?>
 </p>
 

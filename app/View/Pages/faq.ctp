@@ -1,14 +1,14 @@
 <h1>
-FAQ'S
+    FAQ'S
 </h1>
 
 <p>
-hier finden sie die meist gestellten Fragen zu unserer Website:
+    hier finden sie die meist gestellten Fragen zu unserer Website:
 </p>
 
 <p>
-wie kann ich mich registrieren? <br>
-- Antwort
+    wie kann ich mich registrieren? <br>
+    - Antwort
 </p>
 
 <p>
