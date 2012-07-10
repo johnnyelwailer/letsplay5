@@ -73,16 +73,6 @@ h1{
 	font-size:16px;
 }
 
-
-/* layout containers 
-#main{
-	margin:auto;
-	height:100%;
-	width:100%;
-	
-	background-image: url('../images/background.png');
-}*/
-
 #background {
 	position: absolute;
 	left: 0px;
@@ -125,7 +115,6 @@ h1{
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
 }
 
-
 #navigation div.background {
 	background: url(../img/corn-toolbar.png);
 	position: absolute;
@@ -147,8 +136,6 @@ h1{
 #content > * {
 	margin:10px;
 }
-
-
 
 /*###############
     user view
@@ -181,4 +168,52 @@ h1{
 /*button declaration*/
 .users .submit{
     float: right;
+}
+
+
+/*###################
+    login bar on top
+#####################*/
+
+#login-bar .input {
+    display: inline-block;
+    margin: 0px 10px;
+
+    vertical-align: middle;
+}
+
+#login-bar a{
+    margin: 0px 10px;
+
+    vertical-align: middle;
+}
+
+#login-bar label{
+    margin: 0px 10px 0px 0px;
+
+    vertical-align: middle;
+}
+
+.submit{
+    display: inline-block;
+
+
+    margin: 0px 0px 0px 20px ;
+
+    vertical-align: middle;
+}
+
+/*###################
+    logout bar
+#####################*/
+#user-form .submit{
+    float:left;
+
+}
+
+#user-form h1{
+    font-size: 24px;
+    margin: 0px 100px
+
+
 }

@@ -16,5 +16,7 @@
     echo $this->Form->submit('/img/logout.png');
 	
 	echo $this->Form->end();
+
+    echo "<h1>".'Hallo '. $user['username']."</h1>" ;
 	?>
 </div>

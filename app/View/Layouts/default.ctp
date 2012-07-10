@@ -61,7 +61,7 @@
 			if($isGast)
 				echo $this->element('userlogin');
 			else
-				echo $this->element('userlogout');
+                echo $this->element('userlogout',array('user'=>$currentUser));
 			?>
 			</div>
 			
