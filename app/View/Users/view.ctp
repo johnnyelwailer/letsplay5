@@ -44,7 +44,7 @@
 		<dt><?php echo __('Status'); ?></dt>
 		<dd>
 			<?php
-			$timeout = Configure::read('Session.timeout')*60;
+			$timeout = Configure::read('Session.timeout');
 						$last_access = time() - strtotime($user['User']['last_access']);
 						
 						$img = $last_access < $timeout ? 'inactive.png' : 'active.png';

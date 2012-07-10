@@ -58,6 +58,10 @@ class UsersController extends AppController {
  * @return void
  */
 	public function index() {
+		if($this->request->is('post')) {
+		
+		}
+		
         $this->User->recursive = 0;
         $this->set('users', $this->paginate());
     }
