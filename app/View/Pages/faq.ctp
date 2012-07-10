@@ -28,6 +28,11 @@ Anhand von was werden die Spieler bewertet?<br>
 </p>
 
 <p>
+Was sind die Regeln von diesem Spiel?<br>
+- Die Spielregeln sind zu <?php echo $this->Html->link(__('Benutzerhandbuch'), array('action' => 'Benutzerhandbuch', )); ?>. finden
+</p>
+
+<p>
 Wie lange kann man ein pausiertes Spiel ge&ouml;ffnet lassen?<br>
 - 1 Woche
 </p>
