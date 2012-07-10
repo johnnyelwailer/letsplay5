@@ -58,12 +58,16 @@ class UsersController extends AppController {
  * @return void
  */
 	public function index() {
-		if($this->request->is('post')) {
+		$this->User->recursive = 0;
+		$users = null;
 		
+		if(isset($this->request->query['username'])) {
+			$users = $this->paginate('User', array('User.username LIKE' => '%'.$this->request->query['username'].'%'));
+		}else {
+			$users = $this->paginate();
 		}
 		
-        $this->User->recursive = 0;
-        $this->set('users', $this->paginate());
+        $this->set('users', $users);
     }
 
 /**
@@ -96,15 +100,28 @@ class UsersController extends AppController {
  * @return void
  */
 	public function add() {
+		$groups = $this->groups();
+		$user = $this->currentUser();
+		
+		//moderator cannot access admin group
+		if($user['Group']['name'] != 'Administrator')
+			unset($groups[1]);
 		$this->set('groups', $this->groups());
 		
-		$user = $this->currentUser();
+		
 		
 		if($this->request->is('post')) {
 			//$this->User->create();
+			
 			if($user['Group']['name'] != 'Administrator') {
-				//$this->request->data
+				if($user['Group']['name'] == 'Moderator') {
+					if(!in_array($this->request->data['User']['group_id'], array_keys($groups))){
+						$this->request->data['User']['group_id'] = 1;
+					}
+				}else
+					$this->request->data['User']['group_id'] = 1;
 			}
+			
 			
 			if($this->User->save($this->request->data)) {
 				$this->flash(__('User saved.'), array('action' => 'index'));
@@ -183,10 +200,12 @@ class UsersController extends AppController {
 		if (!$this->request->is('post')) {
 			throw new MethodNotAllowedException();
 		}
+		
 		$this->User->id = $id;
-		if (!$this->User->exists()) {
+		if(!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
+		
 		if ($this->User->delete()) {
 			$this->flash(__('User deleted'), array('action' => 'index'));
 		}
@@ -196,11 +215,13 @@ class UsersController extends AppController {
 
 	public function login() {
 		if($this->request->is('post')) {
+			//if the user is a gast, he is already active as "user" -> we need to log him out
 			if($this->isGast())
 				$this->Auth->logout();
-			else 
+			else //if no gast then redirect him
 				$this->redirect($this->Auth->redirect());
 			
+			//process login
 			if ($this->Auth->login()) {
 				$this->redirect($this->Auth->redirect());
 			} else {
@@ -221,8 +242,11 @@ class UsersController extends AppController {
 			
 			$groups = array();
 			
+			//create array that can directly passed to $this->Html->select()
+			//remove anonymous account from the list
 			foreach($gs as $obj) {
-				$groups[(int)$obj['Group']['id']] = $obj['Group']['name'];
+				if($obj['Group']['name'] != 'Anonymous')
+					$groups[(int)$obj['Group']['id']] = $obj['Group']['name'];
 			}
 		}
 		

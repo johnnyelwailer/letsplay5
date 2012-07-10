@@ -1,4 +1,4 @@
-﻿<div id="navigation" class="toolbar-gradient">
+<div id="navigation" class="toolbar-gradient">
 	<div class="background"></div>
 	<ul class="styleless horizontal">
 		<?php if(!$isGast) { ?>

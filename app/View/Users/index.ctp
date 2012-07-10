@@ -1,6 +1,17 @@
 <div class="users index">
-	<h2><?php echo ('Users'); ?></h2>
-
+	<h1><?php echo ('Users'); ?></h1>
+	
+	<?php echo $this->Form->create('User', array(
+			'action' => 'index',
+			'type' => 'GET'
+		)
+	); ?>
+	
+		
+		<?php echo $this->Form->input('username'); ?>
+		<?php echo $this->Form->submit(__('Reset'), array('onclick' => 'this.reset();')); ?>
+	<?php echo $this->Form->end(__('Submit')); ?>
+	
 	<table border="0" class="size border radius">
 	    <thead>
 	        <tr>

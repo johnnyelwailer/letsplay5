@@ -1,4 +1,4 @@
-﻿<div class="user-form">
+<div class="user-form">
 	<?php
 
     //session begings
@@ -25,7 +25,7 @@
 
 
 
-    //echo $this->form->end('Login');
+    echo $this->form->end();
 
 
 
@@ -40,5 +40,6 @@
 		"controller" => "users",
 		"action" => "resetPassword")
 	);
+	
 	?>
 </div>

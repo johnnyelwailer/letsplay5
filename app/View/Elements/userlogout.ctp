@@ -11,11 +11,10 @@
 			)
 		)
 	); 
-	// old version of button
-	// echo $this->Form->end(__('Logout'));
-
-    // picture logout
+	
+	// picture logout
     echo $this->Form->submit('/img/logout.png');
-
+	
+	echo $this->Form->end();
 	?>
 </div>
