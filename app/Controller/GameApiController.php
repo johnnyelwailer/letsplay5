@@ -59,7 +59,8 @@ class GameApiController extends AppController {
                 $game = $this->Game->findById($existingByUser['game_id']);
                 $this->set(array(
                     'game' => $game,
-                    '_serialize' => array('game')
+                    'player' => $user['id'],
+                    '_serialize' => array('game','player')
                 ));
 
                 $this->Waitingforgame->delete($existingByUser);
@@ -95,7 +96,8 @@ class GameApiController extends AppController {
 
             $this->set(array(
                 'game' => $game,
-                '_serialize' => array('game')
+                'player' => $user['id'],
+                '_serialize' => array('game','player')
             ));
             return;
         }

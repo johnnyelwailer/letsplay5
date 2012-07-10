@@ -19,7 +19,7 @@ class Waitingforgame extends AppModel {
  */
 	public $belongsTo = array(
 		'User',
-		'Game',
-		'CakeSession'
+		'Game'/*,
+		'CakeSession'*/
 	);
 }

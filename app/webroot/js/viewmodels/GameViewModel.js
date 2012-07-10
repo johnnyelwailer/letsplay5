@@ -11,15 +11,19 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
 
     var getTurns = function() {
         $resource('../GameApi/turns/:id/:since.json').get({id: $scope.game.id, since: $scope.lastTurnTime || $scope.game.created}, function(result) {
-            var newTurns = $.map(result.turns, function(item) {
-                var turn = parseTurn(item);
-                makeTurn(turn);
+            try {
+                var newTurns = $.map(result.turns, function(item) {
+                    var turn = parseTurn(item);
+                    makeTurn(turn);
 
-                return turn;
-            });
+                    return turn;
+                });
 
-            Array.prototype.push.apply($scope.turns, newTurns);
-            $timeout(getTurns, 1000);
+                Array.prototype.push.apply($scope.turns, newTurns);
+            }
+            finally {
+                $timeout(getTurns, 1000);
+            }
         });
     }
 
@@ -33,6 +37,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
             $scope.waitingForOpponent = false;
 
             $scope.game = result.game.Game;
+            $scope.player = result.player;
 
             getTurns(result);
         });
@@ -78,7 +83,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
     var makeTurn = function(turn) {
         var index = getIndex(turn);
         turn.index = index;
-        turn.isMine = turn.creator == $scope.game.challenger_id;
+        turn.isMine = turn.creator == $scope.player;
         turn.completedLines = [];
         if(isOccupied(turn)) {
             return false;
