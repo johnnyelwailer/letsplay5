@@ -1,26 +1,35 @@
 <h1>
-Spielregeln & Taktik
+Spielanleitung
 </h1>
 
 <p>
-Versuche, 5 Kreuze hintereinander zu bekommen, senkrecht, waagerecht oder diagonal. 
-Sieger ist, wer am Ende die meisten F&uuml;nfer hat (nicht, wer den ersten F&uuml;nfer hat). Ansonsten l&auml;uft es wie bei "TicTacToe". 
-Der Spielstand wird angezeigt. 
-</p>
 
-<p>
-Erfolgreich ist man bei einem ausgewogenen Verh&auml;ltnis von Angriff und Verteidigung (etwa wie im wirklichen Leben und in fast jedem spiel). 
-Setzt man sich gegen einen Angriff erfolgreich zur Wehr, ist man hinterher in einer besseren Position und kann zuweilen kontern. 
-Vernachl&auml;ssigt man aber die Verteidigung und greift nur an, hat man am Ende das Nachsehen und der Gegner setzt an zum Vernichtungsschlag (final crossOver). 
+	5 gewinnt ist fordernd und spannend zugleich
+ 
+	Obwohl das klassische 4 gewinnt weitaus bekannter und auch &auml;lter als das noch relativ neue 5 gewinnt ist, 
+	gibt es im Internet mittlerweile eine sehr gro&szlig;e Auswahl an passenden Onlinespielen, 
+	bei denen Sie 5 gewinnt gegen andere Spieler oder auch gegen einen Computer spielen k&ouml;nnen. 
+	Alternativ l&auml;sst sich 5 gewinnt nat&uuml;rlich auf einem normalen Blatt Papier gegen einen Freund spielen.
+	5 gewinnt l&auml;sst sich nur zu zweit gegeneinander spielen und die Regeln des Spiels sind sehr einfach zu erlernen. 
+	Sie und Ihr Mitspieler d&uuml;rfen abwechselnd ein Quadrat auf dem Spielfeld mit einem Punkt oder einem Kringel f&uuml;llen. 
+	Vor dem Spiel sucht sich jeder sein Symbol heraus.
+	Ein Spieler beginnt und markiert oder zeichnet sein Symbol in ein freies Quadrat, anschlie&szlig;end ist der andere Spieler an der Reihe. 
+	5gewinnt wird so lange gespielt, bis entweder einer der beiden Spieler 5 Kringel oder Kreuze horizontal, vertikal oder diagonal auf dem Spielfeld hat.
 </p>
 <p>
-Verteidigt man sich hingegen ausschlie&szlig;lich, kann man nicht gewinnen. Wohl wird man aber verlieren, denn Menschen (und nicht nur die) machen nun mal Fehler. 
-Und M&ouml;glichkeiten, Fehler zu machen und Fehler des Gegners auszunutzen, gibt es hier zur Gen&uuml;ge. 
-</p>
-<p>
-Ein Angriff besteht nunmehr darin, ein gebietsweises &Uuml;bergewicht der eigenen Figuren (Kreuze) zu erreichen, ohne dass der Gegner dies seinerseits tun kann. 
-Hat man dies geschafft, h&auml;ngt es von den einzelnen Umst&auml;nden und vom bastlerischen (taktischen) Geschick des Spielers ab, ob der Vorteil in einen F&uuml;nfer umgem&uuml;nzt werden kann, ohne dass der Gegner kontert. 
-Etwas Urteilsverm&ouml;gen und Kombinationsgabe sind hier gefragt.
-Um hinter die Vielzahl hinterh&auml;ltiger Tricks zu kommen bedarf es schon einiger Spielerfahrung.
+	Das Spiel muss keinen Sieger haben, es kann auch unentschieden ausgehen, wenn keiner der Spieler mehr ein Feld f&uuml;llen kann. 
+	Obwohl sich 5 gewinnt sehr einfach anh&ouml;rt, kommen Sie mit einer erfolgreichen Taktik schneller ans Ziel als Ihr Gegenspieler.
+ 
+	Diese Taktik sollten Sie beim Spielen beherzigen
+	Versuchen Sie in 5 gewinnt, so schnell wie m&ouml;glich mehrere Symbole (Kringel oder Kreuze) in einer Reihe zu bekommen. 
+	Beobachten Sie jeden Zug Ihres Mitspielers sehr genau und versuchen Sie, seinen n&auml;chsten Zug im Voraus abzusch&auml;tzen.
+	Sobald Ihr Gegenspieler mindestens drei oder maximal vier Symbole in einer Reihe besitzt, sollten Sie seine Reihe mit einem eigenen Symbol unterbrechen und ihm damit die M&ouml;glichkeit nehmen, das Spiel gewinnen zu k&ouml;nnen.
+	Konzentrieren Sie sich nicht nur auf bestimmte Stellen auf dem Spielfeld, sondern versuchen Sie, gleichzeitig mehrere Reihen aufzubauen. 
+	So wird es Ihrem Gegenspieler deutlich schwerer fallen, alle Ihre Reihen im Auge zu behalten und sie zu unterbrechen.
+	Die beste Taktik, um das Spiel schnell gewinnen zu k&ouml;nnen, ist eine gelungene Mischung aus Aktion und Reaktion. 
+	Nutzen Sie zus&auml;tzlich jede Unaufmerksamkeit Ihres Gegners, um 5 gewinnt zu gewinnen.	
+ 
+	5 gewinnt macht sehr viel Spa&szlig;, ganz egal ob &uuml;ber das Internet oder vor Ort gegen einen Freund. Der Grundstein jeder erfolgreichen Taktik ist eine &auml;u&szlig;erst gute Konzentration. 
+	Sobald Sie nicht mehr das ganze Spielfeld und die Z&uuml;ge Ihres Gegners im Auge haben, laufen Sie Gefahr, dass Sie 5 gewinnt verlieren.
 </p>
 
