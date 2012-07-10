@@ -1,5 +1,12 @@
-<?php echo $this->Html->script('viewmodels/GameViewModel');?>
-<?php echo $this->Html->css('game');?>
+echo $this->Html->script('viewmodels/GameViewModel');
+echo $this->Html->script('angular/angular');
+echo $this->Html->script('angular/angular-resource');
+echo $this->Html->script('angular/angular-app');
+echo $this->Html->script('angular/angular-game-services');
+
+echo $this->Html->css('game');
+
+?>
 <div ng-controller="GameViewModel" class="play-grid">
     <div class="message transitioned" ng-class="{collapsedY: !waitingForOpponent}">
         <h1>Waiting for opponent</h1>

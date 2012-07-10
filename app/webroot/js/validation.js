@@ -3,24 +3,24 @@
 
 function validateForm(form, rules) {
   //clear out any old errors
-  $("#messages").html("");
-  $("#messages").slideUp();
-  $(".error-message").hide();
+  $('.input').removeClass('error');
+  $(".error-message").remove();
   
   //loop through the validation rules and check for errors
+  var isValid = true;
   $.each(rules, function(field) {
     var val = $.trim($("#" + field).val());
-    
+	
     $.each(this, function() {
       console.log(this['rule']);
-      
+	  
       //check if the input exists
       if ($("#" + field).attr("id") != undefined) {
         var valid = true;
         
         if (this['allowEmpty'] && val == '') {
           //do nothing
-        } else if (this['rule'].match(/^range/)) {
+        } else if (this['rule'] == "range") {
           var range = this['rule'].split('|');
           if (val < parseInt(range[1])) {
             valid = false;
@@ -37,22 +37,23 @@ function validateForm(form, rules) {
         }
         
         if (!valid) {
+			isValid = false;
           //add the error message
-          $("#messages").append("<p>" + this['message'] + "</p>");
+		  
+          var main = $("#" + field).parent();
+		  main.addClass('error');
+		  main.append('<div class="error-message">' + this['message'] + "</div>");
           
           //highlight the label
           //$("label[for='" + field + "']").addClass("error");
-          $("#" + field).parent().addClass("error");
+          //$("#" + field).parent().addClass("error");
         }
       }
     });
   });
   
-  if($("#messages").html() != "") {
-    $("#messages").wrapInner("<div class='errors'></div>");
-    $("#messages").slideDown();
-    return false;
-  }
+  if(!isValid)
+	return false;
 
   return true;
 }

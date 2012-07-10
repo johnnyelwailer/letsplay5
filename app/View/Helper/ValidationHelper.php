@@ -56,8 +56,8 @@ class ValidationHelper extends AppHelper {
 
     //catch the form submit
     $formId = 'form';
-    if ($options['formId']) {
-      $formId = '#' . $formName;
+    if($options['formId']) {
+      $formId = '#' . $options['formId'];
     }
     $scriptTags      .= "$(document).ready(function(){ $('". $formId . "').submit( function() { return validateForm(this, rules); }); });\n";
 

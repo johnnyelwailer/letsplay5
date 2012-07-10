@@ -47,11 +47,6 @@
 		
 		/* load js files */
         echo $this->Html->script('jquery');
-        echo $this->Html->script('angular/angular');
-        echo $this->Html->script('angular/angular-resource');
-        echo $this->Html->script('angular/angular-app');
-        echo $this->Html->script('angular/angular-game-services');
-		
 	?>
 </head>
 <body ng-app="app">

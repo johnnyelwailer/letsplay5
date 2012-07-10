@@ -2,7 +2,7 @@
     <?php
 	//set up JS validation
 	echo $this->Html->script('validation');
-	echo $this->validation->rules('UserAdd');
+	echo $this->validation->rules('UserAdd', array('formId' => 'UserAdd'));
 	
 	
 	
