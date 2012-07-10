@@ -80,10 +80,12 @@ class UsersController extends AppController {
 	public function view($id = null) {
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
+			$this->Session->setFlash(__('Invalid user'));
+			return;
 			throw new NotFoundException(__('Invalid user'));
 		}
 
-        $user = $this->User->read(null, $id);
+        $user = $this->User->findById($id);
 		$this->set('user', $user);
 
         if ($this->RequestHandler->requestedWith() == 'XMLHttpRequest') {
@@ -108,6 +110,7 @@ class UsersController extends AppController {
 		//moderator cannot access admin group
 		if($user['Group']['name'] != 'Administrator')
 			unset($groups[1]);
+		
 		$this->set('groups', $this->groups());
 		
 		
@@ -115,6 +118,7 @@ class UsersController extends AppController {
 		if($this->request->is('post')) {
 			$this->UserAdd->set($this->request->data);
 			if($this->UserAdd->validates()) {
+				
 				if($user['Group']['name'] != 'Administrator') {
 					if($user['Group']['name'] == 'Moderator') {
 						if(!in_array($this->request->data['UserAdd']['group_id'], array_keys($groups))){
@@ -124,12 +128,16 @@ class UsersController extends AppController {
 						$this->request->data['UserAdd']['group_id'] = 1;
 				}
 				
-				if($this->UserAdd->save($this->request->data)) {
-					$this->flash(__('User saved.'), array('action' => 'index'));
+				//map back from abstract model to our real model
+				$this->request->data['User'] = $this->request->data['UserAdd'];
+				if($this->User->save($this->request->data)) {
+					$this->Session->setFlash(__('User saved.'), 'success');
 				} else {
-					$this->flash(__('User not saved.'), array('action' => 'index'));
+					$this->Session->setFlash(__('User not saved.'));
 				}
-			}else {$this->Session->setFlash('Invalid data', 'userlogin');
+			}else {
+				//$this->flash(__('Invalid data'), array('action' => 'index'));
+				$this->Session->setFlash('Invalid data');
 			//	throw new NotFoundException(__('Invalid data'));
 			}
 		}
@@ -154,7 +162,9 @@ class UsersController extends AppController {
 		
 		$this->User->id = $id;
 		if(!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
+			$this->Session->setFlash(__('Invalid user'));
+			return;
+			//throw new NotFoundException(__('Invalid user'));
 		}
 		
 		if($this->request->is('post') || $this->request->is('put')) {
@@ -181,12 +191,12 @@ class UsersController extends AppController {
 			
 			
 			if ($this->User->save($this->request->data)) {
-				$this->flash(__('The user has been saved.'), array('action' => 'index'));
+				$this->Session->setFlash(__('The user has been saved.'));
 			} else {
-				$this->flash(__('The user has not been saved.'), array('action' => 'index'));
+				$this->Session->setFlash(__('The user has not been saved.'));
 			}
 		} else {
-			$this->request->data = $this->User->read(null, $id);
+			$this->request->data = $this->User->findById($id);
 			//set password to an empty string
 			unset($this->request->data['User']['password']);
 		}
@@ -202,18 +212,22 @@ class UsersController extends AppController {
  */
 	public function delete($id = null) {
 		if (!$this->request->is('post')) {
-			throw new MethodNotAllowedException();
+			$this->Session->setFlash(__('Wrong HTTP method'));
+			return;
+			//throw new MethodNotAllowedException();
 		}
 		
 		$this->User->id = $id;
 		if(!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
+			$this->Session->setFlash(__('Invalid user'));
+			return;
+			//throw new NotFoundException(__('Invalid user'));
 		}
 		
 		if ($this->User->delete()) {
-			$this->flash(__('User deleted'), array('action' => 'index'));
+			$this->Session->setFlash(__('User deleted'));
 		}
-		$this->flash(__('User was not deleted'), array('action' => 'index'));
+		$this->Session->setFlash(__('User was not deleted'));
 		$this->redirect(array('action' => 'index'));
 	}
 

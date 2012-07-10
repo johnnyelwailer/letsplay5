@@ -32,6 +32,7 @@ class User extends AppModel {
 	users and groups tables. So anytime you create or delete a user/group
 	the Aro table is updated.
 	*/
+	
 	public $belongsTo = array('Group');
 	//public $actsAs = array('Acl' => array('type' => 'requester'));
 	

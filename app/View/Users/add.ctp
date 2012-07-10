@@ -5,10 +5,10 @@
 	
 	<h1><legend><?php echo __('Add User'); ?></h1>
         <?php
-            echo $this->Form->input(__('username'));
-            echo $this->Form->input(__('Email'));
-            echo $this->Form->input(__('password'), array('type' => 'password'));
-            echo $this->Form->input(__('passwordreplication'), array('type' => 'password'));
+            echo $this->Form->input('username');
+            echo $this->Form->input('email');
+            echo $this->Form->input('password', array('type' => 'password'));
+            echo $this->Form->input('passwordreplication', array('type' => 'password'));
         ?>
 		
         <!-- drop down -->

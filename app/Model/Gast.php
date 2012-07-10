@@ -1,6 +1,12 @@
 <?php
 App::uses('User', 'Model');
 
+/*
+
+own model for gast
+
+*/
+
 Class Gast extends User {
 	/*
 	public function __construct() {
@@ -16,7 +22,7 @@ Class Gast extends User {
 	public function create($data = null, $somethingElse = false) {
 		$date = date('Y-m-d H:i:s');
 		
-		$groups = $this->Group->read(null, 4);
+		$groups = $this->Group->findById(4);
 		
 		$def = array(
 			'username' => 'Anonymous',
