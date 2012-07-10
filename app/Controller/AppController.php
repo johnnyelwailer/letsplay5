@@ -69,9 +69,9 @@ class AppController extends Controller {
 	public function beforeFilter() {
 		parent::beforeFilter();
 		
-		$this->Auth->fields  = array( 
-            'username'=>'username', //The field the user logs in with (eg. username) 
-            'password' =>'password' //The password field 
+		$this->Auth->fields = array( 
+            'username'=> 'UserLogin.username', //The field the user logs in with (eg. username) 
+            'password' => 'UserLogin.password' //The password field 
         );
 		
 		$user = $this->currentUser();

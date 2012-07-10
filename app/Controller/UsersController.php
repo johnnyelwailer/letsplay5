@@ -8,7 +8,7 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 	
 	public $uses = array('User', 'Group');
-
+	public $helpers = array('Validation');
 	
 	public function isAuthorized($user) {
 		switch($user['Group']['name']) {

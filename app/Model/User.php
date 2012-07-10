@@ -15,7 +15,6 @@ class User extends AppModel {
 	public $name = 'User';
 	public $displayField = 'id';
 	
-	
 	//this encrypt the passwort
 	public function beforeSave() {
         if (isset($this->data[$this->alias]['password'])) {
