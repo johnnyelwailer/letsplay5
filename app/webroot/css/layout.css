@@ -103,7 +103,6 @@ h1{
 #navigation{
 	padding: 5px 10px;
 	position: relative;
-	
 	margin:20px 0px;
 	border-radius: 3px;
 	border:1px solid #868687;
@@ -153,7 +152,6 @@ h1{
 #logo{
     position: absolute;
     right: 0px;
-
 }
 
 /*###############
@@ -174,7 +172,6 @@ h1{
     margin: 20px;
     width: 150px;
     display: inline-block;
-
 }
 
 /*selectbox*/
@@ -183,12 +180,6 @@ h1{
     width: 50px;
 }
 
-/*button declaration*/
-.users .submit{
-    float: right;
-}
-
-
 /*###################
     login bar on top
 #####################*/
@@ -196,28 +187,22 @@ h1{
 #login-bar .input {
     display: inline-block;
     margin: 0px 10px;
-
     vertical-align: middle;
 }
 
 #login-bar a{
     margin: 0px 10px;
-
     vertical-align: middle;
 }
 
 #login-bar label{
     margin: 0px 10px 0px 0px;
-
     vertical-align: middle;
 }
 
 .submit{
     display: inline-block;
-
-
     margin: 0px 0px 0px 20px ;
-
     vertical-align: middle;
 }
 
@@ -226,7 +211,6 @@ h1{
 #####################*/
 #user-form .submit{
     float:left;
-
 }
 
 #user-form h1{
@@ -240,7 +224,6 @@ h1{
 .users h2{
     margin:0 0 5px 0;
     font-size: 16px;
-
 }
 
 dl{
@@ -258,4 +241,8 @@ dt{
 .actions li {
     list-style:none;
     margin: 0 20px;
+}
+
+#UserAdd .submit{
+    margin: 0 0 0 90%;
 }
