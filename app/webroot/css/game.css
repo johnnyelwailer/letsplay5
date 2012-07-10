@@ -1,20 +1,27 @@
 .play-grid {
     width: 620px;
     -webkit-perspective: 500;
+    perspective: 500;
     -webkit-perspective-origin-x: 50%;
+    perspective-origin-x: 50%;
     -webkit-perspective-origin-y: 50%;
+    perspective-origin-y: 50%;
 }
 
 .play-grid .grid {
     -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     -webkit-transform-origin: 50% 100px -140px;
+    transform-origin: 50% 100px -140px;
     -webkit-transform: scale(0.7);
+    transform: scale(0.7);
     opacity: 0.6;
 }
 
 .play-grid .grid.my-turn {
     opacity: 1;
     -webkit-transform: scale(1);
+    transform: scale(1);
     /*-webkit-animation: spin 5s 1;*/
 }
 
