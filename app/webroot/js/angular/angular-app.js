@@ -27,7 +27,7 @@ Date.prototype.firstDayOfMonth = curryIdentity(Date.firstDayOfMonth = function(d
 });
 
 Date.prototype.lastDayOfMonth = curryIdentity(Date.lastDayOfMonth = function(date) {
-    return new Date(Date.UTC(date.getFullYear(), date.getMonth(), 0));
+    return new Date(date.getFullYear(), date.getMonth()+1, 0);
 });
 
 Date.DAY_OF_MILLISECONDS = 86400000
@@ -41,7 +41,7 @@ Date.prototype.lastDayOfWeek = curryIdentity(Date.lastDayOfWeek = function(date)
 });
 
 Date.prototype.getMonthDate = curryIdentity(Date.getMonthDate = function(date) {
-    return new Date(Date.UTC( date.getFullYear(), date.getMonth(), 0));
+    return new Date(Date.UTC( date.getFullYear(), date.getMonth(), 1));
 });
 
 Date.prototype.getDayDate = curryIdentity(Date.getMonthDate = function(date) {

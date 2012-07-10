@@ -26,7 +26,7 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
                                 '<div class="day" ng-repeat="day in currentMonth.days"' +
 								'                 ng-class="{today: isToday(day), \'other-month\': !isCurrentMonth(day)}"' +
                                 '                 aria-selected="{{isSelected(day)}}"' +
-                                '                 ng-click="select(day)">' +
+                                '                 ng-click="select(day)" title="{{day | date}}">' +
                                    '{{day.getDate()}}' +
                                 '</div>' +
                             '</div>' +
@@ -39,7 +39,7 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
 				scope.weekdays = $locale.DATETIME_FORMATS.SHORTDAY;
 				
                 scope.currentMonth = {
-                    date: new Date,
+                    date: scope.selecteddate.getMonthDate(),
                     days: []
                 };
 				
@@ -48,15 +48,15 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
 				}
 				
 				scope.isCurrentMonth = function(date) {
-					return scope.selecteddate.getMonthDate().valueOf() == date.getMonthDate().valueOf();
+					return scope.currentMonth.date.valueOf() == date.getMonthDate().valueOf();
 				}
 
                 scope.nextMonth = function () {
-                    scope.selecteddate = scope.selecteddate.addMonths(1);
+                    scope.changeMonth(1);
                 };
 
                 scope.prevMonth = function () {
-                    scope.selecteddate = scope.selecteddate.addMonths(-1);
+                    scope.changeMonth(-1);
                 };
 				
 				scope.isSelected = function(date) {
@@ -68,30 +68,46 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
 					return scope.selecteddate.getDayDate().valueOf() == datevalue;
 				};
 
+                scope.changeMonth = function(diff) {
+                    scope.currentMonth.date = scope.currentMonth.date.addMonths(diff).getMonthDate();
+
+                }
                 scope.select = function (date) {
+
                     scope.selecteddate = date;
-					var datevalue = date.getDayDate().valueOf();
+                    scope.currentMonth.date = date.getMonthDate();
 
-					if (scope.selecteddates == null) return;
+                    if (scope.popout != null) {
+                        scope.popout.show = false;
+                    }
 
-					if (scope.selecteddates.indexOf(datevalue) != -1) {
-						scope.selecteddates.remove(datevalue);
-					}
-					else {
-						scope.selecteddates.push(datevalue);
-					}
+                    if (scope.selecteddates == null) return;
+                    var datevalue = date.getDayDate().valueOf();
+
+                    if (scope.selecteddates.indexOf(datevalue) != -1) {
+                        scope.selecteddates.remove(datevalue);
+                    }
+                    else {
+                        scope.selecteddates.push(datevalue);
+                    }
                 };
 				
                 scope.$watch('selecteddate', function (date, oldDate) {
-					if( !Date.isValid(date)) {
-						if (Date.isValid(oldDate)) {
-							scope.selecteddate = oldDate;
-						}
-						
-						return;
-					}
-					
-                    var monthsdiff = date.getMonthDate().valueOf() - oldDate.getMonthDate().valueOf();
+                    if( !Date.isValid(date)) {
+                        if (Date.isValid(oldDate)) {
+                            scope.selecteddate = oldDate;
+                        }
+
+                        return;
+                    }
+                });
+
+                scope.$watch('currentMonth.date', function(newMonth, oldMonth) {
+                    newMonth = newMonth.getMonthDate();
+                    oldMonth = oldMonth.getMonthDate();
+                    var monthsdiff =  newMonth.valueOf() - oldMonth.valueOf();
+
+                    if(monthsdiff == 0) return;
 
                     $element.removeClass('slidein-from-right slidein-from-left');
                     $timeout(function () {
@@ -103,18 +119,13 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
                         }
                     });
 
-                    if (monthsdiff != 0) {						
-                        generateMonth();
-                    }
-					else {
-						if (scope.popout != null) {
-							scope.popout.show = false;
-						}
-					}
+                    $timeout(function() {
+                        generateMonth(newMonth);
+                    }, 40); //timeout to keep in sync with animation (10% of duration)
                 });
 
-                var loadDays = function (date) {
-                    var firstday = date.firstDayOfMonth().firstDayOfWeek();
+                var loadDays = function (monthDate) {
+                    var firstday = monthDate.firstDayOfWeek();
 
                     if (firstday.getDate() == 1) {
                         firstday = firstday.addDays(-7);
@@ -127,12 +138,11 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
                     });
                 };
 
-                var generateMonth = function () {
-                    scope.currentMonth.date = new Date(scope.selecteddate.getFullYear(), scope.selecteddate.getMonth() + 1, 0);
-                    loadDays(scope.currentMonth.date);
-                }
+                var generateMonth = function (monthDate) {
+                    loadDays(monthDate);
+                };
 
-                generateMonth();
+                generateMonth(scope.currentMonth.date);
             };
 
             return function (scope, $element) {
