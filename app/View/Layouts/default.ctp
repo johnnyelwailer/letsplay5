@@ -63,9 +63,10 @@
 			else
 				echo $this->element('userlogout');
 
-			echo $this->element('navigation'); ?>
 			</div>
 			
+			
+			echo $this->element('navigation'); ?>
 			<?php echo $this->Session->flash(); ?>
 			
 			<div id="content">
