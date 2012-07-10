@@ -111,9 +111,7 @@ class GameApiController extends AppController {
 
     public function turns($id, $since = null) {
         $this->loadModel('Turn');
-
-
-
+        
         $turns = $this->Turn->findAllByGameId($id);
 
         $this->set(array(
