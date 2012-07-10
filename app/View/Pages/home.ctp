@@ -29,14 +29,19 @@ Wir begr&uuml;ssen dich auf unserer 5Gewinnt Seite!
 
 <p>
 Wir hoffen, dass wir dir das Spiel und alle zus&auml;tzlichen funktionen so angenehm wie m&ouml;glich gestalten konnten.
-Bei Fragen zur Bedienung kannst du gerne in unser <?php echo $this->Html->link(__('Benutzerhandbuch'), array('action' => 'Benutzerhandbuch', )); ?> schauen. Falls sich das Problem bis dann noch nicht gel&ouml;st hat, k&ouml;nnte es dir weiterhelfen, wenn du einen Blick in die FAQ's wirfst.
+Bei Fragen zur Bedienung kannst du gerne in unser <?php echo $this->Html->link(__('Benutzerhandbuch'), array('action' => 'Benutzerhandbuch', )); ?> schauen. 
+Falls sich das Problem bis dann noch nicht gel&ouml;st hat, k&ouml;nnte es dir weiterhelfen, wenn du einen Blick in die FAQ's wirfst.<br>
 Da werden g&auml;ngige Probleme mit ihren L&ouml;sungsvarianten beschrieben.
-Ansonsten w&uuml;nschen wir dir viel Spass & Erfolg beim Spielen und hoffen nat&uuml;rlich, dass du &uuml;ber das Spiel spannende & Interessante gegner finden kannst.
+Ansonsten w&uuml;nschen wir dir viel Spass & Erfolg beim Spielen und hoffen nat&uuml;rlich, dass du &uuml;ber das Spiel spannende & Interessante Gegner finden kannst.
 </p>
 <p>
 Wir hoffen, dass ihr Gefallen an unserer Seite findet und sind nat&uuml;rlich offen f&uuml;r Optimierungsvorschl&auml;ge.
-
+<h2>
 Ihr 5Gewinnt Team
-
+</h2>
+</p>
+<p>
+<img src="letsgo.png" width="368" height="383" alt="3..2..1..  Los gehts mit Zocken!">
+<img src="letsgo.png" width=120 height=130> 
 </p>
 
