@@ -71,8 +71,9 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
                 scope.select = function (date) {
                     scope.selecteddate = date;
 					var datevalue = date.getDayDate().valueOf();
-					
+
 					if (scope.selecteddates == null) return;
+
 					if (scope.selecteddates.indexOf(datevalue) != -1) {
 						scope.selecteddates.remove(datevalue);
 					}
@@ -113,15 +114,16 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
                 });
 
                 var loadDays = function (date) {
-                    var lastday = date.lastDayOfMonth().lastDayOfWeek();
                     var firstday = date.firstDayOfMonth().firstDayOfWeek();
-                    return Array.generate(function (i, prev) {
-                        prev = prev !== null ? prev.addDays(1) : firstday;
-                        var d = prev;
 
-                        scope.currentMonth.days[i] = d;
+                    if (firstday.getDate() == 1) {
+                        firstday = firstday.addDays(-7);
+                    }
 
-                        return (d - lastday > 0) ? false : d;
+                    return Array.range(0, 42, function(i) {
+                       var day = firstday.addDays(i);
+                        scope.currentMonth.days[i] = day;
+                        return day;
                     });
                 };
 
