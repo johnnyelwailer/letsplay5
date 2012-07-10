@@ -12,12 +12,6 @@ wie kann ich mich registrieren? <br>
 </p>
 
 <p>
-Was bietet mir die Registration auf LetsPlay5?<br>
-- Wenn man sich registriert hat, kann man an Turnieren teilnehmen, Spiele er&ouml;ffnen, Benutzerprofil bearbeiten und vieles mehr. <br>
-  Die ausf&uuml;hrlichen Informationen finden sie in unserem <?php echo $this->Html->link(__('Benutzerhandbuch'), array('action' => 'Benutzerhandbuch', )); ?>.
-</p>
-
-<p>
 kann ich meinen Benutzernamen &auml;ndern?<br>
 - Antwort
 </p>
@@ -39,7 +33,7 @@ Kann man selbst als User ein Turnier organisieren?<br>
 
 <p>
 Wo finde ich das Benutzerhandbuch?<br>
--
-<?php
-echo $this->Html->link(__('Benutzerhandbuch'), array('action' => 'Benutzerhandbuch', ));
-?>
+
+- <a href="http://www.google.de/">Hier</a><br>
+
+</p>
