@@ -1,5 +1,6 @@
 <?php
 App::uses('AppModel', 'Model');
+
 /**
  * User Model
  *
@@ -13,38 +14,6 @@ class User extends AppModel {
  */
 	public $name = 'User';
 	public $displayField = 'id';
-	
-	
-	//this defines the rules for validating the userfields
-	public $validate = array(
-        'username' => array(
-            'alphaNumeric' => array(
-                'rule'     => 'alphaNumeric',
-                'required' => true,
-                'message'  => 'Alphabets and numbers only'
-            ),
-			
-            'between' => array(
-                'rule'    => array('between', 5, 15),
-                'message' => 'Between 5 to 15 characters'
-            ),
-			
-			'required'   => true
-        ),
-		
-        'password' => array(
-            'rule'    => array('minLength', '8'),
-            'message' => 'Minimum 8 characters long',
-			'required'   => true
-        ),
-		
-        'email' => array(
-			'rule' => 'email',
-			'message'    => 'Enter a valid date',
-			'required'   => true
-		)
-		
-    );
 	
 	
 	//this encrypt the passwort

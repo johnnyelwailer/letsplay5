@@ -4,12 +4,13 @@
     //session begings
 	echo $this->Session->flash('auth');
 
-	echo $this->Form->create('User',
+	echo $this->Form->create('UserLogin',
 		array(
 			'url' => array(
 				'controller' => 'users', 
 				'action' => 'login'
-			)
+			),
+			'id' => 'UserLogin'
 		)
 	);
 

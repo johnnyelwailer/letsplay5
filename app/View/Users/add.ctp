@@ -1,11 +1,14 @@
 <div class="users form" ng-controller="CreateUserViewModel">
-    <?php echo $this->Form->create('User'); ?>
+    <?php echo $this->Form->create('UserAdd',
+			array('id' => 'UserAdd')
+	); ?>
+	
 	<h1><legend><?php echo __('Add User'); ?></h1>
         <?php
             echo $this->Form->input(__('username'));
-            echo $this->Form->input(__('E-mail'));
+            echo $this->Form->input(__('Email'));
             echo $this->Form->input(__('password'), array('type' => 'password'));
-            echo $this->Form->input(__('password replication'), array('type' => 'password'));
+            echo $this->Form->input(__('passwordreplication'), array('type' => 'password'));
         ?>
 		
         <!-- drop down -->

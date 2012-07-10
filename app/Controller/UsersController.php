@@ -100,6 +100,8 @@ class UsersController extends AppController {
  * @return void
  */
 	public function add() {
+		$this->loadModel('UserAdd');
+		
 		$groups = $this->groups();
 		$user = $this->currentUser();
 		
@@ -111,24 +113,24 @@ class UsersController extends AppController {
 		
 		
 		if($this->request->is('post')) {
-			$this->User->set($this->request->data);
-			
-			if($this->User->validates()) {
+			$this->UserAdd->set($this->request->data);
+			if($this->UserAdd->validates()) {
 				if($user['Group']['name'] != 'Administrator') {
 					if($user['Group']['name'] == 'Moderator') {
-						if(!in_array($this->request->data['User']['group_id'], array_keys($groups))){
-							$this->request->data['User']['group_id'] = 1;
+						if(!in_array($this->request->data['UserAdd']['group_id'], array_keys($groups))){
+							$this->request->data['UserAdd']['group_id'] = 1;
 						}
 					}else
-						$this->request->data['User']['group_id'] = 1;
+						$this->request->data['UserAdd']['group_id'] = 1;
 				}
 				
-				
-				if($this->User->save($this->request->data)) {
+				if($this->UserAdd->save($this->request->data)) {
 					$this->flash(__('User saved.'), array('action' => 'index'));
 				} else {
 					$this->flash(__('User not saved.'), array('action' => 'index'));
 				}
+			}else {$this->Session->setFlash('Invalid data', 'userlogin');
+			//	throw new NotFoundException(__('Invalid data'));
 			}
 		}
 	}
