@@ -57,7 +57,7 @@
 <body ng-app="app">
     <?php echo
         //input of the logo
-        $this->html->image("/img/logo.png", array("alt" => "logo","id" => "logo"));
+        $this->html->image("/img/logo.gif", array("alt" => "logo","id" => "logo"));
     ?>
 
 
