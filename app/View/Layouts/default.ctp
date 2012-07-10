@@ -56,10 +56,6 @@
                                                   "id" => "logo",
                                                   "url"=> array('controller'=>"/")                                                   ));
     ?>
-
-
-
-
     <div id="wrapper">
 		<div id="login-bar">
 			<?php

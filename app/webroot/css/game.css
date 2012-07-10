@@ -25,14 +25,14 @@
     /*-webkit-animation: spin 5s 1;*/
 }
 
-@-webkit-keyframes spin {
+/*@-webkit-keyframes spin {
     80% {
         -webkit-transform: rotateX(0deg);
     }
     to {
         -webkit-transform: rotateX(360deg);
     }
-}
+}*/
 
 .grid-cell {
     float: left;
@@ -42,11 +42,19 @@
     border: 1px solid black;
     vertical-align:  middle;
     text-align: center;
+
 }
 
 .grid-cell:hover {
     cursor: pointer;
 }
+
+.grid-cell:nth-child(odd){
+    background-color: #5a534f;
+}
+
+
+#5a534f
 
 .turn {
     transform: translateY(-50px) scaleY(0);
@@ -78,3 +86,5 @@
 .turn.marked.by-me {
     background: lightBlue;
 }
+
+
