@@ -5,7 +5,7 @@ App::uses('AppController', 'Controller');
  *
  * @property Game $Game
  * @property Turn $Turn
- * @property WaitingForGame $WaitingForGame
+ * @property Waitingforgame $Waitingforgame
  */
 class GameApiController extends AppController {
 
@@ -42,14 +42,14 @@ class GameApiController extends AppController {
     public function makeMatch() {
         $this->loadModel('Game');
         $this->loadModel('User');
-		$this->loadModel('WaitingForGame');
+		$this->loadModel('Waitingforgame');
 
         $user = $this->currentUser();
         //var_dump('user', $user);
 
-        $existingByUser = $this->WaitingForGame->findByUserId($user['id']);
+        $existingByUser = $this->Waitingforgame->findByUserId($user['id']);
 
-        $existingByUser = isset($existingByUser) ? $existingByUser['WaitingForGame'] : null;
+        $existingByUser = isset($existingByUser) ? $existingByUser['Waitingforgame'] : null;
         //var_dump('user existing', $existingByUser);
         if (isset($existingByUser)) {
 
@@ -62,7 +62,7 @@ class GameApiController extends AppController {
                     '_serialize' => array('game')
                 ));
 
-                $this->WaitingForGame->delete($existingByUser);
+                $this->Waitingforgame->delete($existingByUser);
                 return;
             }
 
@@ -74,14 +74,14 @@ class GameApiController extends AppController {
             return;
         }
 
-        $matching =  $this->WaitingForGame->find('first',
+        $matching =  $this->Waitingforgame->find('first',
             array('conditions' =>
                 array(
                     'NOT' => array(
                         'user_id' => $user['id']),
                     'game_id' => null)));
 
-        $matching = isset($matching) ? $matching['WaitingForGame'] : null;
+        $matching = isset($matching) ? $matching['Waitingforgame'] : null;
         //var_dump('matching', $matching);
         if (isset($matching)) {
             $game = $this->Game->save(array(
@@ -91,7 +91,7 @@ class GameApiController extends AppController {
 
             //var_dump('new game', $game);
 
-            $this->WaitingForGame->save(array('id' => $matching['id'],'game_id' => $game['Game']['id']));
+            $this->Waitingforgame->save(array('id' => $matching['id'],'game_id' => $game['Game']['id']));
 
             $this->set(array(
                 'game' => $game,
@@ -100,7 +100,7 @@ class GameApiController extends AppController {
             return;
         }
 
-        $this->WaitingForGame->save(array('user_id' => $user['id']));
+        $this->Waitingforgame->save(array('user_id' => $user['id']));
         $this->set(array(
             'await' => 'searching',
             '_serialize' => array('await')

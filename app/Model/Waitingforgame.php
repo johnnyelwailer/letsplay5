@@ -5,7 +5,7 @@ App::uses('AppModel', 'Model');
  *
  * @property User $User
  * @property Game $Game
- * @property Session $Session
+ * @property CakeSession $CakeSession
  */
 class Waitingforgame extends AppModel {
 
@@ -20,6 +20,6 @@ class Waitingforgame extends AppModel {
 	public $belongsTo = array(
 		'User',
 		'Game',
-		'Session'
+		'CakeSession'
 	);
 }

@@ -27,7 +27,7 @@
  */
 class SessionsSchema extends CakeSchema {
 
-	public $name = 'Sessions';
+	public $name = 'CakeSessions';
 
 	public function before($event = array()) {
 		return true;
