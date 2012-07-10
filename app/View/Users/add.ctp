@@ -2,14 +2,14 @@
     <?php echo $this->Form->create('User'); ?>
 	<h1><legend><?php echo __('Add User'); ?></h1>
         <?php
-            echo $this->Form->input('username');
-            echo $this->Form->input('E-mail');
-            echo $this->Form->input('password');
-            echo $this->Form->input('password replication');
+            echo $this->Form->input(__('username'));
+            echo $this->Form->input(__('E-mail'));
+            echo $this->Form->input(__('password'), array('type' => 'password'));
+            echo $this->Form->input(__('password replication'), array('type' => 'password'));
         ?>
 		
         <!-- drop down -->
-		<?php if($currentUser['Group']['name'] == 'Administrator') { ?>
+		<?php if($currentUser['Group']['name'] == 'Administrator' OR $currentUser['Group']['name'] == 'Moderator') { ?>
 			<?php echo $this->Form->select('User.group_id', $groups, array('empty' => false)); ?>
 		<?php } ?>
 		

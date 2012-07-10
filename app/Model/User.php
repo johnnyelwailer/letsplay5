@@ -14,6 +14,39 @@ class User extends AppModel {
 	public $name = 'User';
 	public $displayField = 'id';
 	
+	
+	//this defines the rules for validating the userfields
+	public $validate = array(
+        'username' => array(
+            'alphaNumeric' => array(
+                'rule'     => 'alphaNumeric',
+                'required' => true,
+                'message'  => 'Alphabets and numbers only'
+            ),
+			
+            'between' => array(
+                'rule'    => array('between', 5, 15),
+                'message' => 'Between 5 to 15 characters'
+            ),
+			
+			'required'   => true
+        ),
+		
+        'password' => array(
+            'rule'    => array('minLength', '8'),
+            'message' => 'Minimum 8 characters long',
+			'required'   => true
+        ),
+		
+        'email' => array(
+			'rule' => 'email',
+			'message'    => 'Enter a valid date',
+			'required'   => true
+		)
+		
+    );
+	
+	
 	//this encrypt the passwort
 	public function beforeSave() {
         if (isset($this->data[$this->alias]['password'])) {
@@ -21,9 +54,6 @@ class User extends AppModel {
 		}
     }
 	
-	public function node() {
-		var_dump("User.node");
-	}
 	
 	/*
 	What this does, is tie the Group and User models to the Acl, 

@@ -111,22 +111,24 @@ class UsersController extends AppController {
 		
 		
 		if($this->request->is('post')) {
-			//$this->User->create();
+			$this->User->set($this->request->data);
 			
-			if($user['Group']['name'] != 'Administrator') {
-				if($user['Group']['name'] == 'Moderator') {
-					if(!in_array($this->request->data['User']['group_id'], array_keys($groups))){
+			if($this->User->validates()) {
+				if($user['Group']['name'] != 'Administrator') {
+					if($user['Group']['name'] == 'Moderator') {
+						if(!in_array($this->request->data['User']['group_id'], array_keys($groups))){
+							$this->request->data['User']['group_id'] = 1;
+						}
+					}else
 						$this->request->data['User']['group_id'] = 1;
-					}
-				}else
-					$this->request->data['User']['group_id'] = 1;
-			}
-			
-			
-			if($this->User->save($this->request->data)) {
-				$this->flash(__('User saved.'), array('action' => 'index'));
-			} else {
-				$this->flash(__('User not saved.'), array('action' => 'index'));
+				}
+				
+				
+				if($this->User->save($this->request->data)) {
+					$this->flash(__('User saved.'), array('action' => 'index'));
+				} else {
+					$this->flash(__('User not saved.'), array('action' => 'index'));
+				}
 			}
 		}
 	}
