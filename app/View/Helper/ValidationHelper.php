@@ -48,7 +48,7 @@ class ValidationHelper extends AppHelper {
     $options = array_merge($defaultOptions, $options);
 
     //load the whitelist
-    $this->whitelist = Configure::read('javascriptValidationWhitelist');
+    //$this->whitelist = Configure::read('javascriptValidationWhitelist');
 
     if (!is_array($modelNames)) {
       $modelNames = array($modelNames);
@@ -94,7 +94,7 @@ class ValidationHelper extends AppHelper {
           if (!empty($validator['rule'])) {
             $rule = $this->convertRule($validator['rule']);
           }
-
+			
           if ($rule) {
             $temp = array('rule' => $rule,
                           'message' => __($validator['message'], true)
@@ -110,7 +110,11 @@ class ValidationHelper extends AppHelper {
               //add a "!" so that JavaScript knows
               $temp['negate'] = true;
             }
-
+			
+			if(isset($validator['rule']) && count($validator['rule']) && $validator['rule'][0] == 'identicalFieldValues') {
+				$temp['identicalFieldValues'] = $modelName . Inflector::camelize($validator['rule'][1]);
+			}
+			
             $validation[$modelName . Inflector::camelize($field)][] = $temp;
           }
         }
@@ -180,6 +184,10 @@ class ValidationHelper extends AppHelper {
         //Don't think there is a way to do this with a regular expressions,
         //so we'll handle this with plain old javascript
         return sprintf('range|%s|%s', $params[0], $params[1]);
+	case 'alphaNumeric':
+			return '/^[\w\d]+$/';
+	case 'identicalFieldValues':
+		return true;
     }
 
     //try to lookup the regular expression from

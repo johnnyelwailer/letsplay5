@@ -28,8 +28,13 @@ function validateForm(form, rules) {
           if (val > parseInt(range[2])) {
             valid = false;
           }
+		} else if (this['identicalFieldValues']) {
+			var f = this['identicalFieldValues'];
+			if($("#" + field).val() != $("#" + f).val())
+				valid = false;
         } else if (this['negate']) {
-          if (val.match(eval(this['rule']))) {
+			
+          if (!val.match(eval(this['rule']))) {
             valid = false;
           }
         } else if (!val.match(eval(this['rule']))) {
