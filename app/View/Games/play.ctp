@@ -1,3 +1,4 @@
+<?php
 echo $this->Html->script('viewmodels/GameViewModel');
 echo $this->Html->script('angular/angular');
 echo $this->Html->script('angular/angular-resource');

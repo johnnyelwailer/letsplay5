@@ -31,9 +31,7 @@
     Wir hoffen, dass wir dir das Spiel und alle zus&auml;tzlichen funktionen so angenehm wie m&ouml;glich gestalten konnten.
     Bei Fragen zur Bedienung kannst du gerne in unser
 
-
     <?php echo $this->Html->link(__('Benutzerhandbuch'), array('action' => 'Benutzerhandbuch', )); ?>
-
 
     schauen.Falls sich das Problem bis dann noch nicht gel&ouml;st hat, k&ouml;nnte es dir weiterhelfen, wenn du einen Blick in die FAQ's wirfst.<br>
     Da werden g&auml;ngige Probleme mit ihren L&ouml;sungsvarianten beschrieben.
@@ -48,7 +46,10 @@
 <p>
     <?php echo
     //input of the logo
-        $this->html->image("/img/letsgo.png", array("alt" => "1.2.3 lets go","id" => "letsgo"));
+        $this->html->image("/img/letsgo.png", array("alt" => "3.2.1 let's go",
+                                                    "url" => array(
+                                                     'controller' => "games/play"
+                                                    )));
     ?>
 </p>
 
