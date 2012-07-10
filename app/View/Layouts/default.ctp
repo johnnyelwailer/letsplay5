@@ -62,11 +62,11 @@
 				echo $this->element('userlogin');
 			else
 				echo $this->element('userlogout');
-
+			?>
 			</div>
 			
 			
-			echo $this->element('navigation'); ?>
+			<?php echo $this->element('navigation'); ?>
 			<?php echo $this->Session->flash(); ?>
 			
 			<div id="content">
