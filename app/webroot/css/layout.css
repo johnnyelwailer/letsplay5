@@ -15,7 +15,9 @@
 	font-family: 'SEGOE UI', arial;
 }
 
-/* default link style*/
+/*#####################
+    default link style
+#######################*/
 
 a:link{
 	text-decoration:none;
@@ -57,8 +59,11 @@ a:focus{
 	background: #02BA30;
 	color: #FFF;
 }
+/*#######################################
+    default style of the common element
+#########################################*/
 
-/* default style of the common elements */
+/*s */
 
 html, body{
 	height:100%;
@@ -72,6 +77,9 @@ body {
 h1{
 	font-size:16px;
 }
+/*#######################
+    main div container
+#########################*/
 
 #background {
 	position: absolute;
@@ -158,7 +166,6 @@ h1{
 
 }
 
-
 /*selectbox*/
 .users select{
     margin: 10px 0px 0px 90px ;
@@ -214,6 +221,30 @@ h1{
 #user-form h1{
     font-size: 24px;
     margin: 0px 100px
+}
 
+/*###################
+    profile site
+#####################*/
+.users h2{
+    margin:0 0 5px 0;
+    font-size: 16px;
 
+}
+
+dl{
+    margin: 0 20px;
+}
+
+dt{
+    width: 15%;
+    height: 15px;
+    float: left;
+    font-weight:bold;
+}
+
+/*actions format*/
+.actions li {
+    list-style:none;
+    margin: 0 20px;
 }
