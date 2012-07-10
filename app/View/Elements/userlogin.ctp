@@ -1,4 +1,4 @@
-﻿<div id="user-form">
+﻿<div class="user-form">
 	<?php
 
     //session begings

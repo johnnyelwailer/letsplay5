@@ -56,6 +56,7 @@
 </head>
 <body ng-app="app">
 	<div id="wrapper">
+			<div id="login-bar">
 			<?php 
 			if($isGast)
 				echo $this->element('userlogin');
@@ -63,7 +64,7 @@
 				echo $this->element('userlogout');
 
 			echo $this->element('navigation'); ?>
-			
+			</div>
 			
 			<?php echo $this->Session->flash(); ?>
 			
