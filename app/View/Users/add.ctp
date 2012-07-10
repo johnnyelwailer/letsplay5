@@ -1,5 +1,12 @@
 <div class="users form" ng-controller="CreateUserViewModel">
-    <?php echo $this->Form->create('UserAdd',
+    <?php
+	//set up JS validation
+	echo $this->Html->script('validation');
+	echo $this->validation->rules('UserAdd');
+	
+	
+	
+	echo $this->Form->create('UserAdd',
 			array('id' => 'UserAdd')
 	); ?>
 	

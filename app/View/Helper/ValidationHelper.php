@@ -30,7 +30,7 @@ if (!defined('DEFAULT_VALIDATION_EXTENSIONS')) {
 }
 
 class ValidationHelper extends AppHelper {
-  var $helpers = array('Javascript');
+  var $helpers = array('JS');
 
   //For security reasons you may not want to include all possible validations
   //in your bootstrap you can define which are allowed
@@ -122,9 +122,9 @@ class ValidationHelper extends AppHelper {
     $scriptTags     .= "var rules = eval(" . json_encode($validation) . ");\n";
 
     if ($options['inline']) {
-      return sprintf($this->Javascript->tags['javascriptblock'], $scriptTags);
+      return sprintf(/*$this->JS->tags['javascriptblock']*/'<script type="text/javascript">%s</script>', $scriptTags);
     } else {
-      $this->Javascript->codeBlock($scriptTags, array('inline' => false));
+      $this->JS->codeBlock($scriptTags, array('inline' => false));
     }
     
     return true;
@@ -184,14 +184,14 @@ class ValidationHelper extends AppHelper {
 
     //try to lookup the regular expression from
     //CakePHP's built-in validation rules
-    $Validation =& Validation::getInstance();
-    if (method_exists($Validation, $rule)) {
-      $Validation->regex = null;
-      call_user_func_array(array(&$Validation, $rule), array_merge(array(true), $params));
+    //$Validation =& Validation::getInstance();
+    if (is_callable('Validation::'.$rule)) {
+      //$Validation->regex = null;
+      $regex = call_user_func_array('Validation::'.$rule, array_merge(array(true), $params));
 
-      if ($Validation->regex) {
+      /*if ($Validation->regex) {
         $regex = $Validation->regex;
-      }
+      }*/
     }
 
     //special handling
