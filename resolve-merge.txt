@@ -1,0 +1,21 @@
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+:: Anleitung: http://www.kernel.org/pub/software/scm/git/docs/v1.7.3/user-manual.html#resolving-a-merge
+:: git commit
+:: >> file.txt: needs merge
+::
+:: git-status(1)
+:: <<<<<<< HEAD:file.txt
+:: Hello world
+:: =======
+:: Goodbye
+:: >>>>>>> 77976da35a11db4580b80ae27e8d65caf5208086:file.txt
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+@echo.
+@echo off
+
+git-status(1)
+
+echo use 'git add file.txt' for all resolved files then press any key to commit
+pause
+
+
