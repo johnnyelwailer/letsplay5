@@ -59,8 +59,10 @@ class GameApiController extends AppController {
 
                 $game = $this->Game->findById($existingByUser['game_id']);
 
-                $game['challenger'] = $this->User->findById($game['Game']['challenger_id']);
-                $game['opponent'] = $this->User->findById($game['Game']['opponent_id']);
+                $challenger = $this->User->findById($game['Game']['challenger_id']);
+                $opponent = $this->User->findById($game['Game']['opponent_id']);
+                $game['challenger'] = $challenger['User']['username'];
+                $game['opponent'] = $opponent['User']['username'];
 
                 $this->set(array(
                     'game' => $game,
@@ -99,8 +101,10 @@ class GameApiController extends AppController {
 
             $this->Waitingforgame->save(array('id' => $matching['id'],'game_id' => $game['Game']['id']));
 
-            $game['challenger'] = $this->User->findById($game['Game']['challenger_id']);
-            $game['opponent'] = $this->User->findById($game['Game']['opponent_id']);
+            $challenger = $this->User->findById($game['Game']['challenger_id']);
+            $opponent = $this->User->findById($game['Game']['opponent_id']);
+            $game['challenger'] = $challenger['User']['username'];
+            $game['opponent'] = $opponent['User']['username'];
 
             $this->set(array(
                 'game' => $game,

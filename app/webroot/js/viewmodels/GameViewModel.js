@@ -44,8 +44,8 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
 
             $scope.game = result.game.Game;
             $scope.player = result.player;
-            $scope.game.challenger = result.game.Challenger;
-            $scope.game.opponent = result.game.Opponent;
+            $scope.game.challenger = result.game.challenger;
+            $scope.game.opponent = result.game.opponent;
             getTurns(result);
         });
     };
