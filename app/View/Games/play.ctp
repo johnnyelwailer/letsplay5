@@ -1,3 +1,5 @@
+<div id="game-wrapper">
+
 <?php
 echo $this->Html->script('viewmodels/GameViewModel');
 echo $this->Html->script('angular/angular');
@@ -8,13 +10,36 @@ echo $this->Html->script('angular/angular-game-services');
 echo $this->Html->css('game');
 
 ?>
+
+<div id="players">
+		<div class="challenger" ng-class="{waiting: !waitingForOpponent}">
+			<div class="online">
+				<?php echo $this->Html->image('active.png', array('alt' => 'inactive')); ?>
+			</div>
+			<span class="name">Spieler1</span>
+			<div class="status">
+				<?php echo $this->Html->image('gamerstatus.png', array('alt' => 'inactive')); ?>
+			</div>
+		</div>
+		
+		
+		<div class="opponent" ng-class="{waiting: !waitingForOpponent}">
+			<span class="name">Spieler2</span>
+			<?php echo $this->Html->image('notmyturn', array('alt' => 'inactive')); ?>
+		</div>
+	</div>
+
 <div ng-controller="GameViewModel" class="play-grid">
-    <div class="message transitioned" ng-class="{collapsedY: !waitingForOpponent}">
+	<!--
+    <div class="message transitioned" ng-class="{waiting: !waitingForOpponent}">
         <h1>Waiting for opponent</h1>
     </div>
     <div class="message transitioned" ng-class="{collapsedY: isMyTurn}">
         <h1>It's the opponents turn...</h1>
     </div>
+	-->
+	
+	
     <div class="grid transitioned" ng-class="{collapsedY: waitingForOpponent, 'my-turn': isMyTurn}">
         <div ng-repeat="turn in grid" class="grid-cell transitioned"
              ng-click="place($index)">
@@ -24,4 +49,6 @@ echo $this->Html->css('game');
 
         </div>
     </div>
+</div>
+
 </div>

@@ -22,7 +22,7 @@
     echo $this->Form->submit('/img/login.png');
 
 
-    echo $this->html->image("Login");
+    //echo $this->html->image("Login");
 
 
 

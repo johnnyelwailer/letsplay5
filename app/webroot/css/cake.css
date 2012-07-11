@@ -27,6 +27,10 @@
     transform: scaleY(0);
     -webkit-transform: scaleY(0);
     -moz-transform: scaleY(0);
+	
+	margin: 0px !important;
+	padding: 0px !important;
+	height: 0px;
 }
 
 /** Paging **/

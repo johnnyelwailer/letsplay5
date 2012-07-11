@@ -7,6 +7,7 @@ App::uses('AppController', 'Controller');
  */
 class GamesController extends AppController {
     
+	public $uses = array('Game', 'User');
 	public $helpers = array('Time');
 	
 	

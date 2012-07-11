@@ -1,27 +1,46 @@
+
 .play-grid {
-    width: 620px;
-    -webkit-perspective: 500;
-    perspective: 500;
-    -webkit-perspective-origin-x: 50%;
-    perspective-origin-x: 50%;
-    -webkit-perspective-origin-y: 50%;
-    perspective-origin-y: 50%;
+	width: 608px;
+	margin: auto;
+	
+	-webkit-perspective: 38px;
+	-webkit-perspective-origin: 50% 50%;
+	
+	-moz-perspective: 38px;
+	-moz-perspective-origin: 50% 50%;
+	-ms-perspective: 38px;
+	-ms-perspective-origin: 50% 50%;
+	-o-perspective: 38px;
+	-o-perspective-origin: 50% 50%;
+	perspective: 38px;
+	perspective-origin: 50% 50%;
 }
 
 .play-grid .grid {
-    -webkit-transition: all 0.5s ease-in-out;
+    /*-webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    -webkit-transform-origin: 50% 100px -140px;
+    
+	-webkit-transform-origin: 50% 100px -140px;
     transform-origin: 50% 100px -140px;
     -webkit-transform: scale(0.7);
     transform: scale(0.7);
-    opacity: 0.6;
+    opacity: 0.6;*/
+	
+	box-shadow: 5px 5px 16px;
+	transform: rotateX(1deg);
+	-webkit-transform: rotateX(1deg);
+	-moz-transform: rotateX(1deg);
+	-ms-transform: rotateX(1deg);
+	-o-transform: rotateX(1deg);
 }
 
 .play-grid .grid.my-turn {
     opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: scale(1), rotateX(1deg);
+	-moz-transform: scale(1), rotateX(1deg);
+	-ms-transform: scale(1), rotateX(1deg);
+	-o-transform: scale(1), rotateX(1deg);
+    transform: scale(1), rotateX(1deg);
     /*-webkit-animation: spin 5s 1;*/
 }
 
@@ -35,8 +54,10 @@
 }*/
 
 .grid-cell {
-    float: left;
-    width: 30px;
+    /*float: left;*/
+	display: inline-block;
+	background-color: #FFF;
+	width: 30px;
     height: 30px;
     line-height: 30px;
     border: 1px solid black;
@@ -50,16 +71,16 @@
 }
 
 .grid-cell:nth-child(odd){
-    background-color: #5a534f;
+    background-color: #ff3322;
 }
 
 
 #5a534f
 
 .turn {
-    transform: translateY(-50px) scaleY(0);
+   /* transform: translateY(-50px) scaleY(0);
     -moz-transform: translateY(-50px) scaleY(0);
-    -webkit-transform: translateY(-50px) scaleY(0);
+    -webkit-transform: translateY(-50px) scaleY(0);*/
     opacity: 0;
 }
 .turn.marked {
@@ -70,10 +91,10 @@
     text-align: center;
     border-radius: 60px;
     background: #f08080;
-
+/*
     transform: translateY(0px) scaleY(1);
     -webkit-transform: translateY(0px) scaleY(1);
-    -moz-transform: translateY(0px) scaleY(1);
+    -moz-transform: translateY(0px) scaleY(1);*/
 }
 
 .turn.belongs-to-line {
@@ -87,4 +108,40 @@
     background: lightBlue;
 }
 
+/*
 
+view of the challenger and opponent
+
+*/
+
+#players {
+	height: 60px;
+	text-align: right;
+	margin: 5px 0px;
+}
+
+#players .challenger, #players .opponent {
+	overflow: hidden;
+	position: relative;
+	width: 40%;
+	height: 100%;
+	display: inline-block;
+	background-color: #808080;
+	
+	border-radius: 5px;
+	border: 1px solid #999;
+	box-shadow: 3px 3px 5px;
+}
+ #players .challenger {
+	float: left;
+ }
+ 
+ #players .challenger .online {
+	float: left;
+ }
+ 
+ #players .challenger .status {
+	margin-right: 10px;
+	float: right;
+	background-color: #33bbff;
+ }

@@ -1,5 +1,5 @@
 <div class="games index">
-	<h2><?php echo __('Games'); ?></h2>
+	<h1><?php echo __('Games'); ?></h1>
 	
 	<table border="0" class="size border radius">
 		<thead>
@@ -15,11 +15,11 @@
 		<?php
 		
 		foreach ($games as $game) { ?>
-			<tr onclick="echo $this->Html->url(array(
+			<tr onclick="window.location='<?php echo $this->Html->url(array(
 					"controller" => "games",
 					"action" => "view",
 					$game['Game']['id'])
-				);">
+				);?>';">
 				<td><?php echo $game['Game']['id']; ?></td>
 				<td>
 				<?php
