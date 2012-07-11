@@ -1,7 +1,9 @@
 
 .play-grid {
 	width: 608px;
-	margin: auto;
+	
+	margin: 40px auto;
+	margin-bottom: 160px;
 	
 	-webkit-perspective: 38px;
 	-webkit-perspective-origin: 50% 50%;
@@ -25,6 +27,8 @@
     -webkit-transform: scale(0.7);
     transform: scale(0.7);
     opacity: 0.6;*/
+	
+	height: auto !important;
 	
 	box-shadow: 5px 5px 16px;
 	transform: rotateX(1deg);
@@ -186,10 +190,43 @@ view of the challenger and opponent
 	-o-transition: background-color 1s linear;
 }
  
- #players .myturn .status {
+ #players .my-turn .status {
 	background-color: #0055dd;
  }
  
+ #players .waiting .status {
+	-webkit-animation: waitingAnim 4s infinite;
+	-ms-animation: waitingAnim 4s infinite;
+	-o-animation: waitingAnim 4s infinite;
+	-moz-animation: waitingAnim 4s infinite;
+	/* fallback solution if the browser does not support CSS animation */
+	background-color: #ffff66;
+}
+
+@-webkit-keyframes waitingAnim {
+    0% {background-color: #FFF;}
+	50% {background-color: #ffff66;}
+    100% {background-color: #FFF;}
+}
+
+@-o-keyframes waitingAnim {
+    0% {background-color: #FFF;}
+	50% {background-color: #ffff66;}
+    100% {background-color: #FFF;}
+}
+
+@-ms-keyframes waitingAnim {
+    0% {background-color: #FFF;}
+	50% {background-color: #ffff66;}
+    100% {background-color: #FFF;}
+}
+
+@-moz-keyframes waitingAnim {
+    0% {background-color: #FFF;}
+	50% {background-color: #ffff66;}
+    100% {background-color: #FFF;}
+}
+
  #players .opponent .status {
 	margin-left: 10px;
 	float: left;

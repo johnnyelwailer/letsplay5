@@ -22,7 +22,7 @@ echo $this->Html->css('game');
 		</div>
 		
 		
-		<div class="opponent" ng-class="{waiting: !waitingForOpponent, 'my-turn': isMyTurn}">
+		<div class="opponent" ng-class="{waiting: !waitingForOpponent, 'my-turn': !isMyTurn}">
 			<div class="status">
 				<?php echo $this->Html->image('opponentstatus.png', array('alt' => 'inactive')); ?>
 			</div>
@@ -41,7 +41,7 @@ echo $this->Html->css('game');
             <h1>You lost!</h1>
         </div>
     </div>
-	<div ng-controller="GameViewModel" class="play-grid">
+	<div class="play-grid">
 	
         <div class="grid transitioned" ng-class="{collapsedY: waitingForOpponent, 'my-turn': isMyTurn}">
             <div ng-repeat="turn in grid" class="grid-cell transitioned"
