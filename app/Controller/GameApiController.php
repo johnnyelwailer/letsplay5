@@ -5,6 +5,7 @@ App::uses('AppController', 'Controller');
  *
  * @property Game $Game
  * @property Turn $Turn
+ * @property User $User
  * @property Waitingforgame $Waitingforgame
  */
 class GameApiController extends AppController {
@@ -57,6 +58,10 @@ class GameApiController extends AppController {
             if ($existingByUser['game_id'] != null) {
 
                 $game = $this->Game->findById($existingByUser['game_id']);
+
+                $game['challenger'] = $this->User->findById($game['Game']['challenger_id']);
+                $game['opponent'] = $this->User->findById($game['Game']['opponent_id']);
+
                 $this->set(array(
                     'game' => $game,
                     'player' => $user['id'],
@@ -93,6 +98,9 @@ class GameApiController extends AppController {
             //var_dump('new game', $game);
 
             $this->Waitingforgame->save(array('id' => $matching['id'],'game_id' => $game['Game']['id']));
+
+            $game['challenger'] = $this->User->findById($game['Game']['challenger_id']);
+            $game['opponent'] = $this->User->findById($game['Game']['opponent_id']);
 
             $this->set(array(
                 'game' => $game,
@@ -172,68 +180,6 @@ class GameApiController extends AppController {
             '_serialize' => array('turn')
         ));
 	}
-
-/**
- * add method
- *
- * @return void
- */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->User->create();
-			if ($this->User->save($this->request->data)) {
-				$this->flash(__('User saved.'), array('action' => 'index'));
-			} else {
-			}
-		}
-	}
-
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function edit($id) {
-		$this->User->id = $id;
-		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
-		}
-		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->User->save($this->request->data)) {
-				$this->flash(__('The user has been saved.'), array('action' => 'index'));
-			} else {
-			}
-		} else {
-			$this->request->data = $this->User->read(null, $id);
-		}
-	}
-
-/**
- * delete method
- *
- * @throws MethodNotAllowedException
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function delete($id) {
-		if (!$this->request->is('post')) {
-			throw new MethodNotAllowedException();
-		}
-		$this->User->id = $id;
-		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
-		}
-		if ($this->User->delete()) {
-			$this->flash(__('User deleted'), array('action' => 'index'));
-		}
-		$this->flash(__('User was not deleted'), array('action' => 'index'));
-		$this->redirect(array('action' => 'index'));
-	}
-
-
 }
 
 class GameMaths {

@@ -44,7 +44,8 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
 
             $scope.game = result.game.Game;
             $scope.player = result.player;
-
+            $scope.game.challenger = result.game.Challenger;
+            $scope.game.opponent = result.game.Opponent;
             getTurns(result);
         });
     };
@@ -107,6 +108,22 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
 
         return $scope.grid[index] = turn;
 
+    };
+
+    $scope.getPlayer = function() {
+        if ($scope.player == $scope.game.challenger_id) {
+            return $scope.game.challenger;
+        }
+
+        return $scope.game.opponent;
+    };
+
+    $scope.getPlayersOpponent = function() {
+        if ($scope.player == $scope.game.challenger_id) {
+            return $scope.game.opponent;
+        }
+
+        return $scope.game.challenger;
     };
 
     $scope.place = function(index) {
