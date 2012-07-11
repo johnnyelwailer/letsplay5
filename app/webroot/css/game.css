@@ -149,6 +149,7 @@ view of the challenger and opponent
 }
  
 #players .challenger .status {
+	margin-top: 1px;
 	margin-right: 10px;
 	float: right;
 }
@@ -234,4 +235,14 @@ view of the challenger and opponent
  
  #players .opponent .online {
 	float: right;
+ }
+ 
+ 
+ 
+ #players .won .status {
+	background-color: #66ee00;
+ }
+ 
+ #players .lost .status {
+	background-color: #ff3300;
  }
