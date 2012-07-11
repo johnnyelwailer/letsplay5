@@ -72,6 +72,9 @@
 
 .grid-cell:hover {
     cursor: pointer;
+    box-shadow: 0px 0px 10px #9f9;
+    border: 1px solid #9f9;
+    -webkit-transform: translateY(-2px);
 }
 
 .grid-cell:nth-child(odd){
