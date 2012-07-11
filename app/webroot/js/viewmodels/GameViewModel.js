@@ -9,8 +9,17 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
         return null;
     });
 
+    var initialize = function() {
+        if (isObservingOnly()) {
+            loadGame(window.gameId);
+        }
+        else {
+            makeMatch();
+        }
+    }
+
     var getTurns = function() {
-        $resource('../GameApi/turns/:id/:since.json').get({id: $scope.game.id, since: $scope.lastTurnTime || $scope.game.created}, function(result) {
+        $resource(window.webroot + 'GameApi/turns/:id/:since.json').get({id: $scope.game.id, since: $scope.lastTurnTime || $scope.game.created}, function(result) {
             try {
                 var newTurns = $.map(result.turns, function(item) {
                     var turn = parseTurn(item);
@@ -37,7 +46,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
         $timeout(function() {
             if ($scope.lastTurnTime.valueOf() == lastTurnTime) {
                 console.log('checking if players are still online...');
-                $resource('../GameApi/detail/:id.json').get({id: $scope.game.id}, function(result) {
+                $resource(window.webroot + 'GameApi/detail/:id.json').get({id: $scope.game.id}, function(result) {
                     $scope.game.challenger.online = result.challenger.online;
                     $scope.game.opponent.online = result.opponent.online;
 
@@ -48,7 +57,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
     }
 
     var loadGame = function(gameId) {
-        $resource('../GameApi/detail/:id.json').get({id: gameId}, function(result) {
+        $resource(window.webroot + 'GameApi/detail/:id.json').get({id: gameId}, function(result) {
             $scope.game = result.game;
             $scope.player = result.player;
             $scope.game.challenger = result.challenger;
@@ -61,7 +70,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
     };
 
     var makeMatch = function() {
-        $resource('../GameApi/makeMatch.json').save(function(result) {
+        $resource(window.webroot + 'GameApi/makeMatch.json').save(function(result) {
             if (result.await != null) {
                 $timeout(makeMatch, 5000);
                 return;
@@ -71,8 +80,6 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
             loadGame(result.game_id);
         });
     };
-
-    makeMatch();
 
     var parseTurn = function(item) {
         return {
@@ -108,6 +115,10 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
         });
 
     };
+
+    var isObservingOnly = function() {
+        return window.isObservingOnly === true;
+    }
 
     var makeTurn = function(turn) {
         var index = getIndex(turn);
@@ -149,7 +160,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
     };
 
     $scope.place = function(index) {
-        if (!$scope.isMyTurn) return;
+        if (!$scope.isMyTurn || isObservingOnly()) return;
 
         var data = getPosition(index);
 
@@ -215,6 +226,21 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
         return $scope.game.challenger;
     };
 
+    $scope.getWinner = function() {
+        if (!$scope.isCompleted()) return null;
+        return $scope.hasChallengerWon() ? $scope.game.challenger : $scope.game.opponent;
+    }
+
+    $scope.hasChallengerWon = function() {
+        if ($scope.game == null) return false;
+        return $scope.game.winner_id == $scope.game.challenger_id;
+    };
+
+    $scope.hasOpponentWon = function() {
+        if ($scope.game == null) return false;
+        return $scope.game.winner_id == $scope.game.opponent_id;
+    };
+
     $scope.isChallengersTurn = function() {
         if ($scope.lastTurn == null) return false;
         return ($scope.lastTurn.creator == $scope.game.opponent_id);
@@ -224,4 +250,6 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
         if ($scope.lastTurn == null) return false;
         return ($scope.lastTurn.creator == $scope.game.challenger_id);
     };
+
+    initialize();
 }

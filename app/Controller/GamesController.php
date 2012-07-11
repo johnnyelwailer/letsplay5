@@ -66,6 +66,7 @@ class GamesController extends AppController {
      * @param string $id
      * @return void
      */
-    public function view($id = null) {
+    public function view($id) {
+        $this -> set('id', $id);
     }
 }
