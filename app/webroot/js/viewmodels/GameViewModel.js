@@ -33,12 +33,18 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
         });
     }
 
+    var loadGame = function(gameId) {
+        $resource('../GameApi/detail/:id.json').get({id: gameId}, function(result) {
+            $scope.game = result.game;
+            $scope.player = result.player;
+            $scope.game.challenger = result.challenger;
+            $scope.game.opponent = result.opponent;
+
+            getTurns();
+        });
+    };
+
     var makeMatch = function() {
-		/*$resource('../GameApi/getGameData/:id.json').get({id: 1/*$scope.game.id*}, function(result) {
-			alert(JSON.stringify(result));
-		});*/
-		
-		
         $resource('../GameApi/makeMatch.json').save(function(result) {
             if (result.await != null) {
                 $timeout(makeMatch, 5000);
@@ -46,12 +52,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
             }
 
             $scope.waitingForOpponent = false;
-
-            $scope.game = result.game.Game;
-            $scope.player = result.player;
-            $scope.game.challenger = result.game.challenger;
-            $scope.game.opponent = result.game.opponent;
-            getTurns(result);
+            loadGame(result.game_id);
         });
     };
 
@@ -170,5 +171,41 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
     $scope.isCompleted = function() {
         if ($scope.game == null) return false;
         return $scope.game.completed;
+    };
+
+    $scope.isPlayerChallenger = function() {
+        if ($scope.game == null) return false;
+
+        return ($scope.player == $scope.game.challenger_id);
+    }
+
+    $scope.getPlayer = function() {
+        if ($scope.game == null) return false;
+
+        if ($scope.isPlayerChallenger()) {
+            return $scope.game.challenger;
+        }
+
+        return $scope.game.opponent;
+    };
+
+    $scope.getPlayersOpponent = function() {
+        if ($scope.game == null) return false;
+
+        if ($scope.isPlayerChallenger()) {
+            return $scope.game.opponent;
+        }
+
+        return $scope.game.challenger;
+    };
+
+    $scope.isChallengersTurn = function() {
+        if ($scope.lastTurn == null) return false;
+        return ($scope.lastTurn.creator == $scope.game.opponent_id);
+    };
+
+    $scope.isOpponentsTurn = function() {
+        if ($scope.lastTurn == null) return false;
+        return ($scope.lastTurn.creator == $scope.game.challenger_id);
     };
 }

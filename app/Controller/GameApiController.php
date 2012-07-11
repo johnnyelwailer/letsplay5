@@ -52,23 +52,16 @@ class GameApiController extends AppController {
         $existingByUser = $this->Waitingforgame->findByUserId($user['id']);
 
         $existingByUser = isset($existingByUser) ? $existingByUser['Waitingforgame'] : null;
+
         //var_dump('user existing', $existingByUser);
         if (isset($existingByUser)) {
 
             //game created, ready to rumble!
             if ($existingByUser['game_id'] != null) {
 
-                $game = $this->Game->findById($existingByUser['game_id']);
-
-                $challenger = $this->User->findById($game['Game']['challenger_id']);
-                $opponent = $this->User->findById($game['Game']['opponent_id']);
-                $game['challenger'] = $challenger['User']['username'];
-                $game['opponent'] = $opponent['User']['username'];
-
                 $this->set(array(
-                    'game' => $game,
-                    'player' => $user['id'],
-                    '_serialize' => array('game','player')
+                    'game_id' => $existingByUser['game_id'],
+                    '_serialize' => array('game_id')
                 ));
 
                 $this->Waitingforgame->delete($existingByUser);
@@ -102,15 +95,9 @@ class GameApiController extends AppController {
 
             $this->Waitingforgame->save(array('id' => $matching['id'],'game_id' => $game['Game']['id']));
 
-            $challenger = $this->User->findById($game['Game']['challenger_id']);
-            $opponent = $this->User->findById($game['Game']['opponent_id']);
-            $game['challenger'] = $challenger['User']['username'];
-            $game['opponent'] = $opponent['User']['username'];
-
             $this->set(array(
-                'game' => $game,
-                'player' => $user['id'],
-                '_serialize' => array('game','player')
+                'game_id' => $game['Game']['id'],
+                '_serialize' => array('game_id')
             ));
             return;
         }
@@ -137,7 +124,7 @@ class GameApiController extends AppController {
         ));
     }
 	
-	public function getGameData($id) {
+	public function detail($id) {
 		$this->loadModel('Game');
         $this->loadModel('User');
 		
@@ -158,7 +145,7 @@ class GameApiController extends AppController {
 			$challenger = array(
 				'username' => $challenger['User']['username'],
 				'id' => $challenger['User']['id'],
-				'online' => $last_access < $timeout
+				'online' => $last_access > $timeout
 			);
 			
 			$last_access = time() - strtotime($opponent['User']['last_access']);
@@ -166,7 +153,7 @@ class GameApiController extends AppController {
 			$opponent = array(
 				'username' => $opponent['User']['username'],
 				'id' => $opponent['User']['id'],
-				'online' => $last_access < $timeout
+				'online' => $last_access > $timeout
 			);
 			
 			
@@ -175,16 +162,19 @@ class GameApiController extends AppController {
 				'terminated' => (bool)$game['Game']['terminated'],
 				'created' => $game['Game']['created'],
 				'modified' => $game['Game']['modified'],
-				'challenger' => $game['Game']['challenger_id'],
-				'opponent' => $game['Game']['opponent_id']
+				'challenger_id' => $game['Game']['challenger_id'],
+				'opponent_id' => $game['Game']['opponent_id']
 			);
 		}
+
+        $user = $this->currentUser();
 		
-		 $this->set(array(
+		$this->set(array(
             'challenger' => $challenger,
             'opponent' => $opponent,
+            'player' => $user['id'],
 			'game' => $game,
-            '_serialize' => array('challenger', 'opponent', 'game')
+            '_serialize' => array('challenger', 'opponent', 'game', 'player')
         ));
 	}
 	
@@ -221,22 +211,6 @@ class GameApiController extends AppController {
             '_serialize' => array('turn', 'won', 'rows')
         ));
     }
-
-/**
- * view method
- *
- * @param string $id
- * @return void
- */
-	public function view($id) {
-        $this->loadModel('Turn');
-        $turn = $this->Turn->findById($id);
-
-        $this->set(array(
-            'turn' => $turn,
-            '_serialize' => array('turn')
-        ));
-	}
 }
 
 class GameMaths {

@@ -15,7 +15,7 @@ echo $this->Html->css('game');
 			<div class="online">
 				<?php echo $this->Html->image('active.png', array('alt' => 'inactive')); ?>
 			</div>
-			<span class="name">{{game.challenger}}</span>
+			<span class="name">{{game.challenger.username}}</span>
 			<div class="status">
 				<?php echo $this->Html->image('challengerstatus.png', array('alt' => 'inactive')); ?>
 			</div>
@@ -26,7 +26,7 @@ echo $this->Html->css('game');
 			<div class="status">
 				<?php echo $this->Html->image('opponentstatus.png', array('alt' => 'inactive')); ?>
 			</div>
-			<span class="name">{{game.opponent}}</span>
+			<span class="name">{{game.opponent.username}}</span>
 			<div class="online">
 				<?php echo $this->Html->image('active.png', array('alt' => 'inactive')); ?>
 			</div>
