@@ -19,7 +19,6 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
                     return turn;
                 });
 
-                console.log(result.winner);
                 if (result.winner != null) {
                     $scope.game.completed = true;
                     $scope.game.winner_id = result.winner;
@@ -33,13 +32,30 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
         });
     }
 
+    var checkOnline = function() {
+        var lastTurnTime =  $scope.lastTurnTime.valueOf();
+        $timeout(function() {
+            if ($scope.lastTurnTime.valueOf() == lastTurnTime) {
+                console.log('checking if players are still online...');
+                $resource('../GameApi/detail/:id.json').get({id: $scope.game.id}, function(result) {
+                    $scope.game.challenger.online = result.challenger.online;
+                    $scope.game.opponent.online = result.opponent.online;
+
+                    checkOnline();
+                });
+            }
+        }, 30000);
+    }
+
     var loadGame = function(gameId) {
         $resource('../GameApi/detail/:id.json').get({id: gameId}, function(result) {
             $scope.game = result.game;
             $scope.player = result.player;
             $scope.game.challenger = result.challenger;
             $scope.game.opponent = result.opponent;
+            $scope.lastTurnTime = $scope.game.created;
 
+            checkOnline();
             getTurns();
         });
     };
@@ -88,7 +104,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
 
     var findAdjacentRows = function() {
         $.each(arguments, function(i, turn){
-            console.log(gamemaths.findAdjacentRows($scope.grid, turn));
+            gamemaths.findAdjacentRows($scope.grid, turn);
         });
 
     };

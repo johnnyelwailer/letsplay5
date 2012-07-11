@@ -13,7 +13,8 @@ echo $this->Html->css('game');
     <div id="players">
 		<div class="challenger" ng-class="{waiting: waitingForOpponent, 'my-turn': isChallengersTurn()}">
 			<div class="online">
-				<?php echo $this->Html->image('active.png', array('alt' => 'inactive')); ?>
+				<?php echo $this->Html->image('active.png', array('alt' => 'active', 'ng-show' => 'game.challenger.online')); ?>
+				<?php echo $this->Html->image('inactive.png', array('alt' => 'inactive', 'ng-show' => '!game.challenger.online')); ?>
 			</div>
 			<span class="name">{{game.challenger.username}}</span>
 			<div class="status">
@@ -28,8 +29,9 @@ echo $this->Html->css('game');
 			</div>
 			<span class="name">{{game.opponent.username}}</span>
 			<div class="online">
-				<?php echo $this->Html->image('active.png', array('alt' => 'inactive')); ?>
-			</div>
+                <?php echo $this->Html->image('active.png', array('alt' => 'active', 'ng-show' => 'game.opponent.online')); ?>
+                <?php echo $this->Html->image('inactive.png', array('alt' => 'inactive', 'ng-show' => '!game.opponent.online')); ?>
+            </div>
 		</div>
 	</div>
 

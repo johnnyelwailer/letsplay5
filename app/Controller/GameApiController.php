@@ -145,7 +145,7 @@ class GameApiController extends AppController {
 			$challenger = array(
 				'username' => $challenger['User']['username'],
 				'id' => $challenger['User']['id'],
-				'online' => $last_access > $timeout
+				'online' => $last_access < $timeout
 			);
 			
 			$last_access = time() - strtotime($opponent['User']['last_access']);
@@ -153,7 +153,7 @@ class GameApiController extends AppController {
 			$opponent = array(
 				'username' => $opponent['User']['username'],
 				'id' => $opponent['User']['id'],
-				'online' => $last_access > $timeout
+				'online' => $last_access < $timeout
 			);
 			
 			
