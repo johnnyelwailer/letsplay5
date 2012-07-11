@@ -15,9 +15,15 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
                 var newTurns = $.map(result.turns, function(item) {
                     var turn = parseTurn(item);
                     makeTurn(turn);
-
+                    findAdjacentRows(turn);
                     return turn;
                 });
+
+                console.log(result.winner);
+                if (result.winner != null) {
+                    $scope.game.completed = true;
+                    $scope.game.winner_id = result.winner;
+                }
 
                 Array.prototype.push.apply($scope.turns, newTurns);
             }
@@ -99,12 +105,13 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
             $scope.lastTurnTime = $scope.lastTurn.createdDate;
         }
 
-        findAdjacentRows(turn);
         return $scope.grid[index] = turn;
 
     };
 
     $scope.place = function(index) {
+        if (!$scope.isMyTurn) return;
+
         var data = getPosition(index);
 
         var params = {
@@ -113,14 +120,33 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
             y: data.y.toString()
         };
 
-        console.log('place', index)
         $resource('../GameApi/place/:id/:x/:y.json', params).get(function(result) {
             makeTurn(parseTurn(result.turn));
+            if (result.won === true) {
+                $scope.game.completed = true;
+                $scope.game.winner_id = $scope.player;
 
+                $.each(result.rows, function(_,row) {
+                    $.each(row, function(_, turn) {
+                        $scope.grid[getIndex(parseTurn(turn))].completedLines.push(row);
+                    });
+                });
+
+            }
         });
     };
 
     $scope.isMarked = function(turn) {
         return turn !== null;
-    }
+    };
+
+    $scope.hasWon = function() {
+        if (!$scope.isCompleted()) return null;
+        return $scope.game.winner_id == $scope.player;
+    };
+
+    $scope.isCompleted = function() {
+        if ($scope.game == null) return false;
+        return $scope.game.completed;
+    };
 }

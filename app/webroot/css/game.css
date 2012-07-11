@@ -74,6 +74,9 @@
     background-color: #ff3322;
 }
 
+play-grid .message {
+    position: absolute;
+}
 
 #5a534f
 

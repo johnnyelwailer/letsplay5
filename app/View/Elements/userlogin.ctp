@@ -22,7 +22,15 @@
     echo $this->Form->submit('/img/login.png');
 
 
+<<<<<<< HEAD
     //echo $this->html->image("Login");
+=======
+    /* outcommented for IE & Chrome
+     *
+     * echo $this->html->image("Login");
+     * 
+     * */
+>>>>>>> 1fd659e403310bd7a074075e6859deeaac7af1fb
 
 
 

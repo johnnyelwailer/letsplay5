@@ -1,5 +1,11 @@
 var App = angular.module('app', ['ngResource']);
 
+App.filter('floor', function() {
+	return function(value) {
+		return Math.floor(value);
+	}
+});
+
 function curryIdentity(fn) {
     return function() {
         var args = [].slice.call(arguments);

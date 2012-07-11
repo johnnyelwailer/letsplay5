@@ -15,7 +15,6 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
 ?>
 
 <!DOCTYPE HTML>
@@ -52,9 +51,9 @@
 <body ng-app="app">
     <?php echo
         //input of the logo
-        $this->html->image("/img/logo.gif", array("alt" => "logo",
+        $this->html->image("/img/logo.png", array("alt" => "logo",
                                                   "id" => "logo",
-                                                  "url"=> array('controller'=>"/")                                                   ));
+                                                  "url"=> array('controller'=>"/")));
     ?>
     <div id="wrapper">
 		<div id="login-bar">
