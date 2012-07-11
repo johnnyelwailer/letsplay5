@@ -17,7 +17,7 @@
 	        <tr>
 	            <th><?php echo $this->Paginator->sort('id'); ?></th>
 		        <th><?php echo $this->Paginator->sort('username'); ?></th>
-				<th><?php echo $this->Paginator->sort('status'); ?></th>
+				<th><?php echo $this->Paginator->sort('last_access'); ?></th>
 				
 				
 				<?php  if($currentUser["Group"]["name"]=="Administrator" OR $currentUser["Group"]["name"]=="Moderator") { ?>
