@@ -38,12 +38,14 @@ class GamesController extends AppController {
         //}else {
             $this->Game->recursive = 0;
 			//var_dump($this->paginate);
-			$this->paginate = array(
+	/*		$this->paginate = array(
 				'fields' => array('COUNT(t.id) AS countturns', '*'),
 				'joins' => array('LEFT JOIN turns as t ON Game.id = t.game_id'),
 				'group' => array('Game.id'),
 				'order' => array('countturns' => 'asc')
 			);
+		*/
+			
 			
             $this->set('games', $this->paginate());
         //}

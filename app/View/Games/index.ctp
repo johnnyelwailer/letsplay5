@@ -6,7 +6,7 @@
 			<tr>
 				<th><?php echo $this->Paginator->sort('id'); ?></th>
 				<th><?php echo $this->Paginator->sort('terminated'); ?></th>
-				<th><?php echo $this->Paginator->sort('countturns'); ?></th>
+				<th><?php echo $this->Paginator->sort('turn_count'); ?></th>
 				<th><?php echo $this->Paginator->sort('created'); ?></th>
 				<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			</tr>
@@ -29,7 +29,7 @@
 				echo $this->Html->image($img, array('alt' => $desc));
 				?>
 				</td>
-				<td><?php echo $game[0]['countturns']; ?></td>
+				<td><?php echo $game['Game']['turn_count']; ?></td>
 				<td><?php echo $this->Time->nice($game['Game']['created']); ?></td>
 				<td><?php echo $this->Time->nice($game['Game']['modified']); ?></td>
 			</tr>

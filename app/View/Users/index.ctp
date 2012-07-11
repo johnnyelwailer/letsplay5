@@ -17,6 +17,7 @@
 	        <tr>
 	            <th><?php echo $this->Paginator->sort('id'); ?></th>
 		        <th><?php echo $this->Paginator->sort('username'); ?></th>
+				<th><?php echo $this->Paginator->sort('score'); ?></th>
 				<th><?php echo $this->Paginator->sort('last_access'); ?></th>
 				
 				
@@ -55,6 +56,7 @@
 					?>
 		                <td><?php echo h($user['User']['id']); ?></td>
 		                <td><?php echo h($user['User']['username']); ?></td>
+						<td><?php echo h($user['User']['score']); ?></td>
 						<td><?php 
 						
 						$timeout = Configure::read('Session.timeout');

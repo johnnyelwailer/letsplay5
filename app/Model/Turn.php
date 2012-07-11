@@ -21,7 +21,8 @@ class Turn extends AppModel {
 			'foreignKey' => 'game_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => '',
+			'counterCache' => 'turn_count'
 		)
 	);
 }

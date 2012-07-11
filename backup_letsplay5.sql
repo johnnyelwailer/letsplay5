@@ -96,6 +96,8 @@ CREATE TABLE IF NOT EXISTS `games` (
   `modified` datetime DEFAULT NULL,
   `terminated` tinyint(4) DEFAULT '0',
   `winner_id` int(11) DEFAULT '0',
+  `turn_count` int(11) DEFAULT '0',
+  
   PRIMARY KEY (`id`),
   KEY `fk_games_users2` (`challenger_id`),
   KEY `fk_games_users3` (`opponent_id`),

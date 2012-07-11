@@ -34,6 +34,9 @@ ul.vertical li ul, ul.horizontal li ul {
 	left: 0px;
 	width: 100%;
 	
+	/* must be higher than everything else */
+	z-index: 10000;
+	
 	background-color: #FFF;
 	background-color: rgba(255, 255, 255, 0.9);
 	
