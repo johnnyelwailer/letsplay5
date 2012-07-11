@@ -135,25 +135,48 @@ view of the challenger and opponent
 	border: 1px solid #999;
 	box-shadow: 3px 3px 5px;
 }
- #players .challenger {
+
+#players .challenger {
 	float: left;
- }
+}
  
- #players .challenger .online {
+#players .challenger .online {
 	float: left;
- }
+}
  
- #players .challenger .status {
+#players .challenger .status {
 	margin-right: 10px;
 	float: right;
- }
+}
 
- 
+#players .name {
+	position: absolute;
+	top: 10px;
+	bottom: 10px;
+	
+	overflow: hidden;
+	color: #FFF;
+	text-shadow: #333 3px 3px 5px;
+	font-size: 20px;
+	font-weight: bold;
+}
+#players .challenger .name {
+	left: 60px;
+	right: 40px;
+}
+
+#players .opponent .name {
+	text-align: left;
+	left: 40px;
+	right: 60px;
+}
+
+
 #players .online {
 	margin: 20px;
 }
 
- #players .status {
+#players .status {
 	background-color: #FFF;
 	
 	transition: background-color 1s linear;
@@ -161,7 +184,7 @@ view of the challenger and opponent
 	-ms-transition: background-color 1s linear;
 	-moz-transition: background-color 1s linear;
 	-o-transition: background-color 1s linear;
- }
+}
  
  #players .myturn .status {
 	background-color: #0055dd;
