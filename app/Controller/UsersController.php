@@ -122,10 +122,10 @@ class UsersController extends AppController {
 				if($user['Group']['name'] != 'Administrator') {
 					if($user['Group']['name'] == 'Moderator') {
 						if(!in_array($this->request->data['UserAdd']['group_id'], array_keys($groups))){
-							$this->request->data['UserAdd']['group_id'] = 1;
+							$this->request->data['UserAdd']['group_id'] = 3;
 						}
 					}else
-						$this->request->data['UserAdd']['group_id'] = 1;
+						$this->request->data['UserAdd']['group_id'] = 3;
 				}
 				
 				//map back from abstract model to our real model

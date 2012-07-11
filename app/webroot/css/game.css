@@ -146,5 +146,32 @@ view of the challenger and opponent
  #players .challenger .status {
 	margin-right: 10px;
 	float: right;
-	background-color: #33bbff;
+ }
+
+ 
+#players .online {
+	margin: 20px;
+}
+
+ #players .status {
+	background-color: #FFF;
+	
+	transition: background-color 1s linear;
+	-webkit-transition: background-color 1s linear;
+	-ms-transition: background-color 1s linear;
+	-moz-transition: background-color 1s linear;
+	-o-transition: background-color 1s linear;
+ }
+ 
+ #players .myturn .status {
+	background-color: #0055dd;
+ }
+ 
+ #players .opponent .status {
+	margin-left: 10px;
+	float: left;
+ }
+ 
+ #players .opponent .online {
+	float: right;
  }
