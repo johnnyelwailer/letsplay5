@@ -11,22 +11,22 @@ echo $this->Html->css('game');
 
 <div id="game-wrapper" ng-controller="GameViewModel">
     <div id="players">
-		<div class="challenger" ng-class="{waiting: !waitingForOpponent, 'my-turn': isMyTurn}">
+		<div class="challenger" ng-class="{waiting: waitingForOpponent, 'my-turn': isChallengersTurn()}">
 			<div class="online">
 				<?php echo $this->Html->image('active.png', array('alt' => 'inactive')); ?>
 			</div>
-			<span class="name">Spieler1</span>
+			<span class="name">{{game.challenger}}</span>
 			<div class="status">
 				<?php echo $this->Html->image('challengerstatus.png', array('alt' => 'inactive')); ?>
 			</div>
 		</div>
 		
 		
-		<div class="opponent" ng-class="{waiting: !waitingForOpponent, 'my-turn': !isMyTurn}">
+		<div class="opponent" ng-class="{waiting: waitingForOpponent, 'my-turn': isOpponentsTurn()}">
 			<div class="status">
 				<?php echo $this->Html->image('opponentstatus.png', array('alt' => 'inactive')); ?>
 			</div>
-			<span class="name">Spieler2</span>
+			<span class="name">{{game.opponent}}</span>
 			<div class="online">
 				<?php echo $this->Html->image('active.png', array('alt' => 'inactive')); ?>
 			</div>
