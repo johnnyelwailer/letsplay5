@@ -34,6 +34,11 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
     }
 
     var makeMatch = function() {
+		/*$resource('../GameApi/getGameData/:id.json').get({id: 1/*$scope.game.id*}, function(result) {
+			alert(JSON.stringify(result));
+		});*/
+		
+		
         $resource('../GameApi/makeMatch.json').save(function(result) {
             if (result.await != null) {
                 $timeout(makeMatch, 5000);

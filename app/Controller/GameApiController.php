@@ -11,7 +11,8 @@ App::uses('AppController', 'Controller');
 class GameApiController extends AppController {
 
     public $components = array('RequestHandler');
-
+	
+	
     public function isAuthorized($user) {
         /*switch($user['Group']['name']) {
             case 'Moderator':
@@ -135,7 +136,59 @@ class GameApiController extends AppController {
             '_serialize' => array('turns', 'winner')
         ));
     }
-
+	
+	public function getGameData($id) {
+		$this->loadModel('Game');
+        $this->loadModel('User');
+		
+		$data = null;
+		$challenger = null;
+		$opponent = null;
+		$game = null;
+		
+		$this->Game->recursive = 0;
+		if($game = $this->Game->findById($id)) {
+			$this->User->recursive = 0;
+			$challenger = $this->User->findById($game['Game']['challenger_id']);
+			$opponent = $this->User->findById($game['Game']['opponent_id']);
+			
+			$timeout = Configure::read('Session.timeout');
+			$last_access = time() - strtotime($challenger['User']['last_access']);
+			
+			$challenger = array(
+				'username' => $challenger['User']['username'],
+				'id' => $challenger['User']['id'],
+				'online' => $last_access < $timeout
+			);
+			
+			$last_access = time() - strtotime($opponent['User']['last_access']);
+			
+			$opponent = array(
+				'username' => $opponent['User']['username'],
+				'id' => $opponent['User']['id'],
+				'online' => $last_access < $timeout
+			);
+			
+			
+			$game = array(
+				'id' => $game['Game']['id'],
+				'terminated' => (bool)$game['Game']['terminated'],
+				'created' => $game['Game']['created'],
+				'modified' => $game['Game']['modified'],
+				'challenger' => $game['Game']['challenger_id'],
+				'opponent' => $game['Game']['opponent_id']
+			);
+		}
+		
+		 $this->set(array(
+            'challenger' => $challenger,
+            'opponent' => $opponent,
+			'game' => $game,
+            '_serialize' => array('challenger', 'opponent', 'game')
+        ));
+	}
+	
+	
     public function place($id, $x, $y) {
         $this->loadModel('Turn');
         $this->loadModel('User');
