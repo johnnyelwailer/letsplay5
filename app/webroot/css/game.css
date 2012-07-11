@@ -53,6 +53,9 @@
     background-color: #5a534f;
 }
 
+play-grid .message {
+    position: absolute;
+}
 
 #5a534f
 
