@@ -249,7 +249,15 @@ class UsersController extends AppController {
 	}
 
 	public function logout() {
-		 $this->redirect($this->Auth->logout());
+		$user = $this->currentUser();
+		
+		$timeout = Configure::read('Session.timeout');
+		$last_access = strtotime($user['User']['last_access']) - $timeout;
+		
+		$this->User->id = $user['id'];
+		$this->User->saveField('last_access', date('Y-m-d H:i:s', $last_access));
+		
+		$this->redirect($this->Auth->logout());
 	}
 	
 	private function groups() {

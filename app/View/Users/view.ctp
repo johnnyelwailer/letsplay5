@@ -47,8 +47,8 @@
 			$timeout = Configure::read('Session.timeout');
 						$last_access = time() - strtotime($user['User']['last_access']);
 						
-						$img = $last_access < $timeout ? 'inactive.png' : 'active.png';
-						$desc = $last_access < $timeout ? __('Offline') : __('Online');
+						$img = $last_access > $timeout ? 'inactive.png' : 'active.png';
+						$desc = $last_access > $timeout ? __('Offline') : __('Online');
 						
 						echo $this->Html->image($img, array('alt' => $desc));
 						
