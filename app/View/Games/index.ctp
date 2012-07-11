@@ -13,7 +13,6 @@
 		</thead>
 		<tbody>
 		<?php
-		
 		foreach ($games as $game) { ?>
 			<tr onclick="window.location='<?php echo $this->Html->url(array(
 					"controller" => "games",
@@ -24,13 +23,13 @@
 				<td>
 				<?php
 				
-				$img = $game['Game']['terminated'] ? 'inactive.png' : 'active.png';
-				$desc = $game['Game']['terminated'] ? __('The was terminated') : __('The game is still running');
+				$img = $game['Game']['terminated'] ? 'active.png' : 'inactive.png';
+				$desc = $game['Game']['terminated'] ? __('The game is still running') : __('The was terminated');
 				
 				echo $this->Html->image($img, array('alt' => $desc));
 				?>
 				</td>
-				<td><?php echo count($game['Turn']); ?></td>
+				<td><?php echo $game[0]['countturns']; ?></td>
 				<td><?php echo $this->Time->nice($game['Game']['created']); ?></td>
 				<td><?php echo $this->Time->nice($game['Game']['modified']); ?></td>
 			</tr>
