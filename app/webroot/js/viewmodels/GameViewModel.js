@@ -60,9 +60,14 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
         $resource(window.webroot + 'GameApi/detail/:id.json').get({id: gameId}, function(result) {
             $scope.game = result.game;
             $scope.player = result.player;
+
             $scope.game.challenger = result.challenger;
             $scope.game.opponent = result.opponent;
             $scope.lastTurnTime = $scope.game.created;
+
+            if ($scope.game.challenger_id == window.currentUserId || $scope.game.opponent_id == window.currentUserId) {
+                window.isObservingOnly = false;
+            }
 
             checkOnline();
             getTurns();

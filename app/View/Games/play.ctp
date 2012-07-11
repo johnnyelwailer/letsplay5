@@ -1,5 +1,6 @@
 <script type="text/javascript">
     window.isObservingOnly = false;
+    window.currentUserId = <?php echo $currentUser['id']; ?>;
     window.webroot = '<?php echo $this->webroot; ?>';
 </script>
 
@@ -16,10 +17,10 @@ echo $this->Html->css('game');
 
 <div id="game-wrapper" ng-controller="GameViewModel">
     <div id="players">
-		<div class="challenger" ng-class="{
-		            waiting: waitingForOpponent,
-		            'my-turn': isChallengersTurn(),
-		            won: hasChallengerWon(), lost: hasOpponentWon()}">
+		<div class="challenger" ng-class="{waiting: waitingForOpponent,
+                    'my-turn': isChallengersTurn(),
+                    won: hasChallengerWon(), lost: hasOpponentWon()}">
+			<div class="online">
 				<?php echo $this->Html->image('active.png', array('alt' => 'active', 'ng-show' => 'game.challenger.online')); ?>
 				<?php echo $this->Html->image('inactive.png', array('alt' => 'inactive', 'ng-show' => '!game.challenger.online')); ?>
 			</div>
@@ -30,8 +31,7 @@ echo $this->Html->css('game');
 		</div>
 		
 		
-		<div class="opponent" ng-class="{
-                    waiting: waitingForOpponent,
+		<div class="opponent" ng-class="{waiting: waitingForOpponent,
 		            'my-turn': isOpponentsTurn(),
 		            won: hasOpponentWon(), lost: hasChallengerWon()}">
 			<div class="status">
@@ -55,7 +55,7 @@ echo $this->Html->css('game');
     </div>
 	<div class="play-grid">
 	
-        <div class="grid transitioned" ng-class="{collapsedY: waitingForOpponent, 'my-turn': isMyTurn}">
+        <div class="grid transitioned">
             <div ng-repeat="turn in grid" ng-class="{break: $index % 19 == 18}" class="grid-cell transitioned"
                  ng-click="place($index)">
                 <div class="turn transitioned " ng-class="{marked: isMarked(turn), 'by-me': turn.isMine, 'belongs-to-line': turn.completedLines.length > 0}">
