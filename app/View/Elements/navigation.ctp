@@ -14,7 +14,7 @@
 										"action" => "edit", $currentUser['id'])
 									);
 								?>">Einstellungen</a></li>
-								<li><a href="#">Nächster Zug!</a></li>
+								<!-- <li><a href="#">Nächster Zug!</a></li> -->
 								<li><a href="<?php echo $this->Html->url(array(
 										"controller" => "users",
 										"action" => "logout")
