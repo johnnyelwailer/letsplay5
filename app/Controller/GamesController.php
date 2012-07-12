@@ -59,13 +59,13 @@ class GamesController extends AppController {
      * @return void
      */
     public function view($id = 'null') {
-        $this -> set('id', $id);
-        $this -> set('intentionToPlay', false);
+        $this->set('id', $id);
+        $this->set('intentionToPlay', false);
     }
 
     public function play() {
-        $this -> set('id', 'null');
-        $this -> set('intentionToPlay', true);
+        $this->set('id', 'null');
+        $this->set('intentionToPlay', true);
         $this->view = 'view';
     }
 

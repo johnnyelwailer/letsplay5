@@ -64,21 +64,27 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
 
             $scope.game.challenger = result.challenger;
             $scope.game.opponent = result.opponent;
+			$scope.game.expires = parseInt($scope.game.expires, 10)*1000;
             $scope.lastTurnTime = $scope.game.created;
 			
             $scope.isObservingOnly = $scope.game.challenger_id == window.currentUserId || $scope.game.opponent_id == window.currentUserId;
 			
-			$timeout(triggerExpires, 100);
+			$timeout(triggerExpires, 1000);
             checkOnline();
             getTurns();
         });
     };
 	
 	var triggerExpires = function() {
-		var t = parseInt($scope.game.expires, 10)*1000;
-		$scope.game.expired = new Date(t);
-		$timeout(triggerExpires, 100);
-	}
+		var t = $scope.game.expires - 1000;
+		
+		if(t>=0) {
+			$scope.game.expired = new Date(t);
+			$scope.game.expires = t;
+			$timeout(triggerExpires, 1000);
+		}else
+			$scope.game.expired = null;
+	};
 	
 	
     var makeMatch = function() {
