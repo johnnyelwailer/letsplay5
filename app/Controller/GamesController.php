@@ -12,6 +12,7 @@ class GamesController extends AppController {
 	
 	
 	public function isAuthorized($user) {
+        var_dump($this->request->params['action'], $user['Group']['name'], in_array($this->request->params['action'], array("index", "play", "view", "viewtemplate", "playtemplate")));
 		switch($user['Group']['name']) {
 			case 'Moderator':
 			case 'Registered':
