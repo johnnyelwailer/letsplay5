@@ -44,10 +44,14 @@
 			);
 		?>">FAQ</a></li>
 		
+		<?php if(!$isGast) { ?>
+		
 		<li><a href="<?php echo $this->Html->url(array(
 				"controller" => "games",
 				"action" => "play")
 			);
 		?>">Neues Spiel!</a></li>
+		
+		<?php } ?>
 	</ul>
 </div>

@@ -187,15 +187,28 @@ class UsersController extends AppController {
 		}
 		
 		if($this->request->is('post') || $this->request->is('put')) {
-			//group can only be changed by admin && moderator
+			//group and name can only be changed by admin && moderator
 			if($user['Group']['name'] == 'Administrator' OR $user['Group']['name'] == 'Moderator') {
 				//only accessable groups are allowed
 				if(!in_array($this->request->data['User']['group_id'], array_keys($groups))){
 					unset($this->request->data['User']['group_id']);
 				}
+				
+				if(isset($this->request->data['User']['username'])) {
+					$u = $this->User->findByUsername($this->request->data['User']['username']);
+					if($u) {
+						unset($this->request->data['User']['username']);
+						 $this->Session->setFlash(__('Username is already in use'));
+						 return;
+					}
+				}
+				
 			}else {
 				if(isset($this->request->data['User']['group_id']))
 					unset($this->request->data['User']['group_id']);
+				
+				if(isset($this->request->data['User']['username']))
+					unset($this->request->data['User']['username']);
 			}
 			
 			//reset the password only if it is not empty AND if the sent value isnt equal to the db password

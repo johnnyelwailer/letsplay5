@@ -30,9 +30,9 @@
 	<div class="info">
 		<dl>
 			<dt><?php echo __('Created'); ?></dt>
-			<dd class="created">{{ game.created || 'waiting...'}}</dd>
+			<dd class="created">{{ game.created | date:"dd.MM.y HH:mm:ss" || 'waiting...'}}</dd>
 			<dt><?php echo __('Expiry date'); ?></dt>
-			<dd class="expires">{{ (game.expired | date:"d") + ' Tage und ' + (game.expired | date:"H:m:s") || 'waiting...'}} </dd>
+			<dd class="expires">{{ (game.expired | date:"d") + ' Tage und ' + (game.expired | date:"HH:mm:ss") || 'waiting...'}} </dd>
 		</dl>
 		
 		<a href="<?php echo $this->Html->url(array(

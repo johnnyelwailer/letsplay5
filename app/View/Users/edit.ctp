@@ -3,11 +3,14 @@
 	
 	<?php echo $this->Form->create('User');
 	
-	echo $this->Form->input('username');
+	if($currentUser['Group']['name'] == "Administrator" OR $currentUser['Group']['name'] == "Moderator"){
+		echo $this->Form->input('username');
+	}
+	
 	echo $this->Form->input('password');
 	
 	if($currentUser['Group']['name'] == "Administrator" OR $currentUser['Group']['name'] == "Moderator") {
-		echo $this->Form->select('User.group_id', $groups, array('empty' => false));	
+		echo $this->Form->select('User.group_id', $groups, array('empty' => false, 'style' => "width: 100px;"));	
 	}
 	?>
 	<?php echo $this->Form->end(__('Submit')); ?>

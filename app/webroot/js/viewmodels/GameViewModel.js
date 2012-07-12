@@ -65,6 +65,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
             $scope.game.challenger = result.challenger;
             $scope.game.opponent = result.opponent;
 			$scope.game.expires = parseInt($scope.game.expires, 10)*1000;
+			$scope.game.created = Date.fromSqlFormat($scope.game.created)
             $scope.lastTurnTime = $scope.game.created;
 			
             $scope.isObservingOnly = $scope.game.challenger_id == window.currentUserId || $scope.game.opponent_id == window.currentUserId;
