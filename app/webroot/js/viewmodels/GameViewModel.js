@@ -13,8 +13,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
     var initialize = function() {
         if (window.gameId != null) {
             loadGame(window.gameId);
-        }
-        else {
+        }else {
             makeMatch();
         }
     }

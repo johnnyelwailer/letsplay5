@@ -6,18 +6,22 @@
 	
 	text-align: center;
 	
+	
+	perspective: 38px;
+	perspective-origin: 50% 50%;
+	
 	-webkit-perspective: 38px;
 	-webkit-perspective-origin: 50% 50%;
 
-    /*ff doesn't like it
+    /*ff doesn't like it - I DONT CARE */
 	-moz-perspective: 38px;
-	-moz-perspective-origin: 50% 50%;*/
+	-moz-perspective-origin: 50% 50%;
 
 	-o-perspective: 38px;
 	-o-perspective-origin: 50% 50%;
-
-	perspective: 38px;
-	perspective-origin: 50% 50%;
+	
+	-ms-perspective: 38px;
+	-ms-perspective-origin: 50% 50%;
 }
 
 .play-grid .grid {
@@ -39,14 +43,16 @@
 	-webkit-transform: rotateX(1deg);
 	-moz-transform: rotateX(1deg);
 	-o-transform: rotateX(1deg);
+	-ms-transform: rotateX(1deg);
 }
 
 .play-grid .grid.my-turn {
     opacity: 1;
+	transform: scale(1), rotateX(1deg);
     -webkit-transform: scale(1), rotateX(1deg);
 	-moz-transform: scale(1), rotateX(1deg);
 	-o-transform: scale(1), rotateX(1deg);
-    transform: scale(1), rotateX(1deg);
+    -ms-transform: scale(1), rotateX(1deg);
     /*-webkit-animation: spin 5s 1;*/
 }
 
@@ -82,11 +88,16 @@
     /*box-shadow: 0px 0px 10px #9f9;*/
 	box-shadow: 5px 5px 12px #333;
 	
-   /*border: 1px solid blue;*/
-   background-color: lightgray !important;
+   /*border: 1px solid blue;
+   background-color: lightgray !important;*/
    transform: translateY(-5px);
-   -webkit-transform: translateY(-2px);
-   -moz-transform: translateY(-2px);
+   -webkit-transform: translateY(-5px);
+   -moz-transform: translateY(-5px);
+   -o-transform: translateY(-5px);
+   -ms-transform: translateY(-5px);
+   
+   /* must be higher than all other */
+   z-index: 100000;
 }
 
 .grid-cell:nth-child(odd){
