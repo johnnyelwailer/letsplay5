@@ -1,8 +1,9 @@
-function GameViewModel($scope, $resource, $timeout, gamemaths) {
+function GameViewModel(
+$scope, $resource, $filter, $timeout, gamemaths) {
 
     $scope.turns = [];
     $scope.waitingForOpponent = true;
-    $scope.isMyTurn = true;
+    $scope.isMyTurn = false;
     $scope.lastTurn = null;
     $scope.lastTurnTime = null;
     $scope.isObservingOnly = true;
@@ -19,7 +20,10 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
     }
 
     var getTurns = function() {
-        $resource(window.webroot + 'GameApi/turns/:id/:since.json').get({id: $scope.game.id, since: $scope.lastTurnTime || $scope.game.created}, function(result) {
+        var since = $filter('date')($scope.lastTurnTime || $scope.game.created, 'yyyy-MM-dd hh:mm:ss');
+        $resource(window.webroot + 'GameApi/turns/:id/:since.json').get({
+            id: $scope.game.id,
+            since: encodeURIComponent(since)}, function(result) {
             try {
                 var newTurns = $.map(result.turns, function(item) {
                     var turn = parseTurn(item);
@@ -97,7 +101,9 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
                 return;
             }
 
+            $scope.isMyTurn = true;
             $scope.waitingForOpponent = false;
+
             loadGame(result.game_id);
         });
     };

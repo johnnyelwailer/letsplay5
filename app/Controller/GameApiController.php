@@ -120,11 +120,18 @@ class GameApiController extends AppController {
         ));
     }
 
-    public function turns($id, $since = null) {
+    public function turns($id, $since) {
         $this->loadModel('Turn');
         $this->loadModel('Game');
 
-        $turns = $this->Turn->findAllByGameId($id);
+        $since = urldecode($since);
+
+        $turns = $this->Turn->find('all', array(
+            'conditions' => array(
+                'game_id' => $id,
+                /*'Turn.created >=' => $since */))
+        );
+
 
         $game = $this->Game->findById($id);
 

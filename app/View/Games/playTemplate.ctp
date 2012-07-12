@@ -33,6 +33,8 @@
 			<dd class="created">{{ game.created | date:"dd.MM.y HH:mm:ss" || 'waiting...'}}</dd>
 			<dt><?php echo __('Expiry date'); ?></dt>
 			<dd class="expires">{{ (game.expired | date:"d") + ' Tage und ' + (game.expired | date:"HH:mm:ss") || 'waiting...'}} </dd>
+            <dt><?php echo __('last turn'); ?></dt>
+			<dd class="expires">{{lastTurnTime}} </dd>
 		</dl>
 		
 		<a href="<?php echo $this->Html->url(array(
@@ -51,11 +53,10 @@
     </div>
 </div>
 <div class="play-grid">
-
     <div class="grid transitioned">
         <div ng-repeat="turn in grid" ng-class="{break: $index>0 && $index % 19 == 0}" class="grid-cell transitioned"
              ng-click="place($index)">
-            <div class="turn transitioned " ng-class="{marked: isMarked(turn), 'by-me': turn.isMine, 'belongs-to-line': turn.completedLines.length > 0}">
+            <div class="turn transitioned " ng-class="{marked: turn != null, 'by-me': turn.isMine, 'belongs-to-line': turn.completedLines.length > 0}">
             </div>
         </div>
     </div>
