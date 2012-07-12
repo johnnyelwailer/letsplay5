@@ -17,7 +17,7 @@ class User extends AppModel {
 	
 	//this encrypt the passwort
 	public function beforeSave() {
-        if (isset($this->data[$this->alias]['password'])) {
+        if(isset($this->data[$this->alias]['password'])) {
 			$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
 		}
     }
