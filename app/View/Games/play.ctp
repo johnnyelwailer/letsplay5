@@ -45,16 +45,20 @@ echo $this->Html->css('game');
 		</div>
 	</div>
 	
-	<hr />
-	
-	<dl>
-		<dt><?php echo __('Created'); ?></dt>
-		<dd>A Date</dd>
-		<dt><?php echo __('Expiry date'); ?></dt>
-		<dd>A Date</dd>
-	</dl>
-	
-	<hr />
+	<div class="info">
+		<dl>
+			<dt><?php echo __('Created'); ?></dt>
+			<dd class="created">{{ game.created || 'waiting...'}}</dd>
+			<dt><?php echo __('Expiry date'); ?></dt>
+			<dd class="lefttime">{{ game.expiry || 'waiting...'}}</dd>
+		</dl>
+		
+		<a href="<?php echo $this->Html->url(array(
+				'controller' => 'games',
+				'action' => 'terminate')
+				); ?>/{{game.id}}" ng-class="{hidden: !game.id}"><?php echo __('Spiel beenden'); ?></a>
+		
+	</div>
 	
     <div ng-show="isCompleted()" >
         <div class="message transitioned collapsedY" ng-class="{collapsedY: !hasWon()}">

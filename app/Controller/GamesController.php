@@ -76,4 +76,6 @@ class GamesController extends AppController {
     public function viewTemplate() {
         $this->layout = false;
     }
+	
+	 public function terminate($id = null) {}
 }

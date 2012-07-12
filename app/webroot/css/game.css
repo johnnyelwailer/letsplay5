@@ -254,3 +254,21 @@ view of the challenger and opponent
  #players .lost .status {
 	background-color: #ff3300;
  }
+ 
+ 
+/* extended informations for the game */
+
+.info {
+	margin: 20px 0px;
+	border-top: 1px dashed #CCC;
+	border-bottom: 1px dashed #CCC;
+}
+.info dt {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.info dd {
+	margin-left: 10px;
+	margin-bottom: 4px;
+}

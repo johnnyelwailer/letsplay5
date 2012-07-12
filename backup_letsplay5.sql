@@ -248,7 +248,7 @@ INSERT INTO `groups` (`id`, `name`, `created`, `modified`) VALUES
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `created`, `modified`, `score`, `isMale`, `group_id`, `storePassword`) VALUES
 (1, 'user', '46df4a13034942d363c8c9be702380ecfc5adc9c', 'user@user.com', '2012-07-07 18:56:17', '2012-07-07 18:56:17', 0, 1, 3, NULL),
 (2, 'admin', '39a06327c87c9e3563a4b6cc136db546cd723a62', 'admin@admin.com', '2012-07-07 20:29:39', '2012-07-07 20:29:39', 0, 1, 1, NULL),
-(3, 'Moderator', '3abfe6335f246c0becb374b4b1a7a5f09df58bbe', 'moderator@moderator.mod', '2012-07-08 00:00:00', '2012-07-08 20:03:43', 0, 1, 2, NULL);
+(3, 'moderator', '3abfe6335f246c0becb374b4b1a7a5f09df58bbe', 'moderator@moderator.mod', '2012-07-08 00:00:00', '2012-07-08 20:03:43', 0, 1, 2, NULL);
 
   
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
