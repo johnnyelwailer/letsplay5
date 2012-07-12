@@ -174,7 +174,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
     };
 
     $scope.place = function(index) {
-        if (!$scope.isMyTurn || isObservingOnly()) return;
+        if (!$scope.isMyTurn || $scope.isObservingOnly) return;
 
         var data = getPosition(index);
 
