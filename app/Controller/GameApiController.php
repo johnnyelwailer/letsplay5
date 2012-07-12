@@ -200,8 +200,7 @@ class GameApiController extends AppController {
         $won = count($rows) > 0;
 
         if($won) {
-            $this->Game->id = $id;
-            $this->Game->save(array('terminated' => true, 'winner_id' => $user['id']));
+            $this->complete($user['id']);
         }
 
         $this->set(array(
@@ -210,6 +209,11 @@ class GameApiController extends AppController {
             'rows' => $rows,
             '_serialize' => array('turn', 'won', 'rows')
         ));
+    }
+
+    private function complete($id, $winner_id = null) {
+        $this->Game->id = $id;
+        $this->Game->save(array('terminated' => true, 'winner_id' => $winner_id));
     }
 }
 
