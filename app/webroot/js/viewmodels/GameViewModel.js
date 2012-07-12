@@ -5,12 +5,13 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
     $scope.isMyTurn = true;
     $scope.lastTurn = null;
     $scope.lastTurnTime = null;
+    $scope.isObservingOnly = true;
     $scope.grid = Array.range(0,gamemaths.gridSize * gamemaths.gridSize, function(i){
         return null;
     });
 
     var initialize = function() {
-        if (isObservingOnly()) {
+        if (window.gameId != null) {
             loadGame(window.gameId);
         }
         else {
@@ -65,9 +66,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
             $scope.game.opponent = result.opponent;
             $scope.lastTurnTime = $scope.game.created;
 
-            if ($scope.game.challenger_id == window.currentUserId || $scope.game.opponent_id == window.currentUserId) {
-                window.isObservingOnly = false;
-            }
+            $scope.isObservingOnly = $scope.game.challenger_id == window.currentUserId || $scope.game.opponent_id == window.currentUserId;
 
             checkOnline();
             getTurns();
@@ -120,10 +119,6 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
         });
 
     };
-
-    var isObservingOnly = function() {
-        return window.isObservingOnly === true;
-    }
 
     var makeTurn = function(turn) {
         var index = getIndex(turn);
@@ -255,6 +250,14 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
         if ($scope.lastTurn == null) return false;
         return ($scope.lastTurn.creator == $scope.game.challenger_id);
     };
+
+    $scope.getTemplate = function() {
+        if ($scope.isObservingOnly && !intentionToPlay) {
+            return webroot + 'games/viewtemplate';
+        }
+
+        return webroot + 'games/playtemplate';
+    }
 
     initialize();
 }

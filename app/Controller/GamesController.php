@@ -52,21 +52,28 @@ class GamesController extends AppController {
     }
 
     /**
-     * play method
-     *
-     * @return void
-     */
-    public function play() {
-    }
-
-    /**
      * view method
      *
      * @throws NotFoundException
      * @param string $id
      * @return void
      */
-    public function view($id) {
+    public function view($id = 'null') {
         $this -> set('id', $id);
+        $this -> set('intentionToPlay', false);
+    }
+
+    public function play() {
+        $this -> set('id', 'null');
+        $this -> set('intentionToPlay', true);
+        $this->view = 'view';
+    }
+
+    public function playTemplate() {
+        $this->layout = false;
+
+    }
+    public function viewTemplate() {
+        $this->layout = false;
     }
 }

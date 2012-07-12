@@ -168,7 +168,7 @@ class GameApiController extends AppController {
 		}
 
         $user = $this->currentUser();
-		
+
 		$this->set(array(
             'challenger' => $challenger,
             'opponent' => $opponent,
