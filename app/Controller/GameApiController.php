@@ -22,15 +22,15 @@ class GameApiController extends AppController {
     public function isAuthorized($user) {
         switch($user['Group']['name']) {
             case 'Moderator':
-                if(in_array($this->request->params['action'], array("index", "makeMatch", "turns", "play", "view")))
+                if(in_array($this->request->params['action'], array("index", "detail", "makeMatch", "turns", "play", "view")))
                     return true;
                 break;
             case 'Registered':
-                if(in_array($this->request->params['action'], array("index", "makeMatch", "place", "turns", "view")))
+                if(in_array($this->request->params['action'], array("index", "detail", "makeMatch", "place", "turns", "view")))
                     return true;
                 break;
             case 'Anonymous':
-                if(in_array($this->request->params['action'], array("index", "turns", "view")))
+                if(in_array($this->request->params['action'], array("index", "detail", "turns", "view")))
                     return true;
                 break;
         }
