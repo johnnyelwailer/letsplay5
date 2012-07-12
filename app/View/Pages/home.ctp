@@ -33,23 +33,26 @@
 
     <?php echo $this->Html->link(__('Benutzerhandbuch'), array('action' => 'Benutzerhandbuch', )); ?>
 
-    schauen.Falls sich das Problem bis dann noch nicht gel&ouml;st hat, k&ouml;nnte es dir weiterhelfen, wenn du einen Blick in die FAQ's wirfst.<br>
+    schauen. Falls sich das Problem bis dann noch nicht gel&ouml;st hat, k&ouml;nnte es dir weiterhelfen, wenn du einen Blick in die FAQ's wirfst.<br>
     Da werden g&auml;ngige Probleme mit ihren L&ouml;sungsvarianten beschrieben.
     Ansonsten w&uuml;nschen wir dir viel Spass & Erfolg beim Spielen und hoffen nat&uuml;rlich, dass du &uuml;ber das Spiel spannende & Interessante Gegner finden kannst.
 </p>
 <p>
-    Wir hoffen, dass ihr Gefallen an unserer Seite findet und sind nat&uuml;rlich offen f&uuml;r Optimierungsvorschl&auml;ge.
+    Wir hoffen, dass Ihr Gefallen an unserer Seite findet und sind nat&uuml;rlich offen f&uuml;r Optimierungsvorschl&auml;ge.
     <h2>
         Ihr 5Gewinnt Team
     </h2>
 </p>
-<p>
-    <?php echo
-    //input of the logo
-        $this->html->image("/img/letsgo.png", array("alt" => "3.2.1 let's go",
-                                                    "url" => array(
-                                                     'controller' => "games/play"
-                                                    )));
+<p style="text-align: center;">
+    <?php 
+	
+	if(!$isGast)
+		$url = array('controller' => "games", "action" => "play");
+	else
+		$url = array('controller' => "users", "action" => "add");
+	
+	//input for the play button
+	echo $this->html->image("/img/letsgo.png", array("alt" => "3.2.1 let's go", "url" => $url));
     ?>
 </p>
 
