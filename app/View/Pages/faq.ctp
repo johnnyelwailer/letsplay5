@@ -14,7 +14,7 @@
 <p>
 	<b>Was bietet mir die Registration auf LetsPlay5?</b><br>
 	- Wenn man sich registriert hat, kann man an Turnieren teilnehmen, Spiele er&ouml;ffnen, Benutzerprofil bearbeiten und vieles mehr. <br>
-	die ausf&uuml;hrlichen Informationen finden sie in unserem <?php echo $this->Html->link(__('Benutzerhandbuch'), array('action' => 'Benutzerhandbuch', )); ?>.
+	die ausf&uuml;hrlichen Informationen finden sie in unserem <?php echo $this->Html->link(__('Benutzerhandbuch'), array('controller' => '','action' => 'files', 'Benutzerhandbuch.pdf')); ?>.
 </p>
 
 <p>
