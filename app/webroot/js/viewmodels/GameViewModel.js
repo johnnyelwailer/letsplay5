@@ -76,7 +76,7 @@ function GameViewModel($scope, $resource, $timeout, gamemaths) {
 	
 	var triggerExpires = function() {
 		var t = parseInt($scope.game.expires, 10)*1000;
-		var $scope.game.expired = new Date(t);
+		$scope.game.expired = new Date(t);
 		$timeout(triggerExpires, 100);
 	}
 	
