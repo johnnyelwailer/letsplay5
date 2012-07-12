@@ -53,7 +53,7 @@
 <div class="play-grid">
 
     <div class="grid transitioned">
-        <div ng-repeat="turn in grid" ng-class="{break: $index % 19 == 18}" class="grid-cell transitioned"
+        <div ng-repeat="turn in grid" ng-class="{break: $index>0 && $index % 19 == 0}" class="grid-cell transitioned"
              ng-click="place($index)">
             <div class="turn transitioned " ng-class="{marked: isMarked(turn), 'by-me': turn.isMine, 'belongs-to-line': turn.completedLines.length > 0}">
             </div>
