@@ -221,24 +221,25 @@ h1{
 /*###################
     profile site
 #####################*/
-.users h2{
-    margin:0 0 5px 0;
-    font-size: 16px;
+
+.users.view dl {
+    margin: 20px;
+	display: inline-block;
+	vertical-align: top;
+	padding: 4px 24px;
+	border: 1px solid #CCC;
+}
+.users.view dt {
+    font-weight: bold;
 }
 
-dl{
-    margin: 0 20px;
-}
-
-dt{
-    width: 15%;
-    height: 15px;
-    float: left;
-    font-weight:bold;
+.users.view dd{
+	margin-left: 10px;
+	margin-bottom: 4px;
 }
 
 /*actions format*/
-.actions li {
+/*.users.view */.actions li {
     list-style:none;
     margin: 0 20px;
 }
@@ -251,6 +252,7 @@ img{
     border: none;
 }
 
-#content table {
-	width: 100%;
+.users.view .games {
+	margin: 20px;
+	display: inline-block;
 }

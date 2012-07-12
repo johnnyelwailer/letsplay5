@@ -44,7 +44,18 @@ echo $this->Html->css('game');
             </div>
 		</div>
 	</div>
-
+	
+	<hr />
+	
+	<dl>
+		<dt><?php echo __('Created'); ?></dt>
+		<dd>A Date</dd>
+		<dt><?php echo __('Expiry date'); ?></dt>
+		<dd>A Date</dd>
+	</dl>
+	
+	<hr />
+	
     <div ng-show="isCompleted()" >
         <div class="message transitioned collapsedY" ng-class="{collapsedY: !hasWon()}">
             <h1>You won!</h1>

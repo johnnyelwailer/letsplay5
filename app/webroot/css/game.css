@@ -1,6 +1,6 @@
 
 .play-grid {
-	width: 608px;
+	/* width: 628px; */
 	
 	margin: 40px auto;
 	margin-bottom: 160px;
@@ -32,7 +32,8 @@
 	
 	height: auto !important;
 	
-	box-shadow: 5px 5px 16px;
+	/*box-shadow: 5px 5px 16px;*/
+	
 	transform: rotateX(1deg);
 	-webkit-transform: rotateX(1deg);
 	-moz-transform: rotateX(1deg);
@@ -58,7 +59,7 @@
 }*/
 
 .grid-cell {
-    /*float: left;*/
+	float: left;
 	display: inline-block;
 	background-color: #FFF;
 	width: 30px;
@@ -68,6 +69,10 @@
     vertical-align:  middle;
     text-align: center;
 
+}
+
+.grid-cell.break {
+	clear: both;
 }
 
 .grid-cell:hover {

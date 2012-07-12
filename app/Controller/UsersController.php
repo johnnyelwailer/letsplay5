@@ -1,5 +1,7 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('CakeEmail', 'Network/Email');
+
 /**
  * Users Controller
  *
@@ -7,8 +9,10 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 	
-	public $uses = array('User', 'Group');
+	public $uses = array('User', 'Group', 'Game');
 	public $helpers = array('Validation');
+	
+	
 	
 	public function isAuthorized($user) {
 		switch($user['Group']['name']) {
@@ -23,7 +27,7 @@ class UsersController extends AppController {
 						return true;
 				}
 			case 'Registered':
-				if(in_array($this->request->params['action'], array("add")))
+				if(in_array($this->request->params['action'], array("add", "resetPassword")))
 					return false;
 				
 				if(in_array($this->request->params['action'], array("logout")))
@@ -39,7 +43,7 @@ class UsersController extends AppController {
 						return true;
 				
 			case 'Anonymous':
-				if(in_array($this->request->params['action'], array("login", "index", "view", "add")))
+				if(in_array($this->request->params['action'], array("login", "index", "view", "add", "resetPassword")))
 					return true;
 				break;
 		}
@@ -84,16 +88,30 @@ class UsersController extends AppController {
 			return;
 			throw new NotFoundException(__('Invalid user'));
 		}
-
+		
+		
         $user = $this->User->findById($id);
 		$this->set('user', $user);
-
+		$this->paginate = array(
+			'Game' => array('conditions' => array(
+				'OR' => array(
+					'Game.challenger_id' => $id,
+					'Game.opponent_id' => $id
+					)
+				)
+			)
+		);
+	
+		
+		$this->set('games', $this->paginate('Game'));
+		
+		/*
         if ($this->RequestHandler->requestedWith() == 'XMLHttpRequest') {
             $this->set(array(
                 'user' => $user,
                 '_serialize' => array('user')
             ));
-        }
+        }*/
 	}
 
 /**
@@ -131,7 +149,8 @@ class UsersController extends AppController {
 				//map back from abstract model to our real model
 				$this->request->data['User'] = $this->request->data['UserAdd'];
 				if($this->User->save($this->request->data)) {
-					$this->Session->setFlash(__('User saved.'), 'success');
+					$this->Session->setFlash(__('User has been saved.'), 'success');
+					$this->redirect(array('controller' => 'pages', 'action' => 'index'));
 				} else {
 					$this->Session->setFlash(__('User not saved.'));
 				}
@@ -191,7 +210,7 @@ class UsersController extends AppController {
 			
 			
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved.'));
+				$this->Session->setFlash(__('The user has been saved.'), 'success');
 			} else {
 				$this->Session->setFlash(__('The user has not been saved.'));
 			}
@@ -251,15 +270,72 @@ class UsersController extends AppController {
 	public function logout() {
 		$user = $this->currentUser();
 		
+		//reset the last_access
 		$timeout = Configure::read('Session.timeout');
 		$last_access = strtotime($user['User']['last_access']) - $timeout;
 		
 		$this->User->id = $user['id'];
 		$this->User->saveField('last_access', date('Y-m-d H:i:s', $last_access));
 		
+		//redirect him to the logout page
 		$this->redirect($this->Auth->logout());
 	}
 	
+	public function resetPassword(){
+		if($this->request->is('post')) {
+			$this->User->recursive = 0;
+			$user = $this->User->findByUsername($this->request->data['User']['screenname']);
+			
+			if(!$user) {
+				$this->Session->setFlash(__('Invalid user'));
+			}else {
+				//generate a random password
+				$password = $this->newpassword();
+				try {
+					//send email
+					$email = new CakeEmail();
+					$email->from(array('noreply@letsplay5.com' => 'Letsplay5'));
+					$email->to($user['User']['email']);
+					$email->subject('Password was reset');
+					
+					
+					$text = "Dear User";
+					$text .= "\n\n";
+					$text .= "Your password have been reset and is now: ";
+					$text .= $password;
+					$text .= "Enjoy your day!";
+					
+					$email->send($text);
+					
+					//save it
+					$this->User->id = $user['User']['id'];
+					$this->User->saveField('password', AuthComponent::password($password));
+				
+					//display success message
+					$this->Session->setFlash(__('Your password have been reset.'), 'success');
+				}catch(Exception $e) {
+					$this->Session->setFlash(__('Could not send the email'));
+				}
+			}
+		}
+	}
+	
+	/* generates a new password */
+	private function newpassword($len = 10) {
+		$letters = range("a", "z");
+		$letters = array_merge($letters, range("A", "Z"));
+		$letters = array_merge($letters, range(0, 9));
+		$letters = array_merge($letters, array("!",".","_",":","=","+","-"));
+		
+		$ret = "";
+		while($len--) {
+			$ret .= $letters[mt_rand(0, count($letters)-1)];
+		}
+		
+		return $ret;
+	}
+	
+	/* returns all accessable groups */
 	private function groups() {
 		static $groups = null;
 		
