@@ -218,12 +218,4 @@ App.directive('calendar', function ($compile, $timeout, $filter, $locale) {
             '<div class="popout transitioned" ng-class="{collapsedY: !show}" ng-transclude>' +
             '</div>'
     };
-})
-.directive('end-repeat', function() {
-    return {
-        restrict: 'A',
-        compile: function($place, attr) {
-
-        }
-    };
 });
