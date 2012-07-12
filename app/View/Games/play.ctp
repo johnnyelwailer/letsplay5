@@ -50,7 +50,7 @@ echo $this->Html->css('game');
 			<dt><?php echo __('Created'); ?></dt>
 			<dd class="created">{{ game.created || 'waiting...'}}</dd>
 			<dt><?php echo __('Expiry date'); ?></dt>
-			<dd class="lefttime">{{ game.expiry || 'waiting...'}}</dd>
+			<dd class="expires">{{ game.expired || 'waiting...'}}</dd>
 		</dl>
 		
 		<a href="<?php echo $this->Html->url(array(

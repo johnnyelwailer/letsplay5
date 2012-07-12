@@ -8,6 +8,12 @@ App::uses('AppController', 'Controller');
  * @property User $User
  * @property Waitingforgame $Waitingforgame
  */
+ 
+
+
+define('gameExpires', 604800); //a week
+define('waitingForGameExpires', 60*60); // a hour
+
 class GameApiController extends AppController {
 
     public $components = array('RequestHandler');
@@ -156,12 +162,15 @@ class GameApiController extends AppController {
 				'online' => $last_access < $timeout
 			);
 			
+			$exp = strtotime($game['Game']['modified']) + gameExpires;
+			$exp -= time();
 			
 			$game = array(
 				'id' => $game['Game']['id'],
 				'terminated' => (bool)$game['Game']['terminated'],
 				'created' => $game['Game']['created'],
-				'modified' => $game['Game']['modified'],
+				//'modified' => $game['Game']['modified'],
+				'expires' => $exp,
 				'challenger_id' => $game['Game']['challenger_id'],
 				'opponent_id' => $game['Game']['opponent_id']
 			);
