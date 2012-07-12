@@ -34,7 +34,7 @@
 			<dt><?php echo __('Expiry date'); ?></dt>
 			<dd class="expires">{{ (game.expired | date:"d") + ' Tage und ' + (game.expired | date:"HH:mm:ss") || 'waiting...'}} </dd>
             <dt><?php echo __('last turn'); ?></dt>
-			<dd class="expires">{{lastTurnTime}} </dd>
+			<dd class="expires">{{lastTurnTime | date:"dd.MM.y HH:mm:ss"}} </dd>
 		</dl>
 		
 		<a href="<?php echo $this->Html->url(array(

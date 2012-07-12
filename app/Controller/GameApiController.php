@@ -129,7 +129,7 @@ class GameApiController extends AppController {
         $turns = $this->Turn->find('all', array(
             'conditions' => array(
                 'game_id' => $id,
-                /*'Turn.created >=' => $since */))
+                'Turn.created <' => $since ))
         );
 
 
