@@ -16,7 +16,7 @@ class GamesController extends AppController {
 			case 'Moderator':
 			case 'Registered':
 			case 'Anonymous':
-				if(in_array($this->request->params['action'], array("index", "play", "view")))
+				if(in_array($this->request->params['action'], array("index", "play", "view", "viewTemplate", "playTemplate")))
 					return true;
 				break;
 		}
