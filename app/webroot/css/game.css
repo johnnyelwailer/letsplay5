@@ -68,7 +68,7 @@
 .grid-cell {
 	float: left;
 	display: inline-block;
-	background-color: #FFF;
+	background-color: #FEDBB3;
 	width: 30px;
     height: 30px;
     line-height: 30px;
@@ -101,7 +101,7 @@
 }
 
 .grid-cell:nth-child(odd){
-    background-color: rgba(230, 100, 100, 0.9);
+    background-color: rgba(45, 45, 45, 0.9);
 }
 
 play-grid .message {
