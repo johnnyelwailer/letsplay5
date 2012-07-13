@@ -87,6 +87,9 @@ $scope, $resource, $filter, $timeout, gamemaths) {
                 && $scope.game.opponent_id != $scope.player;
             console.log($scope.isObservingOnly)
 			
+			
+            $scope.waitingForOpponent = false;
+			
 			if(!silent) {
 				$timeout(triggerExpires, 1000);
 				checkOnline();
@@ -119,7 +122,6 @@ $scope, $resource, $filter, $timeout, gamemaths) {
             }
 
             $scope.isMyTurn = true;
-            $scope.waitingForOpponent = false;
 
             loadGame(result.game_id);
         });
