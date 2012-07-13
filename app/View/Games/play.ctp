@@ -69,6 +69,7 @@ echo $this->Html->css('game');
             <h1>You lost!</h1>
         </div>
     </div>
+	
 	<div class="play-grid">
 	
         <div class="grid transitioned">

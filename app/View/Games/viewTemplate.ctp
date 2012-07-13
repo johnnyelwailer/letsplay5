@@ -27,6 +27,22 @@
     </div>
 </div>
 
+	<div class="info">
+		<dl>
+			<dt><?php echo __('Created'); ?></dt>
+			<dd class="created">{{ game.created || 'waiting...'}}</dd>
+			<dt><?php echo __('Expiry date'); ?></dt>
+			<dd class="expires">{{ (game.expired | date) || 'waiting...'}}</dd>
+		</dl>
+		
+		<a href="<?php echo $this->Html->url(array(
+				'controller' => 'games',
+				'action' => 'terminate')
+				); ?>/{{game.id}}" ng-class="{hidden: !game.id}"><?php echo __('Spiel beenden'); ?></a>
+		
+	</div>
+
+
 <div class="message transitioned collapsedY" ng-class="{collapsedY: !isCpompleted()}">
     <h1>{{getWinner().username}} won!</h1>
 </div>
