@@ -1,5 +1,6 @@
 <script type="text/javascript">
     window.gameId = <?php echo $id; ?>;
+	window.currentUserId = <?php echo isset($currentUser['id']) ? $currentUser['id'] : 0; ?>;
     window.intentionToPlay = <?php echo $intentionToPlay ? 'true' : 'false'; ?>;
     window.webroot = '<?php echo $this->webroot; ?>';
 	window.isGast = <?php echo $isGast ? 'true' : 'false'; ?>;

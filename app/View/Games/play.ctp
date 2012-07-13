@@ -1,6 +1,6 @@
 <script type="text/javascript">
     window.isObservingOnly = false;
-    window.currentUserId = <?php echo $currentUser['id']; ?>;
+    window.currentUserId = <?php echo isset($currentUser['id']) ? $currentUser['id'] : 0; ?>;
     window.webroot = '<?php echo $this->webroot; ?>';
 	window.isGast = <?php echo $isGast ? 'true' : 'false'; ?>;
 </script>

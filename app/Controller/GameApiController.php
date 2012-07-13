@@ -185,14 +185,14 @@ class GameApiController extends AppController {
 			);
 		}
 
-        $user = $this->currentUser();
+        //$user = $this->currentUser();
 
 		$this->set(array(
             'challenger' => $challenger,
             'opponent' => $opponent,
-            'player' => $user['id'],
+            //'player' => !isset($user['id']) ? $user['id'] : null,
 			'game' => $game,
-            '_serialize' => array('challenger', 'opponent', 'game', 'player')
+            '_serialize' => array('challenger', 'opponent', 'game'/*, 'player'*/)
         ));
 	}
 	

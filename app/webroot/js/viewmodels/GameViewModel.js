@@ -10,7 +10,7 @@ $scope, $resource, $filter, $timeout, gamemaths) {
     $scope.grid = Array.range(0,gamemaths.gridSize * gamemaths.gridSize, function(i){
         return null;
     });
-
+	
     var initialize = function() {
         if (window.gameId != null) {
             loadGame(window.gameId);
@@ -41,7 +41,7 @@ $scope, $resource, $filter, $timeout, gamemaths) {
                 }
 
                 Array.prototype.push.apply($scope.turns, newTurns);
-
+				
                 if ($scope.turns.length == 0) {
                     //$scope.isMyTurn = $scope.player == $scope.game.challenger_id;
                 }
@@ -70,7 +70,7 @@ $scope, $resource, $filter, $timeout, gamemaths) {
     var loadGame = function(gameId, silent) {
         $resource(window.webroot + 'GameApi/detail/:id.json').get({id: gameId}, function(result) {
             $scope.game = result.game;
-            $scope.player = result.player;
+            $scope.player = window.currentUserId;
 
             $scope.game.challenger = result.challenger;
             $scope.game.opponent = result.opponent;
@@ -159,15 +159,19 @@ $scope, $resource, $filter, $timeout, gamemaths) {
     };
 
     var makeTurn = function(turn) {
-		if(window.isGast)
-			return;
-		
-        var index = getIndex(turn);
+		var index = getIndex(turn);
         turn.index = index;
-        turn.isMine = turn.creator == $scope.player;
+		
+		if(window.isGast)
+			turn.isMine = false;
+		else
+			turn.isMine = turn.creator == $scope.player;
+		
         turn.isChallenger = turn.creator == $scope.game.challenger_id;
-        console.log(turn.isChallenger);
-        turn.completedLines = [];
+        
+		//console.log(turn.isChallenger);
+        
+		turn.completedLines = [];
         if(isOccupied(turn)) {
             return false;
         }
