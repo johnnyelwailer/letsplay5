@@ -50,7 +50,7 @@ $scope, $resource, $filter, $timeout, gamemaths) {
     }
 
     var updateStatus = function() {
-        $timeout(updateStatus, 30000);
+        $timeout(updateStatus, 3000);
         checkGame($scope.game.id);
     }
 
@@ -84,8 +84,11 @@ $scope, $resource, $filter, $timeout, gamemaths) {
 
             $scope.isObservingOnly = $scope.game.challenger_id != $scope.player
                 && $scope.game.opponent_id != $scope.player;
-
-
+			
+			
+			
+			$scope.isMyTurn = result.challenger.id == window.currentUserId;
+			
             $scope.waitingForOpponent = false;
 
             $timeout(triggerExpires, 1000);
@@ -115,9 +118,7 @@ $scope, $resource, $filter, $timeout, gamemaths) {
                 $timeout(makeMatch, 5000);
                 return;
             }
-
-            $scope.isMyTurn = true;
-
+			
             loadGame(result.game_id);
         });
     };

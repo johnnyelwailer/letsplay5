@@ -37,11 +37,12 @@
 			<dd class="expires">{{lastTurnTime | date:"dd.MM.y HH:mm:ss"}} </dd>
 		</dl>
 		
+		<?php if($currentUser['Group']['name'] == 'Administrator' OR $currentUser['Group']['name'] == 'Moderator') { ?>
 		<a href="<?php echo $this->Html->url(array(
 				'controller' => 'games',
 				'action' => 'terminate')
 				); ?>/{{game.id}}" ng-class="{hidden: !game.id}"><?php echo __('Spiel beenden'); ?></a>
-		
+		<?php } ?>
 	</div>
 
 <div ng-show="isCompleted()" >

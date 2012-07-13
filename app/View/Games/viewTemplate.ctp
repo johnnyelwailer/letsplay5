@@ -30,16 +30,19 @@
 	<div class="info">
 		<dl>
 			<dt><?php echo __('Created'); ?></dt>
-			<dd class="created">{{ game.created || 'waiting...'}}</dd>
+			<dd class="created">{{ game.created | date:"dd.MM.y HH:mm:ss" || 'waiting...'}}</dd>
 			<dt><?php echo __('Expiry date'); ?></dt>
-			<dd class="expires">{{ (game.expired | date) || 'waiting...'}}</dd>
+			<dd class="expires">{{ (game.expired | date:"d") + ' Tage und ' + (game.expired | date:"HH:mm:ss") || 'waiting...'}} </dd>
+            <dt><?php echo __('last turn'); ?></dt>
+			<dd class="expires">{{lastTurnTime | date:"dd.MM.y HH:mm:ss"}} </dd>
 		</dl>
 		
+		<?php if($currentUser['Group']['name'] == 'Administrator' OR $currentUser['Group']['name'] == 'Moderator') { ?>
 		<a href="<?php echo $this->Html->url(array(
 				'controller' => 'games',
 				'action' => 'terminate')
 				); ?>/{{game.id}}" ng-class="{hidden: !game.id}"><?php echo __('Spiel beenden'); ?></a>
-		
+		<?php } ?>
 	</div>
 
 
