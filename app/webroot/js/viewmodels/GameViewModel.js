@@ -292,7 +292,7 @@ $scope, $resource, $filter, $timeout, gamemaths) {
     };
 
     $scope.isChallengersTurn = function() {
-        if ($scope.lastTurn == null) return false;
+        if ($scope.lastTurn == null) return true;
         return ($scope.lastTurn.creator == $scope.game.opponent_id);
     };
 

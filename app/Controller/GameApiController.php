@@ -250,23 +250,26 @@ class GameApiController extends AppController {
 
         if($won) {
 			//terminate game
-			$this->complete($id);
+			//del $this->complete($id);
 			
 			//if both user exists perform additional tasks
 			if($gamed['Game']['challenger_id'] && $gamed['Game']['opponent_id']) {
-				/*$looserId = $gamed['Game']['challenger_id'] == $user['id'] ? $gamed['Game']['challenger_id'] : $gamed['Game']['opponent_id'];
+				$looserId = $gamed['Game']['challenger_id'] == $user['id'] ? $gamed['Game']['challenger_id'] : $gamed['Game']['opponent_id'];
 				
 				
 				$winner = $this->User->findById($user['id']);
 				$looser = $this->User->findById($looserId);
 				
 				if($winner && $looser) {
-					$winner['User']['points'] += 1;
-					$looser['User']['points'] -= 1;
-					
 					//calc ELO number
-					$playerA = $winner['User']['score'] > $looser['User']['score'] ? $winner['User']['score'] : $looser['User']['score'];
-					$playerB = $winner['User']['score'] < $looser['User']['score'] ? $winner['User']['score'] : $looser['User']['score'];
+					if($winner['User']['score'] > $looser['User']['score']) {
+						$playerA = $winner;
+						$playerB = $looser;
+					}else {
+						$playerA = $looser;
+						$playerB = $winner;
+					}
+					
 					
 					$pointDiff = $playerB['User']['score'] - $playerA['User']['score'];
 					
@@ -279,24 +282,28 @@ class GameApiController extends AppController {
 					
 					if($playerA['User']['id'] == $winner['User']['id']) {
 						$winner['User']['score'] = $winner['User']['score'] + 30*(1 - $EA);
-						$looser['User']['score'] = $looser['User']['score'] + 30*(0 - (1- $EA) );
+						$looser['User']['score'] = $looser['User']['score'] + 30*(0 - (1- $EA));
 					}else {
 						$winner['User']['score'] = $winner['User']['score'] + 30*(0 - $EA);
 						$looser['User']['score'] = $looser['User']['score'] + 30*(1 - (1- $EA));
 					}
 					
+					
+					$winner['User']['points'] += 1;
+					$looser['User']['points'] -= 1;
+					
 					//store new "play points"
-					$this->User->id = $user['id'];
 					$this->User->save(
 						array(
+							'id' => $winner['User']['id'],
 							'points' => $winner['User']['points'] < 0 ? 0 : $winner['User']['points'],
 							'score' => $winner['User']['score'] < 0 ? 0 : $winner['User']['score']
 						)
 					);
 					
-					$this->User->id = $looserId;
 					$this->User->save(
 						array(
+							'id' => $looser['User']['id'],
 							'points' => $looser['User']['points'] < 0 ? 0 : $looser['User']['points'],
 							'score' => $looser['User']['score'] < 0 ? 0 : $looser['User']['score']
 						)
@@ -304,7 +311,7 @@ class GameApiController extends AppController {
 					
 					//set winner if the game was fairly won
 					$this->complete($id, $user['id']);
-				}*/
+				}
 			}
 			
         }
