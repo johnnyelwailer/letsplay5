@@ -2,6 +2,7 @@
     window.isObservingOnly = false;
     window.currentUserId = <?php echo $currentUser['id']; ?>;
     window.webroot = '<?php echo $this->webroot; ?>';
+	window.isGast = <?php echo $isGast ? 'true' : 'false'; ?>;
 </script>
 
 <?php
