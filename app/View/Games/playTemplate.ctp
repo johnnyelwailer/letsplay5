@@ -57,6 +57,8 @@
         <div ng-repeat="turn in grid" ng-class="{break: $index>0 && $index % 19 == 0}" class="grid-cell transitioned"
              ng-click="place($index)">
             <div class="turn transitioned " ng-class="{marked: turn != null, 'by-me': turn.isMine, 'belongs-to-line': turn.completedLines.length > 0}">
+                <?php echo $this->Html->image('stoneblack.png', array('ng-show' => '!turn.isChallenger')); ?>
+                <?php echo $this->Html->image('stonewhite.png', array('ng-show' => 'turn.isChallenger')); ?>
             </div>
         </div>
     </div>
