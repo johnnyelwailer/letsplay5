@@ -64,7 +64,6 @@ class GameApiController extends AppController {
 
         //var_dump('user existing', $existingByUser);
         if (isset($existingByUser)) {
-
             //game created, ready to rumble!
             if ($existingByUser['game_id'] != null) {
 
@@ -224,17 +223,26 @@ class GameApiController extends AppController {
 		
 		//is it really my turn?
 		$myturn = $this->Turn->find('first', array(
+			'conditions' => array(
+				'game_id' => $id
+			),
 			'order' => 
 				array('Turn.created' => 'desc')
 			)
 		);
 		
-		if($myturn['Turn']['creator'] == $user['id']) {
-			throw new Exception('Not your turn!');
+		if($myturn) {
+			if($myturn['Turn']['creator'] == $user['id']) {
+				throw new Exception('Not your turn!');
+			}
+        }else {
+			if($user['id'] != $gamed['Game']['challenger_id']) {
+				throw new Exception('Not your turna!');
+			}
 		}
-        
+		
         $turn = $this->Turn->save(array('game_id' => $id, 'x' => $x, 'y' => $y, 'creator' => $user['id']));
-
+		
         $game = new GameMaths($this->Turn, $id);
 
         $rows = $game->findAdjacentRows($turn);
@@ -242,11 +250,11 @@ class GameApiController extends AppController {
 
         if($won) {
 			//terminate game
-            $this->complete($id);
+			$this->complete($id);
 			
 			//if both user exists perform additional tasks
 			if($gamed['Game']['challenger_id'] && $gamed['Game']['opponent_id']) {
-				$looserId = $gamed['Game']['challenger_id'] == $user['id'] ? $gamed['Game']['challenger_id'] : $gamed['Game']['opponent_id'];
+				/*$looserId = $gamed['Game']['challenger_id'] == $user['id'] ? $gamed['Game']['challenger_id'] : $gamed['Game']['opponent_id'];
 				
 				
 				$winner = $this->User->findById($user['id']);
@@ -296,7 +304,7 @@ class GameApiController extends AppController {
 					
 					//set winner if the game was fairly won
 					$this->complete($id, $user['id']);
-				}
+				}*/
 			}
 			
         }
