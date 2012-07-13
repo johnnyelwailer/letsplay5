@@ -41,6 +41,10 @@ $scope, $resource, $filter, $timeout, gamemaths) {
                 }
 
                 Array.prototype.push.apply($scope.turns, newTurns);
+
+                if ($scope.turns.length == 0) {
+                    //$scope.isMyTurn = $scope.player == $scope.game.challenger_id;
+                }
             }
             finally {
                 $timeout(getTurns, 1000);
@@ -70,14 +74,16 @@ $scope, $resource, $filter, $timeout, gamemaths) {
 
             $scope.game.challenger = result.challenger;
             $scope.game.opponent = result.opponent;
-			
+
 			var tz = new Date();
 			$scope.game.expires =  parseInt($scope.game.expires, 10)*1000 + (tz.getTimezoneOffset()*60)*1000;
 			$scope.game.created = Date.fromSqlFormat($scope.game.created);
 			
             $scope.lastTurnTime = $scope.game.created;
-			
-            $scope.isObservingOnly = $scope.game.challenger_id == window.currentUserId || $scope.game.opponent_id == window.currentUserId;
+
+            $scope.isObservingOnly = $scope.game.challenger_id != $scope.player
+                && $scope.game.opponent_id != $scope.player;
+            console.log($scope.isObservingOnly)
 			
 			if(!silent) {
 				$timeout(triggerExpires, 1000);
@@ -159,6 +165,8 @@ $scope, $resource, $filter, $timeout, gamemaths) {
         var index = getIndex(turn);
         turn.index = index;
         turn.isMine = turn.creator == $scope.player;
+        turn.isChallenger = turn.creator == $scope.game.challenger_id;
+        console.log(turn.isChallenger);
         turn.completedLines = [];
         if(isOccupied(turn)) {
             return false;
@@ -210,7 +218,7 @@ $scope, $resource, $filter, $timeout, gamemaths) {
             if (result.won === true) {
                 $scope.game.completed = true;
                 //$scope.game.winner_id = $scope.player;
-				loadGame(window.gameId);
+				loadGame(window.gameId, true);
 				
                 $.each(result.rows, function(_,row) {
                     $.each(row, function(_, turn) {

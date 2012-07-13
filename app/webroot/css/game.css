@@ -120,8 +120,8 @@ play-grid .message {
     margin: auto auto;
     vertical-align:  middle;
     text-align: center;
-    border-radius: 60px;
-    background: #f08080;
+    /*border-radius: 60px;
+    background: #f08080;*/
 /*
     transform: translateY(0px) scaleY(1);
     -webkit-transform: translateY(0px) scaleY(1);
@@ -136,7 +136,7 @@ play-grid .message {
 }
 
 .turn.marked.by-me {
-    background: lightBlue;
+    /*background: lightBlue;*/
 }
 
 /*

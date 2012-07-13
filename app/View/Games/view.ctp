@@ -17,6 +17,9 @@ echo $this->Html->css('game');
 ?>
 
 
-<div id="game-wrapper" ng-controller="GameViewModel" ng-include src="getTemplate()">
+<div id="game-wrapper" ng-controller="GameViewModel" >
+    {{getTemplate()}}
+    <div ng-include src="getTemplate()">
 
+    </div>
 </div>
