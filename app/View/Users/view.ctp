@@ -56,6 +56,12 @@
 			?>
 			&nbsp;
 		</dd>
+		
+		<dt><?php echo __('Score'); ?></dt>
+		<dd>
+			<?php echo $user['User']['score']; ?>
+			&nbsp;
+		</dd>
 	</dl>
 	
 	<div class="games">

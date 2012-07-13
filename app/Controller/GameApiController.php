@@ -203,15 +203,38 @@ class GameApiController extends AppController {
         $this->loadModel('Turn');
         $this->loadModel('User');
         $this->loadModel('Game');
-
+		
+		//common tests
+		$gamed = $this->Game->findById($id);
+		$user = $this->currentUser();
+		
+		if(!$gamed) {
+            throw new Exception('Game does not exist');
+        }
+		
+		if($gamed['Game']['terminated']) {
+			throw new Exception('Game is already terminated');
+		}
+		
+		//field already in use
         $existing = $this->Turn->find('first', array('conditions' =>
             array('game_id' => $id, 'x' => $x, 'y' => $y)));
-
+		
         if ($existing != null) {
             throw new Exception('position already occupied.');
         }
-
-        $user = $this->currentUser();
+		
+		//is it really my turn?
+		$myturn = $this->Turn->find('first', array(
+			'order' => 
+				array('Turn.created' => 'desc')
+			)
+		);
+		
+		if($myturn['Turn']['creator'] == $user['id']) {
+			throw new Exception('Not your turn!');
+		}
+        
         $turn = $this->Turn->save(array('game_id' => $id, 'x' => $x, 'y' => $y, 'creator' => $user['id']));
 
         $game = new GameMaths($this->Turn, $id);
@@ -220,8 +243,63 @@ class GameApiController extends AppController {
         $won = count($rows) > 0;
 
         if($won) {
-            $this->complete($user['id']);
+			//terminate game
+            $this->complete($id);
+			
 			//if both user exists perform additional tasks
+			if($gamed['Game']['challenger_id'] && $gamed['Game']['opponent_id']) {
+				$looserId = $gamed['Game']['challenger_id'] == $user['id'] ? $gamed['Game']['challenger_id'] : $gamed['Game']['opponent_id'];
+				
+				
+				$winner = $this->User->findById($user['id']);
+				$looser = $this->User->findById($looserId);
+				
+				if($winner && $looser) {
+					$winner['User']['points'] += 1;
+					$looser['User']['points'] -= 1;
+					
+					//calc ELO number
+					$playerA = $winner['User']['score'] > $looser['User']['score'] ? $winner['User']['score'] : $looser['User']['score'];
+					$playerB = $winner['User']['score'] < $looser['User']['score'] ? $winner['User']['score'] : $looser['User']['score'];
+					
+					$pointDiff = $playerB['User']['score'] - $playerA['User']['score'];
+					
+					if($pointDiff < -400)
+						$pointDiff = -400;
+					
+					$pointDiff /= 400;
+					
+					$EA = 1 / (1 + pow(10, $pointDiff));
+					
+					if($playerA['User']['id'] == $winner['User']['id']) {
+						$winner['User']['score'] = $winner['User']['score'] + 30*(1 - $EA);
+						$looser['User']['score'] = $looser['User']['score'] + 30*(0 - (1- $EA) );
+					}else {
+						$winner['User']['score'] = $winner['User']['score'] + 30*(0 - $EA);
+						$looser['User']['score'] = $looser['User']['score'] + 30*(1 - (1- $EA));
+					}
+					
+					//store new "play points"
+					$this->User->id = $user['id'];
+					$this->User->save(
+						array(
+							'points' => $winner['User']['points'] < 0 ? 0 : $winner['User']['points'],
+							'score' => $winner['User']['score'] < 0 ? 0 : $winner['User']['score']
+						)
+					);
+					
+					$this->User->id = $looserId;
+					$this->User->save(
+						array(
+							'points' => $looser['User']['points'] < 0 ? 0 : $looser['User']['points'],
+							'score' => $looser['User']['score'] < 0 ? 0 : $looser['User']['score']
+						)
+					);
+					
+					//set winner if the game was fairly won
+					$this->complete($id, $user['id']);
+				}
+			}
 			
         }
 

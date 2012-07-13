@@ -26,6 +26,7 @@ class Game extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
+		
 		'Opponent' => array(
 			'className' => 'User',
 			'foreignKey' => 'opponent_id',
@@ -33,6 +34,7 @@ class Game extends AppModel {
 			'fields' => '',
 			'order' => ''
 		),
+		
 		'Winner' => array(
 			'className' => 'User',
 			'foreignKey' => 'winner_id',
