@@ -23,6 +23,15 @@ class User extends AppModel {
     }
 	
 	
+	public function beforeDelete() {
+		$this->loadModel('Game');
+		$this->Game->updateAll(
+			array('terminated' => '1'),
+			array('challenger_id' => $this->id, 'opponent_id' => $this->id));
+		
+		return true;
+	}
+	
 	/*
 	What this does, is tie the Group and User models to the Acl, 
 	and tell CakePHP that every-time you make a User or Group you 

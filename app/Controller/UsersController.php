@@ -256,9 +256,14 @@ class UsersController extends AppController {
 			//throw new NotFoundException(__('Invalid user'));
 		}
 		
-		if ($this->User->delete()) {
+		if($this->User->delete()) {
 			$this->Session->setFlash(__('User deleted'), 'success');
 			$this->redirect(array('action' => 'index'));
+			
+			
+			$this->Game->set();
+			
+			
 			return;
 		}
 		

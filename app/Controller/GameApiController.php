@@ -22,11 +22,11 @@ class GameApiController extends AppController {
     public function isAuthorized($user) {
         switch($user['Group']['name']) {
             case 'Moderator':
-                if(in_array($this->request->params['action'], array("index", "detail", "makeMatch", "turns", "play", "view")))
+                if(in_array($this->request->params['action'], array("terminate")))
                     return true;
                 break;
             case 'Registered':
-                if(in_array($this->request->params['action'], array("index", "detail", "makeMatch", "place", "turns", "view")))
+                if(in_array($this->request->params['action'], array("makeMatch", "place")))
                     return true;
                 break;
             case 'Anonymous':
@@ -222,6 +222,8 @@ class GameApiController extends AppController {
 
         if($won) {
             $this->complete($user['id']);
+			//if both user exists perform additional tasks
+			
         }
 
         $this->set(array(
@@ -231,7 +233,7 @@ class GameApiController extends AppController {
             '_serialize' => array('turn', 'won', 'rows')
         ));
     }
-
+	
     private function complete($id, $winner_id = null) {
         $this->Game->id = $id;
         $this->Game->save(array('terminated' => true, 'winner_id' => $winner_id));

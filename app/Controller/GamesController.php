@@ -77,5 +77,15 @@ class GamesController extends AppController {
         $this->layout = false;
     }
 	
-	 public function terminate($id = null) {}
+	 public function terminate($id = null) {
+		$this->Game->id = $id;
+		
+		if($this->Game->exists()) {
+			$this->Game->save(array('terminated' => 1));
+			$this->Session->setFlash(__('Game is terminated'), 'success');
+		}else
+			$this->Session->setFlash(__('Game not found'));
+		
+		$this->redirect(array('controller' => 'games', 'action' => 'index'));
+	}
 }

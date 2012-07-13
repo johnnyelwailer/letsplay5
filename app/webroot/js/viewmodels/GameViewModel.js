@@ -60,7 +60,7 @@ $scope, $resource, $filter, $timeout, gamemaths) {
         }, 30000);
     }
 
-    var loadGame = function(gameId) {
+    var loadGame = function(gameId, silent) {
         $resource(window.webroot + 'GameApi/detail/:id.json').get({id: gameId}, function(result) {
             $scope.game = result.game;
             $scope.player = result.player;
@@ -76,9 +76,12 @@ $scope, $resource, $filter, $timeout, gamemaths) {
 			
             $scope.isObservingOnly = $scope.game.challenger_id == window.currentUserId || $scope.game.opponent_id == window.currentUserId;
 			
-			$timeout(triggerExpires, 1000);
-            checkOnline();
-            getTurns();
+			if(!silent) {
+				$timeout(triggerExpires, 1000);
+				checkOnline();
+				getTurns();
+			}
+			
         });
     };
 	
@@ -95,6 +98,9 @@ $scope, $resource, $filter, $timeout, gamemaths) {
 	
 	
     var makeMatch = function() {
+		if(window.isGast)
+			return;
+		
         $resource(window.webroot + 'GameApi/makeMatch.json').save(function(result) {
             if (result.await != null) {
                 $timeout(makeMatch, 5000);
@@ -144,6 +150,9 @@ $scope, $resource, $filter, $timeout, gamemaths) {
     };
 
     var makeTurn = function(turn) {
+		if(window.isGast)
+			return;
+		
         var index = getIndex(turn);
         turn.index = index;
         turn.isMine = turn.creator == $scope.player;
@@ -197,8 +206,9 @@ $scope, $resource, $filter, $timeout, gamemaths) {
             makeTurn(parseTurn(result.turn));
             if (result.won === true) {
                 $scope.game.completed = true;
-                $scope.game.winner_id = $scope.player;
-
+                //$scope.game.winner_id = $scope.player;
+				loadGame(window.gameId);
+				
                 $.each(result.rows, function(_,row) {
                     $.each(row, function(_, turn) {
                         $scope.grid[getIndex(parseTurn(turn))].completedLines.push(row);

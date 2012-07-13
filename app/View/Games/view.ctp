@@ -2,6 +2,7 @@
     window.gameId = <?php echo $id; ?>;
     window.intentionToPlay = <?php echo $intentionToPlay ? 'true' : 'false'; ?>;
     window.webroot = '<?php echo $this->webroot; ?>';
+	window.isGast = <?php echo $isGast ? 'true' : 'false'; ?>;
 </script>
 
 <?php
