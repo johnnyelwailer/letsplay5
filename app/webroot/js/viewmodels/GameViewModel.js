@@ -20,10 +20,13 @@ $scope, $resource, $filter, $timeout, gamemaths) {
     }
 
     var getTurns = function() {
-        var since = $filter('date')($scope.lastTurnTime || $scope.game.created, 'yyyy-MM-dd hh:mm:ss');
+        // since = $filter('date')(
+        //    $scope.lastTurnTime || $scope.game.created, 'yyyy-MM-dd HH:mm:ss');
+
         $resource(window.webroot + 'GameApi/turns/:id/:since.json').get({
             id: $scope.game.id,
-            since: encodeURIComponent(since)}, function(result) {
+            since: ($scope.lastTurnTime || $scope.game.created).getUnix(),
+            timestamp: new Date}, function(result) {
             try {
                 var newTurns = $.map(result.turns, function(item) {
                     var turn = parseTurn(item);
@@ -202,7 +205,7 @@ $scope, $resource, $filter, $timeout, gamemaths) {
             y: data.y.toString()
         };
 
-        $resource('../GameApi/place/:id/:x/:y.json', params).get(function(result) {
+        $resource(webroot + 'GameApi/place/:id/:x/:y.json', params).get(function(result) {
             makeTurn(parseTurn(result.turn));
             if (result.won === true) {
                 $scope.game.completed = true;

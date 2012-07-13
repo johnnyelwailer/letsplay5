@@ -124,12 +124,11 @@ class GameApiController extends AppController {
         $this->loadModel('Turn');
         $this->loadModel('Game');
 
-        $since = urldecode($since);
 
         $turns = $this->Turn->find('all', array(
             'conditions' => array(
                 'game_id' => $id,
-                'Turn.created <' => $since ))
+                'UNIX_TIMESTAMP(Turn.created) >' => $since ))
         );
 
 
