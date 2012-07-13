@@ -24,11 +24,9 @@ class GameApiController extends AppController {
             case 'Moderator':
                 if(in_array($this->request->params['action'], array("terminate")))
                     return true;
-                break;
             case 'Registered':
                 if(in_array($this->request->params['action'], array("makeMatch", "place")))
                     return true;
-                break;
             case 'Anonymous':
                 if(in_array($this->request->params['action'], array("index", "detail", "turns", "view")))
                     return true;
